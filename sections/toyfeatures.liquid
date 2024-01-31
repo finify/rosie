@@ -1,0 +1,415 @@
+{% schema %}
+{
+  "name": "Toy features",
+  "settings": [
+    {
+      "type": "number",
+      "label": "toy feature icon size",
+      "id": "toy_icon"
+    },
+    {
+      "type": "number",
+      "label": "toy feature icon size mobile",
+      "id": "toy_icon_mobile"
+    },
+    {
+      "type": "number",
+      "label": "toy feature text size",
+      "id": "toy_text"
+    },
+    {
+      "type": "number",
+      "label": "toy feature text size mobile",
+      "id": "toy_text_mobile"
+    },
+    {
+      "type": "number",
+      "label": "in the box header size",
+      "id": "itb_size"
+    },
+    {
+      "type": "number",
+      "label": "in the box text size",
+      "id": "itbt_size"
+    },
+    {
+      "type": "number",
+      "label": "ingredient sub text size",
+      "id": "ing"
+    },
+    {
+      "type": "number",
+      "label": "ingredient sub text size mobile",
+      "id": "ing_mobile"
+    },
+    {
+      "type": "number",
+      "label": "items in accordion mobile size ",
+      "id": "item_mobile"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+              ul{
+              list-style-type: none;
+              display: flex;
+              flex-wrap: wrap;
+            /*   justify-content: space-between; */
+              margin:0;
+              padding-top:60px;
+            }
+            .box{
+              width:49%;
+              border:1px solid rgba(191, 85, 105, 0.15);
+              padding:20px 5px !important;
+              height:130px;
+            }
+            li{
+              margin:0;
+              padding:0;
+            }
+      li.box{
+        border-top:none;
+      }
+      li.box:nth-child(1) {
+            border-top: 1px solid rgba(191, 85, 105, 0.15);
+
+        }
+      li.box:nth-child(2) {
+            border-top: 1px solid rgba(191, 85, 105, 0.15);
+
+        }
+          li.box:nth-child(odd) {
+            border-left: none;
+
+        }
+          li.box:nth-child(even) {
+            border-right: none;
+            border-left: none;
+        }
+
+            .box img {
+                  width: {{ section.settings.toy_icon}}px;
+                  height: {{ section.settings.toy_icon}}px;
+                  margin-right: 20px;
+                  margin-left:10px;
+                  vertical-align:center;
+                }
+            .box p{
+              font-size:{{ section.settings.toy_text }}px !important;
+              font-family:Inter;
+
+            }
+          button.accordion-button{
+            font-size:{{ section.settings.itb_size }}px !important;
+              font-family:var(--heading-font-family-bold);
+            font-weight:bold !important;
+          }
+
+          .headone{
+            font-size:{{ section.settings.itb_size }}px !important;
+            font-family:var(--heading-font-family-bold) !important;
+            font-weight:bold !important;
+          }
+
+          h6.space{
+            font-size:{{ section.settings.ing }}px !important;
+            font-family:Inter !important;
+
+          }
+
+          span.items {
+            font-size:{{ section.settings.itbt_size }}px !important;
+          }
+
+
+
+            .box {
+                  display: flex;
+                  align-items: center;
+            }
+            .half{
+                padding-top:50px;
+                width:50%;
+                padding-left:70px !important;
+                padding-right:70px !important;
+                vertical-align:middle;
+              }
+            .half h2{
+              font-size:32px;
+              text-align: center !important;
+            }
+            .second-half{
+              width:50% !important;
+              text-align:right;
+            }
+            .flow{
+              display:flex;
+            }
+
+
+                .image-cover {
+                    padding: 5px;
+                }
+
+
+                .title{
+                    color: #000;
+                    font-family: Operetta 12;
+                    font-size: 7vw;
+                    font-style: normal;
+                    font-weight: 500;
+                    align-items: left;
+                }
+
+
+          .space{
+            padding-bottom:20px !important ;
+          }
+          .marg{
+            padding:20px;
+          }
+          .marg-b{
+            margin-bottom:20px;
+          }
+
+
+
+        .exp{
+          padding: 10px 0;
+
+          color:black;
+
+          display: inline;
+          font-size:13px;
+        }
+        .col-12 {
+          padding-bottom: 50px;
+      }
+
+
+
+      .accordion-button:focus {
+                z-index: 3;
+                border-color: none!important;
+                box-shadow: none!important;
+            }
+    9:12
+    .accordion-button::after {
+              background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+              transform: scale(.7) !important;
+            }
+            .accordion-button:not(.collapsed)::after {
+              background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+            }
+            #myAccordion_inb{
+                border-radius: 8px;
+                border: 1px solid rgba(191, 85, 105, 0.15);
+                background: none;
+                padding: 20px;
+            }
+            .accordion-button:not(.collapsed) {
+                color: black;
+                background: none!important;
+                box-shadow: none!important;
+            }
+            .accordion-button{
+                background: none;
+                padding: 0px;
+            }
+            .items {
+
+                color: black;
+                font-family: Inter!important;
+                font-size: 13px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 150%;
+                /* 19.5px */
+                width: fit-content;
+                padding: 10px;
+                display: flex;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+            }
+            .inbox-item-cover {
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+                width: 100%;
+            }
+            .image-cover {
+                padding: 5px;
+            }
+            .accordion-button:focus {
+                z-index: 3;
+                border-color: none!important;
+                box-shadow: none!important;
+            }
+    .accordion-header{
+      font-family:var(--heading-font-family-bold);
+    }
+
+
+
+        @media only screen and (max-width: 768px) {
+          .box p {
+            font-size: {{ section.settings.toy_text_mobile}}px !important;
+            font-family: Inter;
+          }
+          .box img {
+            width: {{ section.settings.toy_icon_mobile}}px !important;
+            height: {{ section.settings.toy_icon_mobile}}px !important;
+            margin-right: 20px;
+            margin-left: 10px;
+          }
+          h6.space{
+            font-size:{{ section.settings.ing_mobile }}px !important;
+
+          }
+          span.items {
+        font-size: {{ section.settings.item_mobile }}px !important;
+          }
+        }
+
+    .accordion-item.marg {
+      margin-left: -10px;
+  }
+
+      /* Custom style */
+</style>
+
+{% javascript %}
+{% endjavascript %}
+
+<div class="flow">
+  <div class="half">
+    {% if product.metafields.custom.toys_features %}
+      <h2>{{ product.metafields.custom.feature_heading.value }}</h2>
+      <ul class="space">
+        {% for item in product.metafields.custom.toys_features.value %}
+          <li class="box">
+            <img src="{{ item | image_url: width:'80' }}" width="80" height="80">
+            <p>{{ item.alt }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if product.metafields.custom.additional_information or product.metafields.custom.addition_info_image %}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12" style="align-content:left;">
+            <h4 class="space headone">Additional Information</h4>
+            {% if product.metafields.custom.addition_info_image %}
+              <div class="row image-cover">
+                <img
+                  src="{{ product.metafields.custom.addition_info_image | image_url: width:"500%" }}"
+                  width=""
+                  height=""
+
+                  alt=""
+                >
+              </div>
+            {% endif %}
+            {% if product.metafields.custom.additional_information %}
+              <h6 class="space">
+                {{ product.metafields.custom.additional_information.value }}
+              </h6>
+              {% if product.metafields.custom.expiratiion %}
+                <p class="exp">{{ product.metafields.custom.expiratiion.value }}</p>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product.metafields.custom.ingredients %}
+      <div class="accordion-item marg ">
+        <h2 class="accordion-header headtext " id="headingTwo">
+          <button
+            class="accordion-button "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            Ingredients
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse "
+          aria-labelledby="headingTwo"
+        >
+          <div class="accordion-body ">
+            <div class="container mt-3 inbox-cover">
+              <div class="row inbox-item-cover">
+                {% for item in product.metafields.custom.ingredients.value %}
+                  <span class="items">{{ item }} </span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if product.metafields.custom.in_your_box %}
+      <div class="accordion-item marg marg-b">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            In your box
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse "
+          aria-labelledby="headingOne"
+        >
+          <div class="accordion-body">
+            <div class="container mt-3 inbox-cover">
+              <div class="row inbox-item-cover">
+                {% for item in product.metafields.custom.in_your_box.value %}
+                  <span class="items">{{ item }} </span>
+                {% endfor %}
+              </div>
+              {% if product.metafields.custom.in_your_box_image %}
+                <div class="row image-cover">
+                  <img
+                    src="{{ product.metafields.custom.in_your_box_image | image_url: width:"500%" }}"
+                    width=""
+                    height=""
+
+                    alt=""
+                  >
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if product.metafields.custom.toys_features
+    or product.metafields.custom.in_your_box
+    or product.metafields.custom.additional_information
+  %}
+    <div class="second-half">
+      <img src="{{ product.metafields.custom.feature_image | image_url: width:'900' }}" width="700" height="938">
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,173 @@
+<style>
+  .coming-soon .section {
+    width: 100%;
+    height: 100%;
+    padding: 0px !important;
+  }
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-32);
+    padding-top: var(--spacing-32);
+  }
+
+  .section-header h2 {
+    color: {{ section.settings.heading_color }};
+    text-align: center;
+    font-family: Inter;
+    font-size: 62.208px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -3.11px;
+  }
+  .heading-image, img {
+    max-width: 800px;
+    margin: auto;
+    width: 100%;
+  }
+</style>
+
+<div class="coming-soon">
+  <div
+    {% render 'section-properties',
+      background_gradient: section.settings.background_gradient,
+      full_width: section.settings.full_width
+    %}
+  >
+    <div class="section-content">
+      {%- render 'section-header',
+        heading: section.settings.heading,
+        heading_color: section.settings.heading_color,
+        heading_gradient: section.settings.heading_gradient,
+        content: section.settings.content,
+        text_alignment: section.settings.text_alignment
+      -%}
+
+      <div class="heading-image">
+        {%- if section.settings.image != blank -%}
+          {{-
+            section.settings.image
+            | image_url: width: section.settings.image.width
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600'
+          -}}
+        {%- else -%}
+          {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mobile App",
+  "class": "shopify-section--mobile-page",
+    "tag": "section",
+  "settings": [
+        {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": true
+      },
+      {
+      "type": "select",
+      "id": "collection_title_size",
+      "label": "Collection title size",
+      "options": [
+        {
+          "value": "h0",
+          "label": "Hero"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h0"
+    },
+    {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "start",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "center"
+        },
+        {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Coming Soon"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "3200 x 1600px .jpg recommended. Default to collection image."
+    },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background"
+      },
+      {
+        "type": "color_background",
+        "id": "background_gradient",
+        "label": "Background gradient"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading COlor",
+        "default": "#000000"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Mobile App"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

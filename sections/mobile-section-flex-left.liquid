@@ -1,0 +1,139 @@
+<style>
+  .mobile-flex-left-img img{
+      width: 80%!important;
+  }
+  .text-content{
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: center;
+  }
+    .mobile-app-flexible__subtext p{
+      color: #403131;
+      font-family: Helvetica Neue;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 348;
+      line-height: normal;
+      width:80%;
+    }
+
+
+    .flexible_image{
+      width:200%!important;
+      object-fit: fill;
+    }
+    .container{
+      margin-bottom:30px;
+      margin-left: 0px!important;
+    }
+    .mobile-app-flex-left__title{
+      margin-top:30px;
+      color: #403131;
+      font-family: Operetta 12;
+      font-size:80px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .mobile-app-flex-left__title{
+          font-size:40px;
+      }
+      .mobile-app-flexible__subtext p{
+          width:100%;
+          font-size:15px;
+      }
+      .mobile-flex-left-img img{
+          width: 80%!important;
+          margin:auto;
+      }
+    }
+</style>
+<div class="mobile-flex-left">
+  <div class="section section-blends section-full pb-1 section-padding">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-12 mobile-flex-left-img">
+        {%- if section.settings.image_left != blank -%}
+          {{-
+            section.settings.image_left
+            | image_url: width: 2024
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600'
+          -}}
+        {%- else -%}
+          {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+      </div>
+      <div class="col-lg-7 col-md-7 col-12 text-content">
+        <h1 id="{{ section.settings.section_id }}" class="mobile-app-flex-title title-break" bp="{{ section.settings.breakpoint }}">{{ section.settings.heading1 }}</h1>
+        <h4 class="mobile-app-flex-subtext">{{ section.settings.richtext1 }}</h4>
+
+        <a class="mobile-app-section__button" href="{{ section.settings.link1 }}">
+          {{- section.settings.link1text -}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+    "name": "mobile-flexible-left",
+    "class":"mobile-flex-left",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Bookmark ID",
+            "default": "custom_controller"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "Designed for one handed use"
+        },
+        {
+            "type": "number",
+            "id": "breakpoint",
+            "label": "Sentence Breakpoint for heading",
+            "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "image_left",
+          "label": "Image",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext1",
+            "label": "Richtext 1",
+            "default": "<p>The Vibes Only app's custom controller lets you adjust the intensity (0-100%), pick patterns, toggle stealth mode, and control dual motors vibrators independently.</p>"
+        },
+        {
+            "type": "url",
+            "id": "link1",
+            "label": "Link 1"
+        },
+        {
+            "type": "text",
+            "id": "link1text",
+            "label": "Link 1 text",
+            "default": "TRY IT OUT"
+        }
+    ],
+    "presets": [
+        {
+            "name": "mobile-flexible-left"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

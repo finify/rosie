@@ -1,0 +1,358 @@
+{
+  "sections": {
+    "6104a94a-7479-4070-acbf-5fdb044826bd": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "",
+            "sub_heading_tag": "h2"
+          }
+        },
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "One destination for every desire",
+            "heading_tag": "h1",
+            "enable_split": true
+          }
+        },
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Vibes Only is sexual wellness that’s your vibe. Our versatile line of products and connected app offers an array of spicy experiences  you can enjoy alone, or with a partner – from start to finish.  Explore and never be bored in the bedroom again.<\/p>"
+          }
+        },
+        "7e4e6d20-1ce0-4a22-99dc-359248db7637": {
+          "type": "button",
+          "settings": {
+            "style": "fill",
+            "size": "lg",
+            "text": "SHOP NOW",
+            "url": "shopify:\/\/collections",
+            "background": "#bf5569",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-subheading-1",
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-heading-1",
+        "template--16922246742269__6104a94a-7479-4070-acbf-5fdb044826bd-richtext-1",
+        "7e4e6d20-1ce0-4a22-99dc-359248db7637"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {\/* header mobile *\/ p.h1.text-heading {font-size: 30px !important; padding-top: 10px; } .hero-content-layout-1 {gap: var(--spacing-2); } \/* sub-heading mobile *\/ p {font-size: 14px !important; } \/* button mobile *\/ a.button.button--lg {font-size: 20px; }}",
+        " \/* sub-heading *\/p {font-size: 16px;}",
+        " \/* button *\/a.button.button--lg {font-size: 20px;}",
+        " \/* heading *\/p.h1.text-heading {font-size: 45px; padding-top: 18px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "overlay": false,
+        "enable_parallax": true,
+        "layout": "layout-1",
+        "image_size": "lg",
+        "image": "shopify:\/\/shop_images\/hero.png",
+        "mobile_text_position": "place-self-start text-start",
+        "desktop_text_position": "sm:place-self-center-end sm:text-end",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "b384539f-a30c-4fcc-b968-676bbb160977": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Find your vibe with our bestsellers",
+            "heading_tag": "h1",
+            "text_color": "#bf5569",
+            "gradient": ""
+          }
+        },
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-subheading-1",
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-heading-1",
+        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-richtext-1"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {p.h1.hyphenate.big-hero-text {font-size: 30px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "303c28e9-381e-4dfb-8e16-ae8165961dd4": {
+      "type": "featured-collection",
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.prose {color: black; font-size: 15px; }}",
+        "a.button {font-size: 20px;}"
+      ],
+      "settings": {
+        "collection": "best-sellers",
+        "products": [
+
+        ],
+        "full_width": true,
+        "stack_products": true,
+        "show_progress_bar": false,
+        "show_product_price": true,
+        "show_product_description": true,
+        "show_product_button": false,
+        "products_count": 12,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "product_button_text": "SHOP",
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "",
+        "product_price_color": "#bf5569",
+        "product_title_color": "#bf5569",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "rgba(0,0,0,0)",
+        "product_card_text_color": ""
+      }
+    },
+    "fb6827a2-ccf3-409d-a182-8dfa84b8de00": {
+      "type": "media-with-accordion",
+      "blocks": {
+        "template--16922246742269__fb6827a2-ccf3-409d-a182-8dfa84b8de00-image-1": {
+          "type": "image",
+          "settings": {
+            "media_width": 50,
+            "media_position": "start",
+            "text_position": "place-self-center-start text-start",
+            "subheading": "",
+            "title": "An end-to-end experience of pure pleasure",
+            "content": "",
+            "background": "#f4e8e6",
+            "background_gradient": "",
+            "text_color": "#bf5569",
+            "text_gradient": ""
+          }
+        },
+        "14779ee9-b2c9-4228-9a0f-a826df6a85c9": {
+          "type": "accordion",
+          "settings": {
+            "title": "Designed with the body in mind",
+            "content": "<p>Our devices and formulas are made with the finest materials and ingredients, so you can trust they’re always body-safe. The vibrators are water resistant and made with medical-grade silicone, and the formulas are vegan, cruelty-free, and free of sugar, gluten, and parabens, so you can put your trust in both the purity and pleasure of our products.<\/p>",
+            "accordion_background": "#bf5569",
+            "accordion_text_color": "#ffffff"
+          }
+        },
+        "cdd28fdb-f952-49b3-b2f5-9d9695e1fb5e": {
+          "type": "accordion",
+          "settings": {
+            "title": "Bluetooth connected devices",
+            "content": "<p>All of our vibrators connect via Bluetooth to the Vibes Only app, which offers erotic audio stories, educational sex and dating content, and a custom controller for the devices with additional patterns, a battery estimator, long-distance control option, and more. With cutting-edge technology and unparalleled content, you’ll reach elite levels of pleasure.<\/p>",
+            "accordion_background": "",
+            "accordion_text_color": "#ffffff"
+          }
+        },
+        "4eecbccd-24a3-46cb-a087-16b7260428b2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Erotic audio journeys",
+            "content": "<p>We have created the first-ever erotic audio that controls your vibrator for a completely immersive experience. In the app, you’ll find a large library of audio stories with something for everyone. <\/p>",
+            "accordion_background": "",
+            "accordion_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "template--16922246742269__fb6827a2-ccf3-409d-a182-8dfa84b8de00-image-1",
+        "14779ee9-b2c9-4228-9a0f-a826df6a85c9",
+        "cdd28fdb-f952-49b3-b2f5-9d9695e1fb5e",
+        "4eecbccd-24a3-46cb-a087-16b7260428b2"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {p.h2.bold.heading-with-accordion {font-size: 24px; } span {font-size: 24px; } p {font-size: 15px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "spacing": "none"
+      }
+    },
+    "f0cf6424-e1ef-4346-a38e-e6479eddd261": {
+      "type": "image-text-grid",
+      "blocks": {
+        "template--16922246742269__f0cf6424-e1ef-4346-a38e-e6479eddd261-image-1": {
+          "type": "image",
+          "settings": {
+            "media_width": 50,
+            "media_position": "end",
+            "text_position": "place-self-center-start text-start",
+            "subheading": "",
+            "title": "The founders",
+            "content": "<p>From the dirty, expert minds behind the top sex and dating podcast, Girls Gotta Eat, Ashley and Rayna invite you to level up your pleasure and bring your wildest fantasies to life. After building a community of empowered, sex-positive women over the years with Girls Gotta Eat, this ambitious duo realized how many women were in need of more (and better) orgasms and that they were the ones to do something about it.<\/p>",
+            "overline": "",
+            "link_text": "",
+            "link_url": "",
+            "hightlight_index": 2,
+            "background": "#ffffff",
+            "background_gradient": "",
+            "text_color": "#1a1a1a",
+            "hightlight_color": "#1a1a1a",
+            "text_gradient": "",
+            "button_background": "",
+            "button_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16922246742269__f0cf6424-e1ef-4346-a38e-e6479eddd261-image-1"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.content-text {font-size: 15px; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "spacing": "none"
+      }
+    },
+    "1bfd86af-7ad6-43fd-906c-cb4992e71899": {
+      "type": "image-with-testimonials",
+      "blocks": {
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-1": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "“The Rayna is the vibrator of my dreams. I recommend it to everyone I know! It gets me off so fast, that sometimes I start with just the vibrating side so I can go even longer 😂 15\/10”",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "7f4ccc73-c52c-4484-80fe-4fc5baf1b053": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "“I love this lube! A little bit goes a long way, which I love.”",
+            "show_rating": false,
+            "rating": 4
+          }
+        },
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-3": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "“Be a good girl for Conrad”... I. Can’t. Even. Just get the Vibes Only app, you’ll understand! As a woman, this is exactly what I needed.”",
+            "show_rating": true,
+            "rating": 4
+          }
+        },
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-2": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "\"This vibrator and app combo is amazing. I love being able to control the vibrator from my phone and slowly increase the intensity. And I love that the stories sync up with the vibrator! Amazing experience.\"",
+            "show_rating": true,
+            "rating": 4
+          }
+        },
+        "eae86c50-55c1-4056-99f5-8f1909208c18": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "\"LOVED the Vanilla Frosting Blow Gel. First time using something like this and it was so worth it! And my boyfriend loves it, too ;)\"",
+            "show_rating": true,
+            "rating": 4
+          }
+        },
+        "0c5f5f50-814c-4496-afac-8a9066cee6fd": {
+          "type": "quote",
+          "settings": {
+            "logo_width": 100,
+            "author": "",
+            "content": "\"The Lucy is small but mighty and so versatile!\"",
+            "show_rating": true,
+            "rating": 4
+          }
+        },
+        "77655c83-10e0-4a34-8f4d-4dc37392be82": {
+          "type": "media",
+          "settings": {
+            "media_width": 50,
+            "media_position": "start",
+            "title": "Testimonial"
+          }
+        },
+        "6e14d478-3b2a-4399-869b-b476f4ed0c27": {
+          "type": "title",
+          "settings": {
+            "text": "Testimonials",
+            "heading_tag": "h1",
+            "text_color": "#bf5569",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-1",
+        "7f4ccc73-c52c-4484-80fe-4fc5baf1b053",
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-3",
+        "template--16922246742269__1bfd86af-7ad6-43fd-906c-cb4992e71899-quote-2",
+        "eae86c50-55c1-4056-99f5-8f1909208c18",
+        "0c5f5f50-814c-4496-afac-8a9066cee6fd",
+        "77655c83-10e0-4a34-8f4d-4dc37392be82",
+        "6e14d478-3b2a-4399-869b-b476f4ed0c27"
+      ],
+      "custom_css": [
+        ".press__controls {margin: 0 20px !important;}",
+        "@media (min-width: 900px) {.testimonial-stack {padding-left: 3rem !important; padding-right: 3rem !important; }}"
+      ],
+      "settings": {
+        "full_width": true,
+        "spacing": "none",
+        "background": "#ffffff",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    }
+  },
+  "order": [
+    "6104a94a-7479-4070-acbf-5fdb044826bd",
+    "b384539f-a30c-4fcc-b968-676bbb160977",
+    "303c28e9-381e-4dfb-8e16-ae8165961dd4",
+    "fb6827a2-ccf3-409d-a182-8dfa84b8de00",
+    "f0cf6424-e1ef-4346-a38e-e6479eddd261",
+    "1bfd86af-7ad6-43fd-906c-cb4992e71899"
+  ]
+}

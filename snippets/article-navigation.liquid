@@ -1,0 +1,40 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  ARTICLE NAVIGATION
+  ----------------------------------------------------------------------------------------------------------------------
+
+  Shows the prev next articles for a given blog post.
+
+  * show_date
+  * show_author
+  * show_comments_count
+{%- endcomment -%}
+
+<div class="article-navigation">
+  <h2 class="article-navigation__title text-with-icon h4">
+    {{ 'blog.post.continue_reading' | t }}
+  </h2>
+
+  <div class="article-prev-next scroll-area bleed sm:unbleed">
+    {%- if blog.previous_article -%}
+      {%- render 'blog-post-card',
+        article: blog.previous_article,
+        heading_size: 'h5',
+        show_date: show_date,
+        show_author: show_author,
+        show_comments_count: show_comments_count,
+        layout: 'aside'
+      -%}
+    {%- endif -%}
+
+    {%- if blog.next_article -%}
+      {%- render 'blog-post-card',
+        article: blog.next_article,
+        heading_size: 'h5',
+        show_date: show_date,
+        show_author: show_author,
+        show_comments_count: show_comments_count
+      -%}
+    {%- endif -%}
+  </div>
+</div>

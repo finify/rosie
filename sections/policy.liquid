@@ -1,0 +1,95 @@
+{%- render 'section-spacing-collapsing' -%}
+
+{%- assign text_position = section.settings.text_position -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --section-stack-intro: {% if text_position == 'center' %}66.6667%{% elsif section.settings.contact_form_size == 'small' %}50%{% else %}41.6667%{% endif %};
+    --section-stack-main: {% if section.settings.contact_form_size == 'small' %}50%{% else %}58.3334%{% endif %};
+  }
+
+  a.policy-aside__title:hover, a.policy-aside__title:active {
+    color: {{section.settings.hightlight_color}};
+  }
+
+   @media only screen and (max-width: 600px) {
+      .section-stack__main {
+        width: 100%;
+      }
+   }
+</style>
+
+{% if page.handle != blank %}
+  {% assign handle = page.handle | replace: '-', '_' %}
+  {% assign policies = page.metafields.custom[handle].value %}
+
+  <div class="policy-section">
+    <div {% render 'section-properties' %}>
+      {% for policy in policies %}
+        {% assign key = policy.section | replace: ' ', '-' %}
+
+        <div class="policy-grid">
+          <aside class="policy-aside">
+            <ul class="policy-aside__list">
+              <li class="policy-aside__item">
+                <a href="#{{ key }}" class="policy-aside__title">{{ policy.section }}</a>
+              </li>
+            </ul>
+          </aside>
+          <article class="policy-content" id="{{ key }}">
+            {{- policy.content | metafield_tag -}}
+          </article>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+  {
+  "name": "Policy",
+  "class": "shopify-section--policy",
+  "tag": "section",
+  "blocks": [],
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "hightlight_color",
+      "label": "Hightlight Text",
+      "default": "#BF5569"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Policy"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

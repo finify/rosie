@@ -1,0 +1,149 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  ARTICLE BANNER COMPONENT
+  ----------------------------------------------------------------------------------------------------------------------
+  Shows the blog post image with blog post summary on blog post details page. The snippet automatically adjust the image positioning based on its aspect ratio.
+
+  ********************************************
+  Supported parameters
+  ********************************************
+
+  * show_date
+  * show_author
+  * show_comments_count
+  * article_image
+  * header_full_width,
+  * header_image_size
+{%- endcomment -%}
+<style>
+    .col-12{
+    background:transparent;
+    height:60vh;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .art-blog{
+    border-radius:20px;
+    width:100%;
+    height:400px;
+    object-fit: cover;
+  }
+  .overlay-content{
+    position:inherit !important;
+    background-color:transparent !important;
+    color:black !important;
+    height:100%
+  }
+  .article .overlay-content h1{
+    color:black !important;
+  }
+  @media only screen and (max-width: 780px) {
+  .col-6{
+    width:100%;
+  }}
+</style>
+
+{% assign text_color = '#FFFFFF' %}
+{%- capture class -%}content-over-media content-over-media--{{ header_image_size }} {% if header_full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%}
+
+{% comment %}
+  <image-banner
+    reveal-on-scroll="true"
+    parallax="0.3"
+    {% render 'surface', class: class, text_color: text_color %}
+  >
+    {%- if article_image != blank -%}
+      {%- capture sizes -%}(max-width: 1000px) calc(100vw - 40px), calc(min(100vw - 96px, {{ settings.page_width }}px) * 0.65){%- endcapture -%}
+      {{-
+        article.image
+        | image_url: width: article.image.width
+        | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '300,400,500,600,800,1000,1200,1400,1600,1800,2000',
+          class: 'w-full h-full object-cover zoom-image'
+      -}}
+    {%- else -%}
+      {{
+        'lifestyle-1'
+        | placeholder_svg_tag: 'placeholder'
+        | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"'
+      }}
+    {%- endif -%}
+
+    <div class="overlay-content">
+      <!--
+        {%- if article.tags.size > 0 -%}
+          <div class="overlay-content__category">
+            <a href="{{ blog.url }}/tagged/{{ article.tags.first | handle }}" class="badge bold text-sm">
+              {{- article.tags.first -}}
+            </a>
+          </div>
+        {%- endif -%}
+      -->
+
+      <h1 class="h0">{{- article.title -}}</h1>
+
+      <div class="article__meta text-sm">
+        {%- if show_author -%}
+          <p class="text-with-icon link-faded">
+            {%- render 'icon' with 'blog-author' -%}
+            {{- 'blog.post.written_by' | t: author: article.tags.first -}}
+          </p>
+        {%- endif -%}
+
+        {%- if show_date -%}
+          <p class="text-with-icon link-faded">
+            {%- render 'icon' with 'blog-date' -%}
+            <time>{{- article.published_at | date: format: 'abbreviated_date' -}}</time>
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </image-banner>
+{% endcomment %}
+
+<div class="row ">
+  <div class=" col-6 ">
+    <img
+      class="art-blog"
+      src="{{ article.image | image_url }}"
+      alt="HappyFace"
+      width="100%"
+      height="400"
+    >
+  </div>
+  <div class=" col-6 ">
+    <div class="overlay-content">
+      <!--
+        {%- if article.tags.size > 0 -%}
+          <div class="overlay-content__category">
+            <a href="{{ blog.url }}/tagged/{{ article.tags.first | handle }}" class="badge bold text-sm">
+              {{- article.tags.first -}}
+            </a>
+          </div>
+        {%- endif -%}
+      -->
+
+      <h1 class="h0">{{- article.title -}}</h1>
+
+      <div class="article__meta text-sm">
+        {%- if show_author -%}
+          <p class="text-with-icon link-faded">
+            {%- render 'icon' with 'blog-author' -%}
+            {{- 'blog.post.written_by' | t: author: article.tags.first -}}
+          </p>
+        {%- endif -%}
+
+        {%- if show_date -%}
+          <p class="text-with-icon link-faded">
+            {%- render 'icon' with 'blog-date' -%}
+            <time>{{- article.published_at | date: format: 'abbreviated_date' -}}</time>
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>

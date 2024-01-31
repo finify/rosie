@@ -1,0 +1,415 @@
+{%- render 'section-spacing-collapsing' -%}
+{%- assign tag_images = blog.metafields.custom.category_image.value -%}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --blog-posts-per-row: {% if section.blocks.first.type == 'blog' %}{{ section.blocks.first.settings.blog.articles_count | default: 3 | at_least: 2 | at_most: section.blocks.first.settings.posts_count | at_most: 3 }}{% else %}3{% endif %};
+    --blog-posts-grid: {% if section.blocks.first.settings.stack_items or section.blocks.first.type == 'article' %}auto / minmax(0, 1fr)){% else %}auto / auto-flow 74vw{% endif %};
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      --blog-posts-grid: {% if section.blocks.first.settings.stack_items or section.blocks.first.type == 'article' %}auto / repeat(var(--blog-posts-per-row), minmax(0, 1fr)){% else %}auto / auto-flow 52vw{% endif %};
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} {
+      --blog-posts-grid: auto / repeat(var(--blog-posts-per-row), minmax(0, 1fr));
+    }
+  }
+</style>
+
+<div class="blog-posts-standard">
+  <div {% render 'section-properties' %}>
+    <div class="section-stack">
+      {% comment %}
+        {%- render 'section-header',
+          subheading: section.settings.subheading,
+          heading: section.settings.title,
+          heading_color: section.settings.heading_color,
+          heading_gradient: section.settings.heading_gradient,
+          content: section.settings.content,
+          link_text: section.settings.link_text,
+          link_url: section.settings.link_url
+        -%}
+      {% endcomment %}
+      {%- assign heading_text = section.settings.title | split: ' ' -%}
+
+      <p class="h2 custom-blog__title">
+        {% for title in heading_text %}
+          {% if forloop.index > section.settings.hightlight_index %}
+            {%- render 'styled-text', content: title, text_color: section.settings.hightlight_color -%}
+          {% else %}
+            {%- render 'styled-text', content: title, text_color: section.settings.text_color -%}
+          {% endif %}
+        {% endfor %}
+      </p>
+
+      <div class="blog-posts {% unless section.blocks.first.settings.stack_items %}scroll-area bleed md:unbleed{% endunless %}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'blog' -%}
+              {%- capture sizes -%}(max-width: 699px) calc(100vw - 40px), (max-width: 999px) calc(100vw / 3 - 64px), calc(min(100vw - 96px, {{ settings.page_width }}px) / {{ block.settings.blog.articles_count | at_most: 3 }}){%- endcapture -%}
+
+              {% assign articles = block.settings.blog.articles %}
+              {%- for article in articles limit: block.settings.posts_count -%}
+                {%-
+                  render 'blog-post-card',
+                  article: article,
+                  show_excerpt: section.settings.show_excerpt,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_comments_count: section.settings.show_comments_count,
+                  show_category: section.settings.show_category,
+                  tag_images: tag_images,
+                  sizes: sizes,
+                  max_height: block.settings.max_height,
+                  show_description: block.settings.show_description,
+                  heading_size: block.settings.heading_size,
+                -%}
+              {%- else -%}
+                {%- for i in (1..3) -%}
+                  {%-
+                    render 'blog-post-card',
+                    show_excerpt: section.settings.show_excerpt,
+                    show_date: section.settings.show_date,
+                    show_author: section.settings.show_author,
+                    show_comments_count: section.settings.show_comments_count,
+                    show_category: section.settings.show_category,
+                    sizes: sizes,
+                  -%}
+                {%- endfor -%}
+              {%- endfor -%}
+
+            {%- when 'article' -%}
+              {%- capture sizes -%}(max-width: 1000px) calc(100vw - 40px), calc(min(100vw - 96px, {{ settings.page_width }}px) * 0.65){%- endcapture -%}
+
+              {%- if block.settings.article != blank -%}
+                {%-
+                  render 'blog-post-card',
+                  article: block.settings.article,
+                  featured: true,
+                  background: block.settings.background,
+                  text_color: block.settings.text_color,
+                  show_excerpt: section.settings.show_excerpt,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_comments_count: section.settings.show_comments_count,
+                  show_category: section.settings.show_category,
+                  sizes: sizes,
+                  max_height: block.settings.max_height,
+                  show_description: block.settings.show_description,
+                  heading_size: block.settings.heading_size,
+                -%}
+              {%- else -%}
+                {%- render 'blog-post-card',
+                  featured: true,
+                  show_excerpt: section.settings.show_excerpt,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_comments_count: section.settings.show_comments_count,
+                  show_category: section.settings.show_category,
+                  sizes: sizes
+                -%}
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "class": "shopify-section--blog-posts",
+  "tag": "section",
+  "disabled_on": {
+    "templates": ["password"],
+    "groups": ["header", "custom.overlay"]
+  },
+  "max_blocks": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments_count",
+      "label": "Show comments count",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category",
+      "label": "Show category",
+      "info": "Add tag organize blog posts [Learn more](https://help.shopify.com/en/manual/online-store/blogs/writing-blogs#add-tags-to-a-blog-post).",
+      "default": true
+    },
+     {
+          "type": "range",
+          "id": "hightlight_index",
+          "label": "Hightlight Area",
+          "min": 1,
+          "max": 10,
+          "step": 1,
+          "unit": "%",
+          "default": 2
+        },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "View all"
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text"
+    },
+    {
+          "type": "color",
+          "id": "hightlight_color",
+          "label": "Hightlight Color",
+          "default": "#D8465B"
+        },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    },
+    {
+      "type": "color_background",
+      "id": "heading_gradient",
+      "label": "Heading gradient"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        },
+        {
+          "type": "range",
+          "id": "posts_count",
+          "min": 2,
+          "max": 20,
+          "label": "Posts to show",
+          "default": 3
+        },
+        {
+          "type": "checkbox",
+          "id": "stack_items",
+          "label": "Stack on mobile",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_description",
+          "label": "Show Description",
+          "default": false
+        },
+        {
+         "type": "select",
+         "id": "heading_size",
+         "label": "Title Size",
+         "options": [
+           {
+             "value": "p",
+             "label": "paragraph"
+           },
+           {
+             "value": "h1",
+             "label": "H1"
+           },
+           {
+             "value": "h2",
+             "label": "H2"
+           },
+           {
+             "value": "h3",
+             "label": "H3"
+           },
+           {
+             "value": "h4",
+             "label": "H4"
+           },
+           {
+             "value": "h5",
+             "label": "H5"
+           },
+           {
+             "value": "h6",
+             "label": "H6"
+           }
+         ],
+         "default": "p"
+       },
+        {
+          "type": "text",
+          "id": "max_height",
+          "label": "Blog Card Height",
+          "default": "450"
+        }
+      ]
+    },
+    {
+      "type": "article",
+      "name": "Blog post",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Blog post"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "max_height",
+          "label": "Blog Card Height",
+          "default": "450"
+        },
+        {
+         "type": "select",
+         "id": "heading_size",
+         "label": "Title Size",
+         "options": [
+           {
+             "value": "p",
+             "label": "paragraph"
+           },
+           {
+             "value": "h1",
+             "label": "H1"
+           },
+           {
+             "value": "h2",
+             "label": "H2"
+           },
+           {
+             "value": "h3",
+             "label": "H3"
+           },
+           {
+             "value": "h4",
+             "label": "H4"
+           },
+           {
+             "value": "h5",
+             "label": "H5"
+           },
+           {
+             "value": "h6",
+             "label": "H6"
+           }
+         ],
+         "default": "p"
+       },
+        {
+          "type": "checkbox",
+          "id": "show_description",
+          "label": "Show Description",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog posts",
+      "blocks": [
+        {
+          "type": "blog",
+          "settings": {
+            "blog": "news"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Latest Stories",
+      "settings": {
+        "title": "",
+        "link_text": ""
+      },
+      "blocks": [
+        {
+          "type": "article"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

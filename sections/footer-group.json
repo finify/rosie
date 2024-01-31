@@ -1,0 +1,54 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "main-menu",
+            "show_menu_title": false
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "image_width": 110,
+            "heading_size": "h4",
+            "title": "Subscribe to our newsletters",
+            "content": "<p>KEEP UP WITH THE LATEST FROM ROSIE<\/p>"
+          }
+        },
+        "links_ay7dLX": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true
+          }
+        }
+      },
+      "block_order": [
+        "links",
+        "newsletter",
+        "links_ay7dLX"
+      ],
+      "custom_css": [
+        ".footer {overflow-x: hidden !important;}"
+      ],
+      "settings": {
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": false,
+        "show_country_flag": true,
+        "show_country_name": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

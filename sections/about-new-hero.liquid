@@ -1,0 +1,36 @@
+<style>
+  .About-us-New-Hero{
+    background-image:url("{{ section.settings.hero_image | image_url }}");
+    width:100%;
+    height: 720px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+</style>
+
+{% javascript %}
+{% endjavascript %}
+
+<div class='About-us-New-Hero'>
+    <h1>ABOUT US</h1>
+</div>
+<div class='full-hero-image'>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "About us New Hero",
+    "class":"About-us-New-Hero",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Hero Image",
+        "id": "hero_image"
+      }
+    ]
+  }
+{% endschema %}

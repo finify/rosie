@@ -1,0 +1,394 @@
+@charset "UTF-8";
+@font-face {
+  font-family: BonVoyage;
+  src: url(../fonts/MADE\ Bon\ Voyage\ Regular\ PERSONAL\ USE.otf);
+}
+header .menu-wrapper {
+  height: 55px;
+  background-color: rgba(255, 255, 255, 0.2117647059);
+  border-radius: 30px;
+  overflow: hidden;
+  backdrop-filter: blur(94px) brightness(100%);
+  -webkit-backdrop-filter: blur(94px) brightness(100%);
+}
+header .menu-wrapper li {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero {
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero .elevate-your {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.hero .span {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -3.52px;
+}
+.hero .text-wrapper-2 {
+  font-family: "EB Garamond", Helvetica;
+  font-weight: 500;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: -2.52px;
+}
+.hero .text-wrapper-3 {
+  font-family: "EB Garamond", Helvetica;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: -2.52px;
+}
+.hero .text-wrapper-shop {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  font-family: "Plus Jakarta Sans", Helvetica;
+}
+.hero .rectangle {
+  width: 83px;
+  height: 1px;
+  top: 27px;
+  left: 0;
+  background-color: #ffffff;
+}
+@media (max-width: 400px) {
+  .hero .span {
+    font-size: 35px;
+  }
+  .hero .text-wrapper-2 {
+    font-size: 35px;
+  }
+  .hero .text-wrapper-3 {
+    font-size: 35px;
+  }
+}
+
+.page-header {
+  background-color: #504e4e;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-header h1 {
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+  font-family: "Plus Jakarta Sans", Helvetica;
+}
+.page-header p {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.top-sellers .section-header p {
+  color: #000000;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-sellers .section-header h1 {
+  font-family: BonVoyage, Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-sellers .section-header a {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-sellers .products .product-details h1 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-sellers .products .product-details h4 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.about__details p {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.about__details h1 {
+  line-height: 26px;
+  color: white;
+}
+.about__details .browse {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 36px;
+  letter-spacing: -1.98px;
+  line-height: 36.9px;
+}
+.about__details .our {
+  font-family: "EB Garamond", Helvetica;
+  font-weight: 500;
+  font-size: 36px;
+  font-style: italic;
+}
+.about__details .cutlerry {
+  font-family: "EB Garamond", Helvetica;
+  font-weight: 500;
+  font-size: 36px;
+  font-style: italic;
+}
+.about__details .collection {
+  font-size: 36px;
+  font-weight: 600;
+}
+.about__details a {
+  color: white;
+}
+
+.top-products__text p {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-products__text h1 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 600;
+  color: #e9442c;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.top-products__text h4 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 0px;
+  line-height: normal;
+}
+.top-products__text a {
+  padding: 10px;
+  padding-top: 5px;
+  border-radius: 34px;
+  border: 1px solid;
+  border-color: #e9442c;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.our-products .section-header p {
+  color: #000000;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.our-products .section-header h1 {
+  font-family: BonVoyage, Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.our-products .section-header a {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.our-products .products .product-details h1 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.our-products .products .product-details h4 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.call-to-action .section-header p {
+  color: #000000;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.call-to-action .section-header h1 {
+  font-family: BonVoyage, Helvetica;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.call-to-action .section-header a {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.explore .section-header p {
+  color: #000000;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.explore .section-header h1 {
+  font-family: BonVoyage, Helvetica;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.explore .section-header a {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #e9442c;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+footer .footer__top h1 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 500;
+  color: #e9442c;
+  letter-spacing: -0.5;
+  line-height: 28px;
+  white-space: nowrap;
+}
+footer .footer__top p {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 14px;
+  white-space: nowrap;
+  opacity: 0.4;
+}
+footer .footer__top input {
+  width: 100%;
+  padding: 10px;
+  background-color: #0e0e0e;
+  color: white;
+  border: none;
+}
+footer .footer__top input:focus {
+  border: none;
+  outline: none;
+}
+footer .footer__top button {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: absolute;
+  background-color: #e9442c;
+  border-radius: 46px;
+  margin-left: -100px;
+}
+footer .footer__middle h1 {
+  font-weight: 400;
+  color: #e9442c;
+  font-size: 64px;
+  letter-spacing: -3.52px;
+  line-height: 56px;
+  white-space: nowrap;
+  font-family: "Plus Jakarta Sans", Helvetica;
+}
+footer .footer__mobile_middle .accordion {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 35px;
+  transition: 0.4s;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #e9442c;
+  letter-spacing: 0;
+  line-height: normal;
+}
+footer .footer__mobile_middle .active, footer .footer__mobile_middle .accordion:hover {
+  background-color: #ccc;
+}
+footer .footer__mobile_middle .accordion:after {
+  content: "⌄";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  font-size: 25px;
+}
+footer .footer__mobile_middle .active:after {
+  content: "−";
+}
+footer .footer__mobile_middle .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

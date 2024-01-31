@@ -1,0 +1,118 @@
+<style>
+        #shopify-section-{{ section.id }} {
+          --section-stack-intro: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
+          --section-stack-main: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
+        }
+
+  @media (min-width: 900px) {
+   .form-grid {
+      grid-template-columns: repeat({{section.blocks.size}}, 1fr);
+    }
+  }
+</style>
+
+<div {% render 'section-properties' %}>
+  <div class="form-grid">
+    {% if section.blocks.size > 0 %}
+      {%- for block in section.blocks -%}
+        <div class="form-grid__item">
+          <p class="form-grid__text">{{ block.settings.form_text }}</p>
+          {%- render 'button',
+            content: block.settings.form_button_text,
+            type: 'button',
+            href: block.settings.form_link,
+            size: 'xl',
+            background: section.settings.button_background,
+            text_color: section.settings.button_text_color
+          -%}
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Work With Us",
+    "class": "shopify-section--form",
+"tag": "section",
+"blocks": [
+   {
+    "type": "form",
+    "name": "Form",
+    "settings": [
+      {
+        "type": "text",
+        "id": "form_text",
+        "label": "Form text",
+        "default": "Text Here"
+      },
+      {
+        "type": "text",
+        "id": "form_button_text",
+        "label": "Form Button text",
+        "default": "Apply"
+      },
+      {
+        "type": "url",
+        "id": "form_link",
+        "label": "Form Page"
+      }
+    ]
+  }
+],
+"settings": [
+  {
+    "type": "color",
+    "id": "background",
+    "label": "Background"
+  },
+  {
+    "type": "color_background",
+    "id": "background_gradient",
+    "label": "Background gradient"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text",
+    "default": "#000000"
+  },
+  {
+    "type": "color",
+    "id": "hightlight_color",
+    "label": "Hightlight Text",
+    "default": "#BF5569"
+  },
+      {
+    "type": "color",
+    "id": "button_background",
+    "label": "Button background"
+  },
+  {
+    "type": "color",
+    "id": "button_text_color",
+    "label": "Button text"
+  }
+],
+"presets": [
+  {
+    "name": "Work With Us",
+    "blocks": [
+      {
+        "type": "form"
+      },
+      {
+        "type": "form"
+      }
+    ]
+  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,127 @@
+{%- assign feature = product.metafields.custom.features.value -%}
+{%- assign product_kit = feature.kit.value -%}
+{%- assign item_size = 5 -%}
+
+<style>
+   #shopify-section-{{ section.id }} {
+    --testimonial-list-items-per-row: 1;
+    --testimonial-list-carousel-item-width: 74vw;
+    --testimonial-list-grid: auto / auto-flow var(--testimonial-list-carousel-item-width);
+  }
+
+  #shopify-section-{{ section.id }} .scrollbar {
+    {%- assign controls_color = section.settings.text_color | default: section.settings.heading_color | default: settings.text_color -%}
+    --text-color: {{ controls_color.rgb }};
+  }
+
+  @media screen and (min-width: 700px) {
+    #shopify-section-{{ section.id }} {
+      --testimonial-list-items-per-row: 2;
+      --testimonial-list-carousel-item-width: 52vw;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} {
+      --testimonial-list-carousel-item-width: 36vw;
+    }
+  }
+
+  @media screen and (min-width: 1150px) {
+    #shopify-section-{{ section.id }} {
+      --testimonial-list-items-per-row: 3;
+      --testimonial-list-carousel-item-width: calc(100% / 3 - (var(--grid-gutter) / 3 * 2));
+    }
+  }
+</style>
+
+{%- assign scroll_area_id = 'scroll-area-' | append: section.id -%}
+{% if product_kit.description %}
+  <div class="kit-slider-grid">
+    <div>
+      {%- render 'section-header', heading: product_kit.title, heading_color: section.settings.heading_color -%}
+
+      {% if product_kit.description != blank %}
+        <div class="prose kit-slider-grid__description">
+          {{ product_kit.description | metafield_tag }}
+        </div>
+      {% endif %}
+
+      <page-dots aria-controls="{{ scroll_area_id }}" class="page-dots">
+        {%- for kit in product_kit.kit_list.value -%}
+          {% assign index = forloop.index %}
+          <button
+            type="button"
+            class="tap-area kit-slider__indicator"
+            aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+          >
+            <span class="sr-only">{{ 'general.accessibility.go_to_item' | t: index: index }}</span>
+          </button>
+        {%- endfor -%}
+      </page-dots>
+    </div>
+
+    <div class="scrollable-with-controls">
+      <scroll-carousel
+        id="{{ scroll_area_id }}"
+        class="testimonial-list scroll-area bleed is-scrollable"
+      >
+        {% for kit in product_kit.kit_list.value %}
+          <div class="kit-slider__item">
+            {{- kit.image | image_url: width: '300x300' | image_tag: loading: 'lazy' -}}
+            <p class="bold kit-slider__name">{{ kit.name }}</p>
+          </div>
+        {% endfor %}
+      </scroll-carousel>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product Kit Slider",
+    "class": "shopify-section--mobile-page",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Full width",
+        "default": true
+      }
+    ],
+"presets": [
+  {
+    "name": "Product Kit Slider"
+  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+  const carousel_items = document.querySelectorAll(".kit-slider__item");
+  const indicators = document.querySelectorAll(".kit-slider__indicator");
+
+  carousel_items.forEach((item, index) => {
+    if(index == 0) {
+      item.classList.add("is-selected");
+    }
+    item.addEventListener("click", (evt) => {
+       carousel_items.forEach((indc) => {
+          if(indc.classList.contains("is-selected")){
+            indc.classList.remove("is-selected");
+          }
+       })
+      item.classList.add("is-selected");
+    })
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener("click", (evt) => {
+      carousel_items[index].classList.add("is-selected");
+    });
+  });
+{% endjavascript %}

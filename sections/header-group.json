@@ -1,0 +1,95 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky": false,
+        "text_size": "text-xs",
+        "navigation_mode": "scrolling",
+        "scrolling_speed": 10,
+        "background": "#1a1a1a",
+        "background_gradient": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "3b0a2158-ae1e-4472-8ed6-835d9d5e8d44": {
+          "type": "collection",
+          "settings": {
+            "collection": "extras"
+          }
+        },
+        "3e2b7bbe-d5d5-4576-87a7-ca28ae7a0844": {
+          "type": "collection",
+          "settings": {
+            "collection": "bundles"
+          }
+        },
+        "86b7cd05-a1d1-4025-8e60-b25c9a155c03": {
+          "type": "collection",
+          "settings": {
+            "collection": "gels-lubes"
+          }
+        },
+        "c54412ea-d0df-4506-8278-aad01410eb98": {
+          "type": "collection",
+          "settings": {
+            "collection": "toys"
+          }
+        }
+      },
+      "block_order": [
+        "3b0a2158-ae1e-4472-8ed6-835d9d5e8d44",
+        "3e2b7bbe-d5d5-4576-87a7-ca28ae7a0844",
+        "86b7cd05-a1d1-4025-8e60-b25c9a155c03",
+        "c54412ea-d0df-4506-8278-aad01410eb98"
+      ],
+      "custom_css": [
+        "li {margin-bottom: 0px !important;}"
+      ],
+      "settings": {
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "logo": "shopify:\/\/shop_images\/logo.png",
+        "logo_max_width": 170,
+        "logo_mobile_max_width": 140,
+        "menu": "main-menu",
+        "sidebar_menu": "",
+        "secondary_menu": "",
+        "menu_open_trigger": "hover",
+        "opening_from": "bottom",
+        "layout": "logo_left_navigation_center",
+        "show_social_media": true,
+        "show_locale_selector": true,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "transparent_header_text_color": "#ffffff",
+        "reduce_padding": true,
+        "background_opacity": 100,
+        "background_blur_radius": 0
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

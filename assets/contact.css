@@ -1,0 +1,27 @@
+.contact__textwrap h1 {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.contact__textwrap p {
+  color: #000;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.contact__form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.contact__form input:focus {
+  border: none;
+  outline: none;
+}
+.contact__form input {
+  font-size: 15px;
+}
+.contact__form button {
+  font-size: 20px;
+}

@@ -1,0 +1,135 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  CSS
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+<style>
+  .mobile-app-section-2__grid {
+      grid-template-columns: repeat({{ section.blocks.size }}, 1fr);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .mobile-app-section-2__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .mobile-app-section-2__title{
+      font-size: 32px;
+      text-align: left;
+    }
+  }
+
+  .mobile-app-section-2 .section{
+    padding-right: 1.5rem!important;
+    padding-left: 1.5rem!important;
+  }
+
+  {%- for block in section.blocks -%}
+    #block-{{ block.id }} {
+      width: 110%;
+      background-image:url("{{ block.settings.image | image_url: width: 1000 }}")
+    }
+  {% endfor %}
+</style>
+
+<div class="mobile-app-section-2">
+  <div {% render 'section-properties' %}>
+    <h2 class="mobile-app-section-2__title">
+      {{ section.settings.title }}
+    </h2>
+    <div class="mobile-app-section-2__grid">
+      {% if section.blocks %}
+        {% for block in section.blocks %}
+          <div class="mobile-app-section-2__item">
+            <div class="mobile-app-section-2__image-title-container">
+              <div class="mobile-app-section-2__image-title">{{ block.settings.image_title }}</div>
+            </div>
+
+            <div class="mobile-app-section-2__image" id="block-{{ block.id }}">
+              <p class="mobile-app-section-2__caption">{{ block.settings.image_caption }}</p>
+              <div class="mobile-app-section-2__link">
+                <a href="{{ block.settings.link_url }}">
+                  {{- block.settings.link_text -}}
+                </a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Mobile Section 2",
+  "class": "mobile-app-section-2",
+  "tag": "section",
+  "settings": [
+       {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "info": "Only has effect when spacing is set to none.",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "image_title",
+          "label": "Image Title",
+          "default": "Custom Controller"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "Caption",
+          "default": "The long distance lover feature enables that special someone - anywhere - to privately control your vibrator."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Button Link",
+          "default": "Learn more"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile Section 2",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,285 @@
+{%- assign tag_images = blog.metafields.custom.category_image.value -%}
+
+<style>
+      #shopify-section-{{ section.id }} {
+        --blog-posts-per-row: {% if blog_block.type == 'blog' %}{{ blog_block.settings.blog.articles_count | default: 3 | at_least: 2 | at_most: blog_block.settings.posts_count | at_most: 3 }}{% else %}3{% endif %};
+        --blog-posts-grid: {% if blog_block.settings.stack_items or blog_block.type == 'article' %}auto / minmax(0, 1fr)){% else %}auto / auto-flow 74vw{% endif %};
+      }
+
+      @media screen and (min-width: 700px) {
+        #shopify-section-{{ section.id }} {
+          --blog-posts-grid: {% if blog_block.settings.stack_items or blog_block.type == 'article' %}auto / repeat(var(--blog-posts-per-row), minmax(0, 1fr)){% else %}auto / auto-flow 52vw{% endif %};
+        }
+      }
+
+      @media screen and (min-width: 1000px) {
+        #shopify-section-{{ section.id }} {
+          --blog-posts-grid: auto / repeat(var(--blog-posts-per-row), minmax(0, 1fr));
+        }
+      }
+
+    blog-post-card.blog-post-card.snap-center.group {
+      background: white;
+  }
+</style>
+
+{% assign blog_block = section.blocks.first %}
+{% assign articles = blog_block.settings.blog.articles | slice: blog_block.settings.removable_post_count, 8 %}
+{% assign layout = 'standard' %}
+
+<div class="blog-post-grid">
+  <div {% render 'section-properties' %}>
+    <div class="section-stack">
+      <a href="">
+        <p class="h2 custom-blog__title">
+          {%- render 'styled-text', content: section.settings.title, text_color: section.settings.text_color -%}
+        </p>
+      </a>
+
+      <div class="blog-grid">
+        {%- for article in articles limit: blog_block.settings.posts_count -%}
+          {% if forloop.last %}
+            {% assign layout = 'overlay' %}
+          {% elsif forloop.index == 3 %}
+            {% assign layout = 'portrait' %}
+          {% endif %}
+
+          <div class="blog-grid__item_{{ forloop.index }}">
+            {%- render 'blog-post-card',
+              article: article,
+              show_excerpt: section.settings.show_excerpt,
+              show_date: section.settings.show_date,
+              show_author: section.settings.show_author,
+              show_comments_count: section.settings.show_comments_count,
+              show_category: section.settings.show_category,
+              tag_images: tag_images,
+              show_description: blog_block.settings.show_description,
+              heading_size: blog_block.settings.heading_size,
+              layout: layout
+            -%}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog Post Grid",
+    "class": "shopify-section--blog-posts",
+    "tag": "section",
+    "disabled_on": {
+      "templates": ["password"],
+      "groups": ["header", "custom.overlay"]
+    },
+"max_blocks": 1,
+    "settings": [
+  {
+    "type": "checkbox",
+    "id": "full_width",
+    "label": "Full width",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_excerpt",
+    "label": "Show excerpt",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_date",
+    "label": "Show date",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_author",
+    "label": "Show author",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "show_comments_count",
+    "label": "Show comments count",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "show_category",
+    "label": "Show category",
+    "info": "Add tag organize blog posts [Learn more](https://help.shopify.com/en/manual/online-store/blogs/writing-blogs#add-tags-to-a-blog-post).",
+    "default": true
+  },
+  {
+    "type": "text",
+    "id": "subheading",
+    "label": "Subheading"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Heading",
+    "default": "Blog posts"
+  },
+  {
+    "type": "richtext",
+    "id": "content",
+    "label": "Content"
+  },
+  {
+    "type": "header",
+    "content": "Colors",
+    "info": "Gradient replaces solid colors when set."
+  },
+  {
+    "type": "color",
+    "id": "background",
+    "label": "Background"
+  },
+  {
+    "type": "color_background",
+    "id": "background_gradient",
+    "label": "Background gradient"
+  },
+  {
+    "type": "color",
+    "id": "text_color",
+    "label": "Text"
+  },
+  {
+    "type": "color",
+    "id": "heading_color",
+    "label": "Heading color"
+  },
+  {
+    "type": "color_background",
+    "id": "heading_gradient",
+    "label": "Heading gradient"
+  }
+],
+"blocks": [
+  {
+    "type": "blog",
+    "name": "Blog",
+    "settings": [
+      {
+        "type": "blog",
+        "id": "blog",
+        "label": "Blog"
+      },
+            {
+       "type": "select",
+       "id": "layout",
+       "label": "Layout",
+       "options": [
+         {
+           "value": "standard",
+           "label": "Standard"
+         },
+         {
+           "value": "portrait",
+           "label": "Portrait"
+         },
+         {
+           "value": "overlay",
+           "label": "Overlay"
+         }
+       ],
+       "default": "standard"
+     },
+      {
+        "type": "range",
+        "id": "posts_count",
+        "min": 2,
+        "max": 20,
+        "label": "Posts to show",
+        "default": 4
+      },
+       {
+        "type": "range",
+        "id": "removable_post_count",
+        "min": 1,
+        "max": 6,
+        "label": "Remove Posts Count",
+        "default": 3
+      },
+      {
+        "type": "checkbox",
+        "id": "stack_items",
+        "label": "Stack on mobile",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_description",
+        "label": "Show Description",
+        "default": false
+      },
+      {
+       "type": "select",
+       "id": "heading_size",
+       "label": "Title Size",
+       "options": [
+         {
+           "value": "p",
+           "label": "paragraph"
+         },
+         {
+           "value": "h1",
+           "label": "H1"
+         },
+         {
+           "value": "h2",
+           "label": "H2"
+         },
+         {
+           "value": "h3",
+           "label": "H3"
+         },
+         {
+           "value": "h4",
+           "label": "H4"
+         },
+         {
+           "value": "h5",
+           "label": "H5"
+         },
+         {
+           "value": "h6",
+           "label": "H6"
+         }
+       ],
+       "default": "p"
+     },
+      {
+        "type": "text",
+        "id": "max_height",
+        "label": "Blog Card Height",
+        "default": "250"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "Blog Post Grid",
+    "blocks": [
+      {
+        "type": "blog",
+        "settings": {
+          "blog": "news"
+        }
+      }
+    ]
+  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

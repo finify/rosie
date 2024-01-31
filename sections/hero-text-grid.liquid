@@ -1,0 +1,314 @@
+{%- render 'section-spacing-collapsing' -%}
+{%- assign text_position = section.settings.text_position -%}
+{%- assign item_alignment = section.settings.item_alignment -%}
+{%- assign layout = section.settings.layout -%}
+
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  CSS
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<style>
+  @media (min-width: 900px) {
+      {% if layout == "column" %}
+        .scope-hero-grid {
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+          place-items: {{item_alignment}};
+          text-align: {{text_position}};
+          gap: var(--spacing-6);
+        }
+      {% else %}
+        .scope-hero-grid {
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          align-items: {{item_alignment}};
+          text-align: {{text_position}};
+        }
+      {% endif %}
+  }
+
+  @media only screen and (max-width: 600px) {
+    .scope-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      place-items: {{item_alignment}};
+      text-align: {{text_position}};
+      gap: var(--spacing-6);
+    }
+    .scope-hero-grid p {
+      text-align: center;
+    }
+  }
+</style>
+
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  LIQUID
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<div {% render 'section-properties' %}>
+  <div class="scope-hero-grid">
+    {%- if section.blocks.size > 0 -%}
+      {% for block in section.blocks %}
+        {%- if block.settings.text != blank -%}
+          <p class="{{ block.settings.heading_tag }} hyphenate hero-text" {{ block.shopify_attributes }}>
+            {%- render 'styled-text',
+              content: block.settings.text,
+              text_color: block.settings.text_color,
+              gradient: block.settings.gradient
+            -%}
+          </p>
+        {%- endif -%}
+        {%- if block.settings.content != blank -%}
+          <div
+            style="max-width:{% if layout == "column" %} 450px {% else %} 100% {% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {{- block.settings.content -}}
+          </div>
+        {%- endif -%}
+        {% if block.settings.text == blank and block.settings.content == blank %}
+          <h1 class="h1 hyphenate hero-text">
+            {%- render 'styled-text', content: page.title, text_color: section.settings.text_color -%}
+          </h1>
+        {% endif -%}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+ {
+   "name": "Hero Text Grid",
+"class": "shopify-section--hero-text",
+ "tag": "section",
+ "disabled_on": {
+   "groups": ["header", "custom.overlay"]
+ },
+ "settings": [
+   {
+     "type": "checkbox",
+     "id": "full_width",
+     "label": "Full width",
+     "default": true
+   },
+   {
+     "type": "select",
+     "id": "content_width",
+     "label": "Content width",
+     "options": [
+       {
+         "value": "small",
+         "label": "Small"
+       },
+       {
+         "value": "medium",
+         "label": "Medium"
+       },
+       {
+         "value": "large",
+         "label": "Large"
+       }
+     ],
+     "default": "small"
+   },
+   {
+     "type": "select",
+     "id": "text_position",
+     "label": "Text position",
+     "options": [
+       {
+         "value": "start",
+         "label": "Left"
+       },
+       {
+         "value": "center",
+         "label": "Center"
+       },
+       {
+         "value": "end",
+         "label": "Right"
+       }
+     ],
+     "default": "center"
+   },
+   {
+     "type": "select",
+     "id": "item_alignment",
+     "label": "Align Items",
+     "options": [
+       {
+         "value": "start",
+         "label": "Left"
+       },
+       {
+         "value": "center",
+         "label": "Center"
+       },
+       {
+         "value": "end",
+         "label": "Right"
+       }
+     ],
+     "default": "center"
+   },
+    {
+     "type": "select",
+     "id": "layout",
+     "label": "Layout",
+     "options": [
+       {
+         "value": "column",
+         "label": "Column"
+       },
+       {
+         "value": "row",
+         "label": "Row"
+       }
+     ],
+     "default": "row"
+   },
+   {
+     "type": "header",
+     "content": "Colors",
+     "info": "Gradient replaces solid colors when set."
+   },
+   {
+     "type": "color",
+     "id": "background",
+     "label": "Background"
+   },
+   {
+     "type": "color_background",
+     "id": "background_gradient",
+     "label": "Background gradient"
+   },
+   {
+     "type": "color",
+     "id": "text_color",
+     "label": "Text"
+   }
+ ],
+ "blocks": [
+   {
+     "type": "heading",
+     "name": "Heading",
+     "settings": [
+       {
+         "type": "text",
+         "id": "text",
+         "label": "Text",
+         "default": "Heading"
+       },
+       {
+         "type": "select",
+         "id": "heading_tag",
+         "label": "Style",
+         "options": [
+           {
+             "value": "h0",
+             "label": "H0"
+           },
+           {
+             "value": "h1",
+             "label": "H1"
+           },
+           {
+             "value": "h2",
+             "label": "H2"
+           },
+           {
+             "value": "h3",
+             "label": "H3"
+           },
+           {
+             "value": "h4",
+             "label": "H4"
+           },
+           {
+             "value": "h5",
+             "label": "H5"
+           },
+           {
+             "value": "h6",
+             "label": "H6"
+           }
+         ],
+         "default": "h1"
+       },
+       {
+         "type": "color",
+         "id": "text_color",
+         "label": "Text"
+       },
+       {
+         "type": "color_background",
+         "id": "gradient",
+         "label": "Gradient"
+       }
+     ]
+   },
+   {
+     "type": "richtext",
+     "name": "Paragraph",
+     "settings": [
+       {
+         "type": "richtext",
+         "id": "content",
+         "label": "Content",
+         "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+       }
+     ]
+   },
+   {
+     "type": "page",
+     "name": "Page",
+     "settings": [
+       {
+         "type": "page",
+         "id": "page",
+         "label": "Page"
+       }
+     ]
+   },
+   {
+     "type": "liquid",
+     "name": "Liquid",
+     "settings": [
+       {
+         "type": "liquid",
+         "id": "liquid",
+         "label": "Liquid",
+         "default": "<p>Write custom Liquid code to include widget or dynamic code.</p>"
+       }
+     ]
+   }
+ ],
+ "presets": [
+   {
+     "name": "Hero Text Grid",
+     "blocks": [
+       {
+         "type": "heading",
+         "settings": {
+           "text": "Heading",
+           "heading_tag": "tw-text-h1"
+         }
+       },
+       {
+         "type": "richtext"
+       }
+     ]
+   }
+ ]
+ }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

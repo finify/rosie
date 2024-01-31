@@ -1,0 +1,272 @@
+{%- comment -%}
+  ------------------------------------------------------------------------------------------------------------------------
+  NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing this theme as much as we did for
+    developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
+    hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
+    all events, dependencies...) in the "documentation.txt" file, located in the Assets folder.
+  ------------------------------------------------------------------------------------------------------------------------
+{%- endcomment -%}
+
+<!doctype html>
+
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+  <head>{% render 'pagefly-head' %}
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0"
+    >
+    <meta name="theme-color" content="{{ settings.header_background }}">
+    {% comment %} <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    > {% endcomment %}
+
+    <title>
+      {% if page_title == blank -%}
+        {{- shop.name -}}
+      {%- else -%}
+        {{- page_title -}}
+        {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
+      {%- endif %}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 96 }}">
+      <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180 }}">
+    {%- endif -%}
+
+    {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
+    <link rel="preconnect" href="https://cdn.shopify.com">
+    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+
+    {%- unless settings.heading_font.system? -%}
+      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- unless settings.text_font.system? -%}
+      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+    {%- endunless -%}
+
+    {%- render 'social-meta-tags' -%}
+    {%- render 'microdata-schema' -%}
+    {%- render 'css-variables' -%}
+    {%- render 'js-variables' -%}
+
+    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'sections.js' | asset_url }}"></script>
+
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <!--
+      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    -->
+    {{ content_for_header }}
+
+    {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    {{- 'custom.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    {% comment %} Rosies theme files{% endcomment %}
+    {{- 'base.css' | asset_url | stylesheet_tag: preload: true -}}
+    {{- 'index.css' | asset_url | stylesheet_tag: preload: true -}}
+
+
+    {% comment %} newasset {% endcomment %}
+    {{- 'newcustom.css' | asset_url | stylesheet_tag: preload: true -}}
+
+    {{ shop.metafields.loox.global_html_head }}
+    <style>
+  .container {
+    margin-inline-start:auto!important;
+  }
+    </style>
+  </head>
+
+  <body class="{% if settings.show_page_transition %}page-transition{% endif %} {% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %} bg-[#f9f8ee]">
+    {% section 'custom-font' %}
+
+    {%- render 'shadow-dom-templates' -%}
+
+    <a href="#main" class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    {%- if request.page_type != 'password' -%}
+      {%- sections 'header-group' -%}
+      {%- sections 'overlay-group' -%}
+
+      {%- if settings.cart_type == 'popover' -%}
+        <cart-notification-drawer open-from="bottom" class="quick-buy-drawer drawer"></cart-notification-drawer>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if request.page_type == 'customers/account'
+      or request.page_type == 'customers/order'
+      or request.page_type == 'customers/addresses'
+    -%}
+      {%- section 'account-banner' -%}
+    {%- endif -%}
+
+    <main role="main" id="main" class="anchor">
+      {{ content_for_layout }}
+
+      {%- comment -%}
+        IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
+        added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
+      {%- endcomment -%}
+      {%- if request.page_type != 'password' -%}
+        {%- sections 'footer-group' -%}
+      {%- endif -%}
+    </main>
+
+    {{ shop.metafields.loox.global_html_body }}
+    {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
+    {% comment %} <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+      defer
+    ></script> {% endcomment %}
+
+    {% comment %} newasset {% endcomment %}
+    {% comment %} <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script> {% endcomment %}
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function(){
+          // $("#v-pills-custom-tab").addClass("active");
+          $('.image-nav-link').first().addClass('active');
+          $('.image-tab-pane').first().addClass('active');
+      });
+      let myTitles= document.querySelectorAll('.title-break');
+      myTitles.forEach(myTitle => {
+          let myTitleText = myTitle.innerHTML;
+          let breakpoint = myTitle.getAttribute('bp');
+
+          let myTitleArray = myTitleText.split(" ");
+          myTitleArray.splice(breakpoint, 0, "</br>");
+          let modTitle = myTitleArray.slice(0, myTitleArray.length).join(' ') ;
+          if(breakpoint != 0 || breakpoint==""){
+              myTitle.innerHTML = modTitle ;
+          }
+      });
+
+      //video flip js
+      $(document).ready(function(){
+          // $("#v-pills-custom-tab").addClass("active");
+          $('.video-nav-link').first().addClass('active');
+          $('.video-nav-link').first().attr('disabled', 'disabled');
+          $('.video-tab-pane').first().addClass('active');
+      });
+
+      $('.video-nav-link').first().next().click(function (e) {
+          $('.video-tab-pane').first().next().removeClass('active');
+          $('.video-tab-pane').first().addClass('active');
+          var thevideo = document.getElementsByClassName('myVideo')[0];
+          thevideo.play();
+          setTimeout(function() {
+              $('.video-tab-pane').first().next().addClass('active');
+              $('.video-tab-pane').first().removeClass('active');
+              thevideo.pause ();
+              thevideo.currentTime = 0;
+              $('.video-nav-link').first().removeAttr("disabled");
+              $('.video-nav-link').first().next().attr('disabled', 'disabled');
+          }, 3000);
+       });
+
+       $('.video-nav-link').first().click(function (e) {
+          $('.video-tab-pane').first().removeClass('active');
+          $('.video-tab-pane').first().next().addClass('active');
+          var thevideo = document.getElementsByClassName('myVideo')[1];
+          thevideo.play();
+          setTimeout(function() {
+              $('.video-tab-pane').first().addClass('active');
+              $('.video-tab-pane').first().next().removeClass('active');
+              thevideo.pause ();
+              thevideo.currentTime = 0;
+              $('.video-nav-link').first().next().removeAttr("disabled");
+              $('.video-nav-link').first().attr('disabled', 'disabled');
+          }, 3000);
+       });
+
+      $(document).ready(function() {
+
+        $.fn.isInViewport = function () {
+            let elementTop = $(this).offset().top ;
+            let elementBottom = elementTop + $(this).outerHeight();
+            let viewportTop = $(window).scrollTop();
+            let viewportBottom = viewportTop + $(window).height();
+            return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
+    
+        WindowWidth = $(window).width();
+        if (WindowWidth < 600){
+            $(window).on("load scroll", function () {
+            $('.mobile-app-section-2__image').each(function() {
+                if( $(this).isInViewport() ) {
+                  //background animate
+                  // $(this).prev().find('.mobile-app-section-2__image').delay(10000).css("background-position","bottom");
+                  $(this).delay(10000).css("background-position","100px 100px");
+                  
+                  //caption animate
+                    // $(this).prev().find('.mobile-app-section-2__caption').delay(10000).css("right","-500px");
+                    // $(this).prev().find('.mobile-app-section-2__caption').delay(10000).css("opacity","0");
+                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("right","0");
+                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("opacity","1");
+
+                  //Link animate
+                    // $(this).prev().find('.mobile-app-section-2__link').delay(10000).css("bottom","-500px");
+                    // $(this).prev().find('.mobile-app-section-2__link').delay(10000).css("opacity","0");
+                    $(this).find('.mobile-app-section-2__link').delay(10000).css("bottom","0");
+                    $(this).find('.mobile-app-section-2__link').delay(10000).css("opacity","1");
+
+                }else{
+                  //background animate
+                  $(this).delay(10000).css("background-position","bottom");
+
+                   //caption animate
+                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("right","-500px");
+                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("opacity","0");
+
+                  //Link animate
+                    $(this).find('.mobile-app-section-2__link').delay(10000).css("bottom","-500px");
+                    $(this).find('.mobile-app-section-2__link').delay(10000).css("opacity","0");
+                }
+            });
+        });
+        }
+        else {
+            console.log("desktop");
+        }
+    
+        
+    
+        
+        });
+    </script>
+    {% comment %} newasset {% endcomment %}
+
+    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RmHaAm"></script>
+  </body>
+</html>

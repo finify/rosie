@@ -1,0 +1,302 @@
+<style>
+        .about-us-header{
+          color: #000;
+          text-align:center;
+          font-size:75px;
+          font-weight:400;
+          width: 50%;
+          margin: auto;
+          padding-top:60px !important;
+          font-family: var(--heading-font-family-bold);
+        }
+        .about-us-highlight{
+          color:#D8465B;
+        }
+        .body-text{
+          font-family:Inter;
+          width:50%  !important;
+          font-size:24px !important;
+          margin:  auto !important;
+          text-align: left;
+          font-weight:500;
+          padding-top:20px !important;
+          padding-bottom: 30px  !important;
+        }
+        #signature{
+          margin:auto;
+          padding-bottom:100px;
+        }
+
+
+        .my-text-with-line {
+          position: relative;
+          display: inline-block; /* Ensures that the width only wraps the content */
+          width:100%;
+          margin: auto;
+          text-align:center;
+          font-family:var (--heading-font-family-bold);
+          font-size:32px;
+          font-weight:500;
+
+        }
+
+        .my-text-with-line::before,
+        .my-text-with-line::after {
+          content: ' ';
+          display: block;
+          height: 1px; /* Adjust the height of the line */
+          width: 40%; /* Adjust the width of the line */
+          background-color: rgba(0, 0, 0, 0.15); /* Adjust the color of the line */
+          position: absolute;
+          top: 50%;
+        }
+
+        .my-text-with-line::before {
+          left: 0;
+          /* transform: translate(-100%, -50%); */
+        }
+
+        .my-text-with-line::after {
+          right: 0;
+          /* transform: translate(100%, -50%); */
+      }
+        .about-margin{
+          margin-left:40px  !important;
+          margin-right:40px !important;
+          padding-top:150px;
+          padding-bottom:75px;
+        }
+        .brand{
+          margin:auto;
+        }
+        .brand2{
+          padding-bottom:55px;
+        }
+      @media only screen and (max-width: 768px) {
+      h2.about-us-header {
+        font-size: 30px;
+        width: 80%;
+      }
+      p.body-text {
+        font-size: 15px !important;
+        width: 80% !important;
+      }
+      .my-text-with-line::before,
+      .my-text-with-line::after {
+        content: " ";
+        display: block;
+        height: 1px;
+        width: 20%;
+        background-color: rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 50%;
+      }
+      .my-text-with-line {
+        font-size: 20px;
+      }
+      .about-margin {
+        padding-top: 0px !important;
+        padding-bottom:20px;
+      }
+      .brand {
+        padding: 0 40px;
+    }
+      .brand2 {
+        padding: 0 40px 40px 40px;
+    }
+        .pad {
+      padding: 0 40px 40px 40px !important;
+  }
+        .row{
+    padding: 10px 0 !important;
+  }
+
+    }
+  .pad {
+      padding: 0 150px 100px 150px;
+  }
+  .row{
+    padding: 10px 0;
+  }
+</style>
+
+
+
+<h2 class="about-us-header">
+  <span class="about-us-highlight">{{ section.settings.highted_text }}</span> {{ section.settings.header_text }}
+</h2>
+
+<p class="body-text">{{ section.settings.body_text }}</p>
+
+<img id="signature" src="{{ section.settings.signature.src | image_url }}" width="300" height="160">
+
+<div class="about-margin"><p class="my-text-with-line">As seen In</p></div>
+
+<div class="pad">
+  <div class="row justify-content-evenly">
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand1-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand1.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand2-link }}">
+        <img src="{{ section.settings.brand2.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand3-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand3.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand4-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand4.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+  </div>
+
+  <div class="row justify-content-evenly">
+    <div class="col-6 col-sm-3  align-items-center">
+      <a href="{{ section.settings.brand5-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand5.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand6-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand6.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand7-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand7.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+    <div class="col-6 col-sm-3 align-items-center">
+      <a href="{{ section.settings.brand8-link }}" target=”_blank”>
+        <img src="{{ section.settings.brand8.src | image_url }}" width="150" height="">
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "About us New text",
+  "class":"About-us-New-text",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Highlighted Text",
+      "id": "highted_text"
+    },
+    {
+      "type": "text",
+      "label": "Header Text",
+      "id": "header_text"
+    },
+    {
+      "type": "textarea",
+      "label": "Body Text",
+      "id": "body_text"
+    },
+    {
+      "type": "image_picker",
+      "label": "Signature",
+      "id": "signature"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 1",
+      "id": "brand1"
+    },
+    {
+      "type": "text",
+      "label": "brand1  link",
+      "id": "brand1-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 2",
+      "id": "brand2"
+    },
+    {
+      "type": "text",
+      "label": "brand2  link",
+      "id": "brand2-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 3",
+      "id": "brand3"
+    },
+    {
+      "type": "text",
+      "label": "brand3  link",
+      "id": "brand3-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 4",
+      "id": "brand4"
+    },
+    {
+      "type": "text",
+      "label": "brand4  link",
+      "id": "brand4-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 5",
+      "id": "brand5"
+    },
+    {
+      "type": "text",
+      "label": "brand5  link",
+      "id": "brand5-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 6",
+      "id": "brand6"
+    },
+    {
+      "type": "text",
+      "label": "brand6  link",
+      "id": "brand6-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 7",
+      "id": "brand7"
+    },
+    {
+      "type": "text",
+      "label": "brand7  link",
+      "id": "brand7-link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Brand 8",
+      "id": "brand8"
+    },
+    {
+      "type": "text",
+      "label": "brand8  link",
+      "id": "brand8-link"
+    }
+  ],
+    "presets": [
+        {
+            "name": "About-us-New-text"
+        }
+    ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

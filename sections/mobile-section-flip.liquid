@@ -1,0 +1,212 @@
+<style>
+    .mobile-video-item.active {
+        border-radius: 16px;
+        border: 1px solid #403131;
+        background: white!important;
+        max-width: 365px;
+        display: flex;
+        gap: 5px;
+        padding: 21px 16px 21px 23px;
+        color:#403131!important;
+    }
+    .mobile-video-item.active .tab-button-title{
+        color: #403131;
+        font-family: Inter!important;
+        font-size: 44.855px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .mobile-video-item.active .tab-button-description{
+        color: #403131;
+        font-family: Inter!important;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .mobile-video-item {
+        border-radius: 16px;
+        background: white!important;
+        max-width: 365px;
+        display: flex;
+        gap: 5px;
+        padding: 21px 16px 21px 23px;
+        color:#403131!important;
+    }
+    .mobile-video-item .tab-button-title{
+        color: #403131;
+        font-family: Inter!important;
+        font-size: 44.855px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    .mobile-video-item .tab-button-description{
+        color: #403131;
+        font-family: Inter!important;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    
+    .nav{
+        width: 45%;
+        gap:10px;
+    }
+
+    .tab-image{
+        width: 80%;
+        margin: auto;
+    }
+    @media only screen and (max-width: 600px) {
+        .nav{
+        flex-direction: row!important;
+        width:100%;
+        }
+        .mobile-video{
+        width: 100%!important;
+        margin: auto;
+        }
+        .mobile-video-item {
+            font-size: 4.7vw;
+        }
+        .tab-image{
+        margin-top: 0px!important;
+        }
+
+        .mobile-video-item.active .tab-button-title{
+            font-size: 25px;
+        }
+        .mobile-video-item.active .tab-button-description{
+            font-size: 13px!important;
+        }
+
+        .mobile-video-item .tab-button-title{
+            font-size: 25px;
+        }
+        .mobile-video-item .tab-button-description{
+            font-size: 13px!important;
+        }
+
+          .mobile-video-item.active {
+            width:100%!important;
+            padding: 5px 8px 5px 8px;
+        }
+      .mobile-video-item {
+            width:100%!important;
+            padding: 5px 8px 5px 8px;
+        }
+    }
+    .nav-link{
+        text-align: left;
+    }
+    .mobile-video{
+        width: 90%;
+        margin: auto;
+    }
+</style>
+<div class="mobile-video">
+    <h2 class="text-center mobile-app-flex-title title-break pb-3">{{ section.settings.title }}</h2>
+    <h5 class="mobile-app-flex-subtext text-center pb-3">{{ section.settings.headerrichtext }}</h5>
+    <div class="section section-blends section-full pt-0">
+        <div class="d-flex flex-row align-items-center row justify-content-center">
+            <div class="tab-content col-lg-6 col-md-6 col-12" id="v-pills-tabContent">
+              {% if section.blocks %}
+                {% for block in section.blocks %}
+                      <div class="tab-pane video-tab-pane show" id="v-pills-custom" role="tabpanel" aria-labelledby="v-pills-custom-tab">
+                        {% if block.settings.video != nil %}
+                          {{ block.settings.video | video_tag:image_size:'400x', class: 'myVideo', width: '100%', preload: 'auto' }}
+                        {% endif %}
+                      </div>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="nav d-flex flex-column nav-pills col-lg-6 col-md-6 col-12 justify-content-around" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              {% if section.blocks %}
+                {% for block in section.blocks %}
+                      <button class="nav-link video-nav-link mobile-video-item d-flex flex-column" id="v-pills-custom-tab" data-bs-toggle="pill"
+                          data-bs-target="#v-pills-custom" type="button" role="tab" aria-controls="v-pills-custom"
+                          aria-selected="true">
+                          {% if block.settings.title != blank %}
+                              <h1 class="tab-button-title">{{ block.settings.title }}</h1> 
+                          {% endif%}
+
+                          {% if block.settings.videorichtext != blank %}
+                              <h5 class="tab-button-description">{{ block.settings.videorichtext }}</h5>
+                          {% endif%}
+                      </button>
+                {% endfor %}
+              {% endif %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Mobile Section Flip",
+  "class": "mobile-video",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Manual and Automatic Modes"
+    },
+    {
+        "type": "richtext",
+        "id": "headerrichtext",
+        "label": "Header text description",
+        "default": "<p>Use manual mode to tailor your vibrator intensity, patterns, and vibrations as per your preference. Or, choose the automatic mode to seamlessly synchronize your device with the progression of the erotic audio storyline. We've created an experience that you can feel and hear.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "A Shopify-hosted video"
+        },
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Tab Heading",
+        "default": "Automatic"
+        },
+        {
+            "type": "richtext",
+            "id": "videorichtext",
+            "label": "video tab text description",
+            "default": "<p>Take the reins of your experience. Fine-tune the power of your vibrator to your preference and select from an extensive array of patterns, all while immersing yourself in any tantalizing story within the VO app.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mobile Section Flip",
+      "blocks": [
+        {
+          "type": "video"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

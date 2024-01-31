@@ -1,0 +1,27 @@
+.about-greeting__text h1 {
+  font-family: "MADE Bon Voyage";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.about-greeting__text p {
+  color: #000;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ourstory h1 {
+  font-family: "MADE Bon Voyage";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.ourstory p {
+  color: #000;
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

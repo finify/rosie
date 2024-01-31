@@ -1,0 +1,569 @@
+<style>
+    #shopify-section-{{ section.id }} {
+      {%- if section.settings.full_width -%}
+        --section-outer-spacing-block: 0;
+      {%- endif -%}
+
+      --content-over-media-overlay: {{ section.settings.overlay_color.rgb }} / {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+
+      {%- if section.settings.allow_transparent_header -%}
+        margin-block-start: calc(-1 * var(--header-height) * var(--section-is-first));
+      {%- endif -%}
+    }
+
+    .content-over-media:before {
+      background: {% if section.settings.overlay %} rgb(var(--content-over-media-overlay)) {% else %} transparent {% endif %};
+    }
+
+  .content-over-media {
+    place-items: {% if section.settings.layout == "layout-1" or section.settings.layout == "layout-2" %} flex-end !important {% else %} center {% endif %};
+    gap: 0 !important;
+  }
+
+  .hero-content-layout-2 {
+    grid-template-rows: repeat({{section.blocks.size}}, 1fr);
+  }
+
+  .hero-paragrph {
+    width: 100%;
+    max-width: {% if section.settings.layout == "layout-2" %} 500px {% else %} 100% {% endif %};
+  }
+  .flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .hero{
+    background-image:url("{{- section.settings.image | image_url: width: 1728 -}}") ;
+  }
+</style>
+{%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%}
+
+  <div class="hero flex flex-col w-full !h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%]">
+  <div class="text-wrapper flex flex-col">
+      <div class="elevate-your lg:text-[16px] text-[13px]">ELEVATE YOUR CULINARY EXPERIENCE</div>
+      <p class="p text-white">
+          <span class="span lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">Welcome </span>
+          <span class="text-wrapper-2 lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">To</span>
+          <span class="span lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">Your<br /></span>
+          <span class="text-wrapper-3 lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">Dream kitchen</span>
+      </p>
+      <div class="frame-2 flex flex-col-reverse mt-4 gap-x-2">
+          <div class="text-wrapper-shop leading-3">Shop Now</div>
+          <div class="rectangle mt-2"></div>
+      </div>
+  </div>
+  
+</div>
+
+
+{% comment %} <image-banner
+  reveal-on-scroll="true"
+  {% if section.settings.enable_parallax %}
+    parallax="0.3"
+  {% endif %}
+  {% render 'surface', class: class, text_color: section.settings.text_color %}
+>
+  {%- if section.settings.image != blank -%}
+    {%- capture image_class -%}{% if section.settings.mobile_image != blank %}hidden sm:block{% endif %}{%- endcapture -%}
+    {%- capture sizes -%}{% if section.settings.full_width %}100vw{% else %}(max-width: 740px) calc(100vw - 40px), (max-width: 999px) calc(100vw - 64px), min({{ settings.page_width }}px, 100vw - 96px){% endif %}{%- endcapture -%}
+
+    {{-
+      section.settings.image
+      | image_url: width: section.settings.image.width
+      | image_tag:
+        loading: 'lazy',
+        sizes: sizes,
+        widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200',
+        class: image_class
+    -}}
+
+    {%- if section.settings.mobile_image != blank -%}
+      {{-
+        section.settings.mobile_image
+        | image_url: width: section.settings.mobile_image.width
+        | image_tag:
+          loading: 'lazy',
+          sizes: sizes,
+          widths: '200,300,400,500,600,700,800,900,1000,1200,1400,1600',
+          class: 'sm:hidden'
+      -}}
+    {%- endif -%}
+  {%- else -%}
+    {{
+      'lifestyle-1'
+      | placeholder_svg_tag: 'placeholder'
+      | replace: '<svg', '<svg preserveAspectRatio="xMinYMin slice"'
+    }}
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    
+
+
+    <div class="{% if section.settings.layout == 'layout-3' %} overlay-content {% else %} hero-content {% endif %}">
+      <div class="grid hero-content-{{ section.settings.layout }}">
+        {%- for block in section.blocks -%}
+          {% if block.type == 'subheading' and block.settings.text != blank %}
+            <p class="{{ block.settings.sub_heading_tag }} bold" {{ block.shopify_attributes }}>
+              {{ block.settings.text | escape }}
+            </p>
+          {% endif -%}
+
+          {% if block.type == 'heading' and block.settings.text != blank %}
+            <p
+              class="{{ block.settings.heading_tag }} text-heading"
+              {% if settings.heading_apparition != 'none' %}
+                reveal-on-scroll="true"
+              {% endif %}
+              {{ block.shopify_attributes }}
+            >
+              {%- render 'styled-text', content: block.settings.text, apparition_effect: block.settings.enable_split -%}
+            </p>
+          {% endif %}
+
+          {%- if block.type == 'button' and block.settings.text != blank -%}
+            <div></div>
+          {% endif %}
+
+          {% if block.type == 'richtext' and block.settings.content != blank %}
+            <div
+              {{ block.shopify_attributes }}
+              class="hero-paragrph {% if section.settings.layout == 'layout-1' %} flex-column-center {% endif %}"
+            >
+              {{- block.settings.content -}}
+            </div>
+          {% endif %}
+
+          {%- if block.type == 'button' and block.settings.text != blank -%}
+            <div>
+              {% render 'button',
+                content: block.settings.text,
+                href: block.settings.url,
+                size: block.settings.size,
+                style: block.settings.style,
+                background: block.settings.background,
+                text_color: block.settings.text_color,
+                block: block
+              %}
+            </div>
+          {%- endif -%}
+        {% endfor %}
+      </div>
+    </div>
+  {%- endif -%}
+</image-banner> {% endcomment %}
+
+{% schema %}
+{
+  "name": "Image with text overlay",
+  "class": "shopify-section--image-with-text-overlay",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_transparent_header",
+      "label": "Allow transparent header",
+      "info": "This setting only applies when this section is the first one.",
+      "default": false
+    },
+     {
+      "type": "checkbox",
+      "id": "overlay",
+      "label": "Overlay",
+      "info": "Add or remove background overlay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "Enable parallax effect",
+      "info": "Parallax crops images.",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "layout-1",
+          "label": "Layout 1"
+        },
+        {
+          "value": "layout-2",
+          "label": "Layout 2"
+        },
+        {
+          "value": "layout-3",
+          "label": "Layout 3"
+        }
+      ],
+      "default": "layout-1"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Original image ratio"
+        },
+        {
+          "value": "sm",
+          "label": "Small"
+        },
+        {
+          "value": "md",
+          "label": "Medium"
+        },
+        {
+          "value": "lg",
+          "label": "Large"
+        },
+        {
+          "value": "fill",
+          "label": "Fill screen"
+        }
+      ],
+      "info": "Choose \"Original image ratio\" to avoid image cropping. [Learn more](https://help.shopify.com/en/manual/online-store/images/theme-images#best-practices-for-slideshows-and-full-widtw-images)",
+      "default": "auto"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "3200 x 1600px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image",
+      "info": "1300 x 1500px .jpg recommended. Default to desktop image."
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_position",
+      "label": "Mobile content position",
+      "options": [
+        {
+          "value": "place-self-start text-start",
+          "label": "Top left"
+        },
+        {
+          "value": "place-self-start-center text-center",
+          "label": "Top center"
+        },
+        {
+          "value": "place-self-start-end text-end",
+          "label": "Top right"
+        },
+        {
+          "value": "place-self-center-start text-start",
+          "label": "Middle left"
+        },
+        {
+          "value": "place-self-center text-center",
+          "label": "Middle center"
+        },
+        {
+          "value": "place-self-center-end text-end",
+          "label": "Middle right"
+        },
+        {
+          "value": "place-self-end-start text-start",
+          "label": "Bottom left"
+        },
+        {
+          "value": "place-self-end-center text-center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "place-self-end text-end",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "place-self-center text-center"
+    },
+    {
+      "type": "select",
+      "id": "desktop_text_position",
+      "label": "Desktop content position",
+      "options": [
+        {
+          "value": "sm:place-self-start sm:text-start",
+          "label": "Top left"
+        },
+        {
+          "value": "sm:place-self-start-center sm:text-center",
+          "label": "Top center"
+        },
+        {
+          "value": "sm:place-self-start-end sm:text-end",
+          "label": "Top right"
+        },
+        {
+          "value": "sm:place-self-center-start sm:text-start",
+          "label": "Middle left"
+        },
+        {
+          "value": "sm:place-self-center sm:text-center",
+          "label": "Middle center"
+        },
+        {
+          "value": "sm:place-self-center-end sm:text-end",
+          "label": "Middle right"
+        },
+        {
+          "value": "sm:place-self-end-start sm:text-start",
+          "label": "Bottom left"
+        },
+        {
+          "value": "sm:place-self-end-center sm:text-center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "sm:place-self-end sm:text-end",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "sm:place-self-center sm:text-center"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subheading",
+      "name": "Subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Subheading"
+        },
+          {
+         "type": "select",
+         "id": "sub_heading_tag",
+         "label": "Style",
+         "options": [
+           {
+             "value": "h2",
+             "label": "H2"
+           },
+           {
+             "value": "h3",
+             "label": "H3"
+           },
+           {
+             "value": "h4",
+             "label": "H4"
+           },
+           {
+             "value": "h5",
+             "label": "H5"
+           },
+           {
+             "value": "h6",
+             "label": "H6"
+           }
+         ],
+         "default": "h2"
+       }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Style",
+          "options": [
+            {
+              "value": "h0",
+              "label": "H0"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h1"
+        },
+  {
+      "type": "checkbox",
+      "id": "enable_split",
+      "label": "Enable split effect",
+      "info": "Split text.",
+      "default": true
+    }
+      ]
+    },
+    {
+      "name": "Paragraph",
+      "type": "richtext",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "fill",
+              "label": "Fill"
+            }
+          ],
+          "default": "fill"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size",
+          "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
+            {
+              "value": "base",
+              "label": "Medium"
+            },
+            {
+              "value": "lg",
+              "label": "Large"
+            },
+            {
+              "value": "xl",
+              "label": "X-Large"
+            }
+          ],
+          "default": "lg"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text overlay",
+      "blocks": [
+        {
+          "type": "subheading",
+          "settings": {
+            "text": "Subheading"
+          }
+        },
+        {
+          "type": "heading",
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_tag": "h1"
+          }
+        },
+        {
+          "type": "richtext"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

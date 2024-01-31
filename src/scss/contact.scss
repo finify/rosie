@@ -1,0 +1,34 @@
+.contact{
+    &__textwrap{
+        h1{
+            font-family: "Plus Jakarta Sans";
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        p{
+            color: #000;
+            font-family: "Plus Jakarta Sans";;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__form{
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          input:focus{
+            border:none;
+            outline: none;
+        }
+        input{
+            font-size: 15px;
+        }
+        button{
+            font-size: 20px;
+        }
+    }
+}

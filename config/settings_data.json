@@ -1,0 +1,243 @@
+{
+  "current": {
+    "section_vertical_spacing": "medium",
+    "button_border_radius": 6,
+    "input_border_radius": 8,
+    "block_border_radius": 24,
+    "block_shadow_opacity": 10,
+    "block_shadow_vertical_offset": 18,
+    "icon_stroke_width": 1.8,
+    "button_style": "fill",
+    "background": "#ffffff",
+    "text_color": "#1a1a1a",
+    "header_background": "#ffffff",
+    "header_text_color": "#2b2b2b",
+    "footer_background": "#bf5569",
+    "footer_text_color": "#fff",
+    "primary_button_background": "#bf5569",
+    "primary_button_text_color": "#ffffff",
+    "secondary_button_background": "#bf5569",
+    "secondary_button_text_color": "#ffffff",
+    "product_card_text_color": "#1a1a1a",
+    "product_primary_badge_background": "#803cee",
+    "heading_font": "ff_meta_serif_n4",
+    "heading_font_size": "large",
+    "heading_letter_spacing": -1.5,
+    "text_font": "inter_n4",
+    "text_font_letter_spacing": -2.5,
+    "currency_code_enabled": false,
+    "show_page_transition": true,
+    "heading_apparition": "split_fade",
+    "show_vendor": false,
+    "show_secondary_image": false,
+    "show_quick_buy": false,
+    "show_product_rating": false,
+    "product_color_display": "hide",
+    "product_image_aspect_ratio": "square_crop",
+    "product_info_alignment": "start",
+    "cart_type": "drawer",
+    "social_twitter": "https:\/\/twitter.com\/Vibesonly",
+    "social_instagram": "https:\/\/www.instagram.com\/vibesonly\/",
+    "favicon": "shopify:\/\/shop_images\/f1-5.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-black.png",
+    "checkout_accent_color": "#bf5569",
+    "checkout_button_color": "#ffffff",
+    "sections": {
+      "custom-font": {
+        "type": "custom-font",
+        "blocks": {
+          "62612847-120e-411f-bbde-799969e837d1": {
+            "type": "image",
+            "settings": {
+              "name": "Operetta18-Regular",
+              "custom_font_weight": "400",
+              "custom_font_style": "normal",
+              "custom_font_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0668\/9164\/5181\/files\/Operetta18-Regular.woff?v=1698788831",
+              "apply_h1": false,
+              "apply_h2": false,
+              "apply_h3": false,
+              "apply_h4": true,
+              "apply_h5": true,
+              "apply_h6": true,
+              "apply_span": false,
+              "apply_p": false,
+              "apply_custom": ".product-card__title\n\n.text-heading\n\n.custom-blog__title\n\n.media-text-grid--title\n\n.big-hero-text\n\n.button\n\n.btn\n\n.product-info__description .button"
+            }
+          },
+          "244d19b7-551d-495a-a512-738385db0225": {
+            "type": "image",
+            "settings": {
+              "name": "Operetta18-Bold",
+              "custom_font_weight": "none",
+              "custom_font_style": "none",
+              "custom_font_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0668\/9164\/5181\/files\/Operetta18-Bold.woff?v=1698788830",
+              "apply_h1": true,
+              "apply_h2": true,
+              "apply_h3": true,
+              "apply_h4": false,
+              "apply_h5": false,
+              "apply_h6": false,
+              "apply_span": false,
+              "apply_p": false,
+              "apply_custom": ""
+            }
+          }
+        },
+        "block_order": [
+          "62612847-120e-411f-bbde-799969e837d1",
+          "244d19b7-551d-495a-a512-738385db0225"
+        ],
+        "settings": {
+          "enable": true
+        }
+      },
+      "about-us-hero": {
+        "type": "about-us-hero",
+        "custom_css": [
+          "@media only screen and (max-width: 600px) {.full-hero {height: 382px !important; }}"
+        ],
+        "settings": {
+          "hero_image": "shopify:\/\/shop_images\/Group_1413.png"
+        }
+      },
+      "about-us-text": {
+        "type": "about-us-text",
+        "settings": {
+          "highted_text": "Vibes Only",
+          "header_text": "started with a passion...",
+          "body_text": "for self-pleasure and a desire to take it to unprecedented levels. With our podcast Girls Gotta Eat, we built such an incredible community, and not only felt the positive impacts of discussing sex and pleasure in an open, honest, non-judgmental way, but realized how many women were in need of more (and better) orgasms. So, we knew a sex toy company was the natural next step. We wanted to create elite, superior quality toys that we would use ourselves, along with the necessary accouterments for the bedroom like oral sex enhancer, lubricant, and more.\n\n<br><br>\n\nBut then we thought, what else are we so passionate about in the bedroom? Oh right...DIRTY TALK. And the app was born. The Vibes Only app is full of erotic audio experiences so you can immerse yourself in your wildest fantasies and have the ultimate orgasm (not to mention the other app features like the Long Distance Lover remote control, vibrator battery estimator, and more). The company is run by a team of incredible women and is designed for whoever finds pleasure in it.",
+          "signature": "shopify:\/\/shop_images\/Group_1404_1.png",
+          "brand1": "shopify:\/\/shop_images\/image_85.png",
+          "brand1-link": "https:\/\/www.youtube.com\/watch?v=dvYavB5GN8o",
+          "brand2": "shopify:\/\/shop_images\/image_87.png",
+          "brand2-link": "https:\/\/www.cosmopolitan.com\/sex-love\/news\/a43169\/the-best-porn-sites-for-women\/",
+          "brand3": "shopify:\/\/shop_images\/image_89.png",
+          "brand3-link": "https:\/\/www.wellandgood.com\/vibes-only-allison-wonderland\/",
+          "brand4": "shopify:\/\/shop_images\/image_88.png",
+          "brand4-link": "https:\/\/www.popsugar.com\/love\/photo-gallery\/43317145\/image\/49144300\/Best-Vibrating-Butt-Plug",
+          "brand5": "shopify:\/\/shop_images\/image_86.png",
+          "brand5-link": "https:\/\/www.refinery29.com\/en-us\/vibes-only-sex-toy-review",
+          "brand6": "shopify:\/\/shop_images\/image_89_1.png",
+          "brand6-link": "https:\/\/www.sheknows.com\/health-and-wellness\/articles\/2679631\/vibes-only-vibrators-app-audio-erotica\/",
+          "brand7": "shopify:\/\/shop_images\/image_87_1.png",
+          "brand7-link": "https:\/\/www.theskimm.com\/shopping\/sex-toys-for-every-person-and-preference",
+          "brand8": "shopify:\/\/shop_images\/image_88_1.png",
+          "brand8-link": "https:\/\/www.menshealth.com\/sex-women\/g19524731\/romantic-gifts-for-valentines-day\/"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Sound": {
+      "section_vertical_spacing": "medium",
+      "button_border_radius": 60,
+      "input_border_radius": 8,
+      "block_border_radius": 24,
+      "block_shadow_opacity": 10,
+      "block_shadow_vertical_offset": 18,
+      "background": "#f0f0f0",
+      "text_color": "#1a1a1a",
+      "header_background": "#f0f0f0",
+      "header_text_color": "#1a1a1a",
+      "footer_background": "#ffffff",
+      "footer_text_color": "#1a1a1a",
+      "primary_button_background": "#1a1a1a",
+      "primary_button_text_color": "#ffffff",
+      "secondary_button_background": "#f0c417",
+      "secondary_button_text_color": "#1a1a1a",
+      "product_card_text_color": "#1a1a1a",
+      "product_primary_badge_background": "#803cee",
+      "heading_font": "din_next_n7",
+      "heading_font_size": "large",
+      "heading_letter_spacing": -2,
+      "text_font": "din_next_n4",
+      "show_page_transition": true,
+      "heading_apparition": "split_fade",
+      "product_color_display": "swatch",
+      "product_info_alignment": "start",
+      "checkout_accent_color": "#f0c417",
+      "checkout_button_color": "#1a1a1a"
+    },
+    "Home": {
+      "section_vertical_spacing": "medium",
+      "section_boxed_horizontal_spacing": "large",
+      "button_hover_effect": "reverse",
+      "background": "#ffffff",
+      "text_color": "#272727",
+      "success_color": "#708a5c",
+      "warning_color": "#e37e16",
+      "error_color": "#aa2826",
+      "header_background": "#ffffff",
+      "header_text_color": "#272727",
+      "footer_background": "#f2f2f2",
+      "footer_text_color": "#272727",
+      "primary_button_background": "#272727",
+      "primary_button_text_color": "#ffffff",
+      "secondary_button_background": "#3c619e",
+      "secondary_button_text_color": "#ffffff",
+      "product_card_text_color": "#272727",
+      "product_on_sale_accent": "#e34f4f",
+      "product_sold_out_badge_background": "#bebdb9",
+      "product_primary_badge_background": "#3c619e",
+      "heading_font": "futura_n7",
+      "heading_font_size": "large",
+      "heading_text_transform": "normal",
+      "heading_letter_spacing": -1,
+      "text_font": "futura_n4",
+      "heading_apparition": "split_rotation",
+      "color_swatch_style": "rectangle",
+      "product_color_display": "swatch",
+      "cart_type": "drawer",
+      "checkout_body_background_color": "#f2f2f2",
+      "checkout_sidebar_background_color": "#ffffff",
+      "checkout_accent_color": "#3c619e",
+      "checkout_button_color": "#3c619e"
+    },
+    "Shape": {
+      "page_width": 1440,
+      "section_vertical_spacing": "small",
+      "section_boxed_horizontal_spacing": "medium",
+      "button_border_radius": 60,
+      "input_border_radius": 8,
+      "block_border_radius": 20,
+      "icon_stroke_width": 1.5,
+      "button_style": "fill",
+      "button_hover_effect": "reverse",
+      "text_color": "#2a555a",
+      "header_background": "#ffffff",
+      "header_text_color": "#2a555a",
+      "footer_background": "#f7f7f7",
+      "footer_text_color": "#2a555a",
+      "primary_button_background": "#2a555a",
+      "primary_button_text_color": "#ffffff",
+      "secondary_button_background": "#d9967e",
+      "product_card_text_color": "#2a555a",
+      "heading_font": "itc_berkeley_old_style_n4",
+      "heading_font_size": "large",
+      "heading_text_transform": "normal",
+      "heading_letter_spacing": -1,
+      "text_font": "muli_n4",
+      "text_font_size_desktop": 15,
+      "product_color_display": "swatch",
+      "product_info_alignment": "center"
+    }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".accordion-box.rounded.bg-secondary.text-custom {background: #bf5569 !important;}",
+      "@media only screen and (max-width: 768px) {body {overflow-x: hidden !important; }}",
+      ".cap {text-transform: capitalize !important;}",
+      ".product .product-info__flex div:first-child {display: flex;}",
+      ".product .product-info__flex {text-align-last: left !important;}",
+      "@media only screen and (max-width: 600px) {.product .product-info__flex {\/* justify-content: space-between; *\/ text-align: left !important; -moz-text-align-last: left !important; text-align-last: left !important; }}",
+      ".zoom-image {background: #f8f8f8 !important;}",
+      ".dropdown-menu__item {opacity: 1 !important;}",
+      ".text-subdued {font-size: 15px !important;}",
+      ".needsclick {min-height: auto !important;}",
+      "div[data-testid=\"form-component\"]:nth-child(2) {padding: 0px !important;}"
+    ]
+  }
+}

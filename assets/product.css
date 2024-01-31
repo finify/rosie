@@ -1,0 +1,58 @@
+@charset "UTF-8";
+.product__text h1 {
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 600;
+  color: #e9442c;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.product__price input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product__price input[type=number]:focus {
+  border: none;
+  outline: none;
+}
+.product__price input[type=number] {
+  font-size: 20px;
+}
+.product__price button {
+  font-size: 20px;
+}
+.product__accordion .accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  font-family: "Plus Jakarta Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.product__accordion .active, .product__accordion .accordion:hover {
+  background-color: #ccc;
+}
+.product__accordion .accordion:after {
+  content: "+";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.product__accordion .active:after {
+  content: "−";
+}
+.product__accordion .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

@@ -1,0 +1,136 @@
+<style>
+    #shopify-section-{{ section.id }} {
+      --section-stack-intro: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
+      --section-stack-main: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
+    }
+  .active {
+      color: {{ section.settings.hightlight_color }};
+  }
+    .aside-section__title {
+      color: {{ section.settings.text_color }};
+    }
+  .aside-section__title:hover, .aside-section__title:active {
+      color: {{ section.settings.hightlight_color }};
+  }
+</style>
+
+{% assign faqs = page.metafields.custom.faqs.value | reverse %}
+
+<section class="section" style="background:{{ section.settings.background }};">
+  <div class="faq-grid">
+    <aside class="aside-section">
+      <p class="overline" style="padding:0px 1rem;">Questions & Answer</p>
+      <ul class="aside-section__list">
+        {% for faq in faqs %}
+          {% assign key = faq.section | replace: ' ', '-' %}
+          <li class="aside-section__item">
+            <a
+              href="#{{ key }}"
+              class="aside-section__title"
+            >
+              {{- faq.section -}}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <article>
+      {% for faq in faqs %}
+        {% assign key = faq.section | replace: ' ', '-' %}
+
+        <div class="article-section" id="{{ key }}">
+          <h3 class="article-section__title">{{ faq.section }}</h3>
+          <ul class="article-section__list">
+            {% for q_and_a in faq.fa_qs.value %}
+              <li class="article-section__item">
+                <p class="article-section__question">{{ q_and_a.question }}</p>
+                <div class="article-section__answer">{{- q_and_a.answer | metafield_tag -}}</div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </article>
+  </div>
+</section>
+
+{%- comment -%}On the FAQ page, we also output the content with JSON microdata for SEO{%- endcomment -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "class": "shopify-section--faq",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "blocks": [],
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "background_gradient",
+      "label": "Background gradient"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "hightlight_color",
+      "label": "Hightlight Text",
+      "default": "#BF5569"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  const faq = document.querySelectorAll("a.aside-section__title");
+  const titles = document.querySelectorAll(".article-section__title");
+
+  faq.forEach((f, id) => {
+    if(id === 0){
+      f.classList.add("active");
+      titles[id].classList.add("active");
+    }
+    f.addEventListener("click", (evt) => setActive(evt, id))
+  })
+
+  function setActive(evt, id) {
+    removeClass(faq);
+    evt.target.classList.add("active");
+    titles[id].classList.add("active");
+  }
+
+  function removeClass(list) {
+    list.forEach((l, id) => {
+      if (l.classList.contains("active")) {
+        l.classList.remove("active");
+      }
+      const title = titles[id];
+      if(title) {
+        if (title.classList.contains("active")){
+          title.classList.remove("active")
+        }
+      }
+    })
+  }
+{% endjavascript %}

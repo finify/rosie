@@ -1,0 +1,484 @@
+//functions 
+// @mixin text-font($color,$fontfamily,$size,$weight){
+//     color:$color;
+//     font-family: 'League Spartan';
+//     font-size: $size;
+//     letter-spacing: 0;
+//     font-weight: $weight;
+//     line-height: normal;
+//   }
+@font-face {
+    font-family: BonVoyage;
+    src: url(../fonts/MADE\ Bon\ Voyage\ Regular\ PERSONAL\ USE.otf);
+ }
+ 
+
+header{
+    .menu-wrapper{
+        height: 55px;
+        background-color: #ffffff36;
+        border-radius: 30px;
+        overflow: hidden;
+        backdrop-filter: blur(94px) brightness(100%);
+        -webkit-backdrop-filter: blur(94px) brightness(100%);
+
+        li{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 500;
+            color: #000000;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            a{
+            }
+            
+        }
+    }
+}
+
+
+.hero{
+    // background-image: url("../img/hero.png"); 
+    background-color: #cccccc; 
+    // height: 500px;
+    // background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+
+    .elevate-your{
+        font-family: "Plus Jakarta Sans", Helvetica;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+
+    .span{
+        font-family: "Plus Jakarta Sans", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        letter-spacing: -3.52px;
+    }
+
+    .text-wrapper-2{
+        font-family: "EB Garamond", Helvetica;
+        font-weight: 500;
+        font-style: italic;
+        color: #ffffff;
+        letter-spacing: -2.52px;
+    }
+
+    .text-wrapper-3 {
+        font-family: "EB Garamond", Helvetica;
+        font-weight: 600;
+        font-style: italic;
+        color: #ffffff;
+        letter-spacing: -2.52px;
+    }
+
+    .text-wrapper-shop {
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: normal;
+        position: absolute;
+        font-family: "Plus Jakarta Sans", Helvetica;
+    }
+
+   .rectangle {
+        width: 83px;
+        height: 1px;
+        top: 27px;
+        left: 0;
+        background-color: #ffffff;
+    }
+
+    @media (max-width: 400px) {
+        .span{
+            font-size: 35px;
+        }
+        .text-wrapper-2{
+            font-size: 35px;
+        }
+        .text-wrapper-3{
+            font-size: 35px;
+        }
+        // background-position: 26% 50%; 
+    }
+}
+
+.page-header{
+    // background-image: url("../img/hero.png"); 
+    background-color: #504e4e; 
+    // height: 500px;
+    // background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+
+    h1{
+        font-weight: 600;
+        font-style: italic;
+        color: #ffffff;
+        letter-spacing: 0;
+        line-height: normal;
+        font-family: "Plus Jakarta Sans", Helvetica;  
+    }
+    p{
+        font-family: "Plus Jakarta Sans", Helvetica;
+        font-weight: 400;
+        color: #ffffff;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+}
+
+
+.top-sellers{
+
+    .section-header{
+        p{
+            color: #000000;
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        h1{
+            font-family: BonVoyage, Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 48px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        a{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #e9442c;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+    }
+
+    .products{
+        .product-details{
+            h1{
+                font-family: "Plus Jakarta Sans", Helvetica;
+                font-weight: 500;
+                color: #000000;
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: normal;
+            }
+            h4{
+                font-family: "Plus Jakarta Sans", Helvetica;
+                font-weight: 500;
+                color: #e9442c;
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+
+.about{
+    &__details{
+        p{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        h1{
+            line-height: 26px;
+            color:white;
+        }
+        .browse{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 36px;
+            letter-spacing: -1.98px;
+            line-height: 36.9px;
+        }
+        .our{
+            font-family: "EB Garamond", Helvetica;
+            font-weight: 500;
+            font-size: 36px;
+            font-style: italic;
+        }
+        .cutlerry{
+            font-family: "EB Garamond", Helvetica;
+            font-weight: 500;
+            font-size: 36px;
+            font-style: italic;
+        }
+        .collection{
+            font-size: 36px;
+            font-weight: 600;
+        }
+        a{
+            color:white;
+        }
+    }
+}
+
+.top-products{
+    &__text{
+        p{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            font-size: 16px;
+            color: #ffffff;
+            letter-spacing: 0;
+            line-height: normal; 
+        }
+
+        h1{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 600;
+            color: #e9442c;
+            letter-spacing: 0;
+            line-height:normal;
+        }
+        h4{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing:0px;
+            line-height: normal;
+        }
+        a{
+            padding: 10px;
+            padding-top: 5px;
+            border-radius: 34px;
+            border: 1px solid;
+            border-color: #e9442c;
+            color:white;
+            width:fit-content;
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height:normal;
+        }
+    }
+}
+
+.our-products{
+
+    .section-header{
+        p{
+            color: #000000;
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        h1{
+            font-family: BonVoyage, Helvetica;
+            font-weight: 400;
+            color: #000000;
+            font-size: 48px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        a{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #e9442c;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+    }
+
+    .products{
+        .product-details{
+            h1{
+                font-family: "Plus Jakarta Sans", Helvetica;
+                font-weight: 500;
+                color: #000000;
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: normal;
+            }
+            h4{
+                font-family: "Plus Jakarta Sans", Helvetica;
+                font-weight: 500;
+                color: #e9442c;
+                font-size: 16px;
+                letter-spacing: 0;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.call-to-action{
+
+    .section-header{
+        p{
+            color: #000000;
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        h1{
+            font-family: BonVoyage, Helvetica;
+            font-weight: 400;
+            color: #000000;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        a{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #e9442c;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+    }
+}
+
+.explore{
+
+    .section-header{
+        p{
+            color: #000000;
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 300;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        h1{
+            font-family: BonVoyage, Helvetica;
+            font-weight: 400;
+            color: #000000;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+        a{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #e9442c;
+            font-size: 16px;
+            letter-spacing: 0;
+            line-height: normal;
+        }
+    }
+}
+
+footer{
+    .footer__top{
+        h1{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 500;
+            color: #e9442c;
+            letter-spacing: -0.5;
+            line-height: 28px;
+            white-space: nowrap;
+        }
+        p{
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 14px;
+            white-space: nowrap;
+            opacity: 0.4;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            background-color: #0e0e0e;
+            color:white;
+            border: none;
+        }
+        input:focus{
+            border:none;
+            outline: none;
+        }
+
+
+        button{
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            position: absolute;
+            background-color: #e9442c;
+            border-radius: 46px;
+            margin-left: -100px;
+        }
+    }
+    .footer__middle{
+        h1{
+            font-weight: 400;
+            color: #e9442c;
+            font-size: 64px;
+            letter-spacing: -3.52px;
+            line-height: 56px;
+            white-space: nowrap;
+            font-family: "Plus Jakarta Sans", Helvetica;
+        }
+    }
+
+    .footer__mobile_middle{
+        .accordion {
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 35px;
+            transition: 0.4s;
+
+            font-family: "Plus Jakarta Sans", Helvetica;
+            font-weight: 400;
+            color: #e9442c;
+            letter-spacing: 0;
+            line-height: normal;
+          }
+          
+          .active, .accordion:hover {
+            background-color: #ccc;
+          }
+          
+          .accordion:after {
+            content: '\2304';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+            font-size: 25px;
+          }
+          
+          .active:after {
+            content: "\2212";
+          }
+          
+          .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          }
+    }
+}
