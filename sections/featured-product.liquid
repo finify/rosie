@@ -39,7 +39,32 @@
   }
 </style>
 
-<div {% render 'section-properties', tight: true %}>
+{%- assign product = section.settings.product -%}
+<div class="top-products grid lg:grid-cols-2 grid-cols-1 my-6 h-auto">
+    <div class="flex flex-col about__item justify-center bg-[#262626] lg:px-10 px-4 pt-10 lg:pb-10 pb-0">
+        <div class="top-products__details text-left border border-solid border-[#e9442c4c] px-10 h-full">
+            <div class="top-products__text flex flex-col justify-center text-left h-full lg:py-0 py-6 ">
+                <p>TOP PRODUCT</p>
+                <h1 class="mt-2 text-[20px] lg:text-[35px]">{{- product.title | capitalize -}}</h1>
+                <h4 class="mt-2 text-[14px] lg:text-[16px]">{{- product.description -}}</h4>
+                <a href="{{- product.url -}}" class="mt-2">Shop Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col about__item justify-center lg:px-0 px-4 bg-[#262626]">
+        {% comment %} <img src="img/product4.png" class="w-full" alt=""> {% endcomment %}
+        {{-
+          product.featured_media
+          | image_url: width: product.featured_media.width
+          | image_tag:
+            loading: 'lazy',
+            widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800',
+            class:'w-full'
+        -}}
+    </div>
+</div>
+
+{% comment %} <div {% render 'section-properties', tight: true %}>
   <div class="product">
     {%- if section.settings.product != blank -%}
       {%- if section.settings.product.media.size > 0 -%}
@@ -114,7 +139,7 @@
       </safe-sticky>
     {%- endif -%}
   </div>
-</div>
+</div> {% endcomment %}
 
 {% schema %}
 {

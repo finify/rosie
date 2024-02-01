@@ -63,48 +63,6 @@
         "overlay_opacity": 30
       }
     },
-    "b384539f-a30c-4fcc-b968-676bbb160977": {
-      "type": "rich-text",
-      "blocks": {
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-subheading-1": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-heading-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Find your vibe with our bestsellers",
-            "heading_tag": "h1",
-            "text_color": "#bf5569",
-            "gradient": ""
-          }
-        },
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-richtext-1": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-subheading-1",
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-heading-1",
-        "template--16922246742269__b384539f-a30c-4fcc-b968-676bbb160977-richtext-1"
-      ],
-      "custom_css": [
-        "@media only screen and (max-width: 768px) {p.h1.hyphenate.big-hero-text {font-size: 30px; }}"
-      ],
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "303c28e9-381e-4dfb-8e16-ae8165961dd4": {
       "type": "featured-collection",
       "custom_css": [
@@ -125,8 +83,8 @@
         "products_count": 12,
         "products_per_row_mobile": "1",
         "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "",
+        "subheading": "Our Top Sellers",
+        "title": "TOP PRODUCTS",
         "content": "",
         "link_url": "",
         "link_text": "",
@@ -140,6 +98,111 @@
         "heading_gradient": "",
         "product_card_background": "rgba(0,0,0,0)",
         "product_card_text_color": ""
+      }
+    },
+    "featured_product_3p4hyf": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_b8LRaA": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title_qmzynE": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges_KttBcH": {
+          "type": "badges",
+          "settings": {
+          }
+        },
+        "price_NiiHCW": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_AAX8yg": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator_TREMcR": {
+          "type": "separator",
+          "settings": {
+          }
+        },
+        "description_UV83xJ": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker_kQqXAx": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_x9ExX6": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_PkT4ye": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_FfFPz6": {
+          "type": "pickup_availability",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor_b8LRaA",
+        "title_qmzynE",
+        "badges_KttBcH",
+        "price_NiiHCW",
+        "rating_AAX8yg",
+        "separator_TREMcR",
+        "description_UV83xJ",
+        "variant_picker_kQqXAx",
+        "quantity_selector_x9ExX6",
+        "buy_buttons_PkT4ye",
+        "pickup_availability_FfFPz6"
+      ],
+      "settings": {
+        "full_width": true,
+        "product": "product4",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
       }
     },
     "fb6827a2-ccf3-409d-a182-8dfa84b8de00": {
@@ -194,6 +257,7 @@
         "cdd28fdb-f952-49b3-b2f5-9d9695e1fb5e",
         "4eecbccd-24a3-46cb-a087-16b7260428b2"
       ],
+      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 768px) {p.h2.bold.heading-with-accordion {font-size: 24px; } span {font-size: 24px; } p {font-size: 15px; }}"
       ],
@@ -231,6 +295,7 @@
       "block_order": [
         "template--16922246742269__f0cf6424-e1ef-4346-a38e-e6479eddd261-image-1"
       ],
+      "disabled": true,
       "custom_css": [
         "@media only screen and (max-width: 768px) {.content-text {font-size: 15px; }}"
       ],
@@ -330,6 +395,7 @@
         "77655c83-10e0-4a34-8f4d-4dc37392be82",
         "6e14d478-3b2a-4399-869b-b476f4ed0c27"
       ],
+      "disabled": true,
       "custom_css": [
         ".press__controls {margin: 0 20px !important;}",
         "@media (min-width: 900px) {.testimonial-stack {padding-left: 3rem !important; padding-right: 3rem !important; }}"
@@ -345,14 +411,26 @@
         "logo_item_background": "",
         "logo_item_border": ""
       }
+    },
+    "full_image_3fA3qU": {
+      "type": "full-image",
+      "settings": {
+        "section_id": "custom_controller",
+        "heading1": "Designed for one handed use",
+        "image_left": "shopify:\/\/shop_images\/calltoaction.png",
+        "richtext1": "<p>The Vibes Only app's custom controller lets you adjust the intensity (0-100%), pick patterns, toggle stealth mode, and control dual motors vibrators independently.<\/p>",
+        "link1": "",
+        "link1text": "TRY IT OUT"
+      }
     }
   },
   "order": [
     "6104a94a-7479-4070-acbf-5fdb044826bd",
-    "b384539f-a30c-4fcc-b968-676bbb160977",
     "303c28e9-381e-4dfb-8e16-ae8165961dd4",
+    "featured_product_3p4hyf",
     "fb6827a2-ccf3-409d-a182-8dfa84b8de00",
     "f0cf6424-e1ef-4346-a38e-e6479eddd261",
-    "1bfd86af-7ad6-43fd-906c-cb4992e71899"
+    "1bfd86af-7ad6-43fd-906c-cb4992e71899",
+    "full_image_3fA3qU"
   ]
 }

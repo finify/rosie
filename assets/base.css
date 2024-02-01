@@ -489,11 +489,11 @@ video {
 .sticky{
   position: sticky;
 }
-.z-10{
-  z-index: 10;
-}
 .z-0{
   z-index: 0;
+}
+.z-10{
+  z-index: 10;
 }
 .col-span-1{
   grid-column: span 1 / span 1;
@@ -505,13 +505,17 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.my-3{
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+.my-6{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.\!mx-auto{
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 .me-3{
   margin-inline-end: 0.75rem;
@@ -558,11 +562,14 @@ video {
 .aspect-video{
   aspect-ratio: 16 / 9;
 }
+.\!h-screen{
+  height: 100vh !important;
+}
 .h-full{
   height: 100%;
 }
-.\!h-screen{
-  height: 100vh !important;
+.h-auto{
+  height: auto;
 }
 .w-0{
   width: 0px;
@@ -620,6 +627,9 @@ video {
 }
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .flex-row{
   flex-direction: row;
@@ -699,13 +709,13 @@ video {
 .gap-8{
   gap: 2rem;
 }
-.gap-x-3{
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
-}
 .gap-x-2{
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+}
+.gap-x-3{
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
 }
 .divide-x > :not([hidden]) ~ :not([hidden]){
   --tw-divide-x-reverse: 0;
@@ -764,8 +774,14 @@ video {
 .border-t{
   border-top-width: 1px;
 }
+.border-solid{
+  border-style: solid;
+}
 .border-none{
   border-style: none;
+}
+.border-\[\#e9442c4c\]{
+  border-color: #e9442c4c;
 }
 .border-white{
   --tw-border-opacity: 1;
@@ -782,8 +798,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 248 238 / var(--tw-bg-opacity));
 }
-.bg-\[url\(\'\/img\/hero\.png\'\)\]{
-  background-image: url('/img/hero.png');
+.bg-\[\#262626\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 .bg-\[26\%_50\%\]{
   background-position: 26% 50%;
@@ -805,12 +822,17 @@ video {
 .p-3{
   padding: 0.75rem;
 }
-.p-5{
-  padding: 1.25rem;
+.px-1{
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .py-1{
   padding-top: 0.25rem;
@@ -819,6 +841,10 @@ video {
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 .py-3{
   padding-top: 0.75rem;
@@ -832,20 +858,19 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-.px-1{
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
-.px-2{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.px-5{
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .pb-1{
   padding-bottom: 0.25rem;
+}
+.pb-20{
+  padding-bottom: 5rem;
 }
 .pb-3{
   padding-bottom: 0.75rem;
@@ -862,8 +887,14 @@ video {
 .pt-5{
   padding-top: 1.25rem;
 }
-.pb-20{
-  padding-bottom: 5rem;
+.pb-0{
+  padding-bottom: 0px;
+}
+.pt-10{
+  padding-top: 2.5rem;
+}
+.text-left{
+  text-align: left;
 }
 .text-center{
   text-align: center;
@@ -874,8 +905,14 @@ video {
 .text-end{
   text-align: end;
 }
+.text-\[13px\]{
+  font-size: 13px;
+}
 .text-\[20px\]{
   font-size: 20px;
+}
+.text-\[45px\]{
+  font-size: 45px;
 }
 .text-base{
   font-size: 1rem;
@@ -893,23 +930,8 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-\[3rem\]{
-  font-size: 3rem;
-}
-.\!text-\[3rem\]{
-  font-size: 3rem !important;
-}
-.text-\[35px\]{
-  font-size: 35px;
-}
-.text-\[40px\]{
-  font-size: 40px;
-}
-.text-\[45px\]{
-  font-size: 45px;
-}
-.text-\[13px\]{
-  font-size: 13px;
+.text-\[14px\]{
+  font-size: 14px;
 }
 .uppercase{
   text-transform: uppercase;
@@ -923,17 +945,15 @@ video {
 .italic{
   font-style: italic;
 }
-.leading-\[\]{
-  line-height: ;
-}
-.leading-\[30px\]{
-  line-height: 30px;
+.leading-3{
+  line-height: .75rem;
 }
 .leading-\[40px\]{
   line-height: 40px;
 }
-.leading-3{
-  line-height: .75rem;
+.text-\[\#e9442c\]{
+  --tw-text-opacity: 1;
+  color: rgb(233 68 44 / var(--tw-text-opacity));
 }
 .text-black{
   --tw-text-opacity: 1;
@@ -942,16 +962,6 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-\[\]{
-  color: ;
-}
-.text-\[\#e9442c\]{
-  --tw-text-opacity: 1;
-  color: rgb(233 68 44 / var(--tw-text-opacity));
-}
-.text-\[3\]{
-  color: 3;
 }
 .overline{
   text-decoration-line: overline;
@@ -1186,20 +1196,23 @@ a {
   .lg\:w-1\/4{
     width: 25%;
   }
-  .lg\:w-6\/12{
-    width: 50%;
-  }
-  .lg\:w-full{
-    width: 100%;
-  }
   .lg\:w-4\/5{
     width: 80%;
+  }
+  .lg\:w-6\/12{
+    width: 50%;
   }
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+  .lg\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
   .lg\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .lg\:border{
     border-width: 1px;
@@ -1219,21 +1232,20 @@ a {
   .lg\:p-5{
     padding: 1.25rem;
   }
+  .lg\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
   .lg\:py-0{
     padding-top: 0px;
     padding-bottom: 0px;
   }
-  .lg\:px-5{
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+  .lg\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
   }
-  .lg\:\!px-5{
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-  .lg\:px-10{
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+  .lg\:pb-10{
+    padding-bottom: 2.5rem;
   }
   .lg\:text-left{
     text-align: left;
@@ -1241,20 +1253,20 @@ a {
   .lg\:text-\[1\.5rem\]{
     font-size: 1.5rem;
   }
-  .lg\:text-\[64px\]{
-    font-size: 64px;
-  }
   .lg\:text-\[16px\]{
     font-size: 16px;
   }
-  .lg\:leading-\[\]{
-    line-height: ;
+  .lg\:text-\[64px\]{
+    font-size: 64px;
+  }
+  .lg\:text-\[35px\]{
+    font-size: 35px;
+  }
+  .lg\:text-\[48px\]{
+    font-size: 48px;
   }
   .lg\:leading-\[65px\]{
     line-height: 65px;
-  }
-  .lg\:text-\[\]{
-    color: ;
   }
   .lg\:hover\:w-full:hover{
     width: 100%;

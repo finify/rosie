@@ -1,0 +1,100 @@
+<div class="call-to-action">
+    <div class="section-header flex flex-col text-center py-10 items-center">
+        <h1 class="text-[20px] lg:text-[48px]">{{ section.settings.heading1 }}</h1>
+        <a href="{{ section.settings.link1 }}">{{- section.settings.link1text -}}</a>
+    </div>
+    
+    <div class="call-to-action__image">
+        {% comment %} <img src="img/calltoaction.png" class="w-full" alt=""> {% endcomment %}
+        {%- if section.settings.image_left != blank -%}
+          {{-
+            section.settings.image_left
+            | image_url: width: 2024
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600',
+            class:'w-full'
+          -}}
+        {%- else -%}
+          {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+    </div>
+</div>
+
+{% comment %} <div class="mobile-flex-left">
+  <div class="section section-blends section-full pb-1 section-padding">
+    <div class="row">
+      <div class="col-lg-5 col-md-5 col-12 mobile-flex-left-img">
+        {%- if section.settings.image_left != blank -%}
+          {{-
+            section.settings.image_left
+            | image_url: width: 2024
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600'
+          -}}
+        {%- else -%}
+          {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+      </div>
+      <div class="col-lg-7 col-md-7 col-12 text-content">
+        <h1 id="{{ section.settings.section_id }}" class="mobile-app-flex-title title-break" bp="{{ section.settings.breakpoint }}">{{ section.settings.heading1 }}</h1>
+        <h4 class="mobile-app-flex-subtext">{{ section.settings.richtext1 }}</h4>
+
+        <a class="mobile-app-section__button" href="{{ section.settings.link1 }}">
+          {{- section.settings.link1text -}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+{% schema %}
+{
+    "name": "full-image",
+    "class":"mobile-flex-left",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "Bookmark ID",
+            "default": "custom_controller"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "Designed for one handed use"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_left",
+          "label": "Image",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext1",
+            "label": "Richtext 1",
+            "default": "<p>The Vibes Only app's custom controller lets you adjust the intensity (0-100%), pick patterns, toggle stealth mode, and control dual motors vibrators independently.</p>"
+        },
+        {
+            "type": "url",
+            "id": "link1",
+            "label": "Link 1"
+        },
+        {
+            "type": "text",
+            "id": "link1text",
+            "label": "Link 1 text",
+            "default": "TRY IT OUT"
+        }
+    ],
+    "presets": [
+        {
+            "name": "full-image"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

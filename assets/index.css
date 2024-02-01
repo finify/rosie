@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: BonVoyage;
-  src: url(../fonts/MADE\ Bon\ Voyage\ Regular\ PERSONAL\ USE.otf);
+  src: url(MADE.otf);
 }
 header .menu-wrapper {
   height: 55px;
@@ -105,14 +105,14 @@ header .menu-wrapper li {
 
 .top-sellers .section-header p {
   color: #000000;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
 }
 .top-sellers .section-header h1 {
-  font-family: BonVoyage, Helvetica;
+  font-family: BonVoyage, Helvetica !important;
   font-weight: 400;
   color: #000000;
   font-size: 48px;
@@ -128,7 +128,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .top-sellers .products .product-details h1 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 500;
   color: #000000;
   font-size: 16px;
@@ -136,7 +136,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .top-sellers .products .product-details h4 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 500;
   color: #e9442c;
   font-size: 16px;
@@ -185,7 +185,7 @@ header .menu-wrapper li {
 }
 
 .top-products__text p {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 300;
   font-size: 16px;
   color: #ffffff;
@@ -193,14 +193,14 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .top-products__text h1 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 600;
   color: #e9442c;
   letter-spacing: 0;
   line-height: normal;
 }
 .top-products__text h4 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 300;
   color: #ffffff;
   letter-spacing: 0px;
@@ -215,7 +215,7 @@ header .menu-wrapper li {
   color: white;
   width: -moz-fit-content;
   width: fit-content;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
   font-size: 16px;
   letter-spacing: 0;
@@ -265,21 +265,21 @@ header .menu-wrapper li {
 
 .call-to-action .section-header p {
   color: #000000;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
 }
 .call-to-action .section-header h1 {
-  font-family: BonVoyage, Helvetica;
+  font-family: BonVoyage, Helvetica !important;
   font-weight: 400;
   color: #000000;
   letter-spacing: 0;
   line-height: normal;
 }
 .call-to-action .section-header a {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
   color: #e9442c;
   font-size: 16px;

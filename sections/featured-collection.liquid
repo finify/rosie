@@ -32,7 +32,41 @@
   }
 </style>
 
-<div {% render 'section-properties' %}>
+{%- assign products = section.settings.products | default: section.settings.collection.products -%}
+<div class="top-sellers container mx-auto">
+    <div class="section-header flex flex-col text-center py-10 items-center">
+        <p>{{- section.settings.title -}}</p>
+        <h1>{{- section.settings.subheading -}}</h1>
+        <a href="{{- section.settings.collection.url -}}">See more</a>
+    </div>
+    
+    <div class="products grid lg:grid-cols-4 grid-cols-2">
+      {%- for product in products limit: section.settings.products_count -%}
+        <a href="{{- product.url -}}" class="product-car p-3 border border-solid border-[#e9442c4c]">
+          <div >
+              {{-
+              product.featured_media
+              | image_url: width: product.featured_media.width
+              | image_tag:
+                loading: 'lazy',
+                widths: '200,300,400,500,600,700,800,1000,1200,1400,1600,1800'
+            -}}
+            <div class="product-details flex justify-between pt-2">
+                <h1>{{- product.title | capitalize -}}</h1>
+                <h4>
+                  {{- product.price | money -}}
+               </h4>
+            </div>
+          </div>
+        </a>
+      {%- else -%}
+        
+      {%- endfor -%}
+        
+    </div>
+</div>
+
+{% comment %} <div {% render 'section-properties' %}>
   <div class="section-stack">
     {%- assign link_url = section.settings.link_url | default: section.settings.collection.url -%}
     {%- render 'section-header',
@@ -117,7 +151,7 @@
       {%- endif -%}
     </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 {% schema %}
 {
