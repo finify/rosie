@@ -1,15 +1,15 @@
 .contact{
     &__textwrap{
         h1{
-            font-family: "Plus Jakarta Sans";
+            font-family: "Plus Jakarta Sans"!important;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
         }
 
-        p{
+        h4{
             color: #000;
-            font-family: "Plus Jakarta Sans";;
+            font-family: "Plus Jakarta Sans"!important;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -17,11 +17,23 @@
         }
     }
     &__form{
+        h3{
+            color: #000;
+            font-family: "Plus Jakarta Sans"!important;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            
+        }
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
           }
           input:focus{
+            border:none;
+            outline: none;
+        }
+        textarea:focus{
             border:none;
             outline: none;
         }

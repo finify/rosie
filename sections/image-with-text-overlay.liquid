@@ -39,7 +39,7 @@
     background-image:url("{{- section.settings.image | image_url: width: 1728 -}}") ;
   }
 </style>
-{%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%}
+{% comment %} {%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%} {% endcomment %}
 
   <div class="hero flex flex-col w-full !h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%]">
   <div class="text-wrapper flex flex-col">

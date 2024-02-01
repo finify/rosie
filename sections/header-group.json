@@ -27,6 +27,14 @@
         "text_color": "#ffffff"
       }
     },
+    "page_header_BmdJqd": {
+      "type": "page-header",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/aboutimage2.png",
+        "heading": "Contact Us",
+        "subheading": ""
+      }
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -90,6 +98,7 @@
   },
   "order": [
     "announcement-bar",
+    "page_header_BmdJqd",
     "header"
   ]
 }

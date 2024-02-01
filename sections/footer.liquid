@@ -24,7 +24,7 @@
                         {%- if block.settings.image != blank -%}
                           {%- capture sizes -%}{{ block.settings.image_width }}px{%- endcapture -%}
                           {%- capture widths -%}{{ block.settings.image_width }}, {{ block.settings.image_width | times: 2 | at_most: block.settings.image.width }}{%- endcapture -%}
-                          {%- capture style -%}max-width: {{ block.settings.image_width }}px{%- endcapture -%}
+                          {% comment %} {%- capture style -%}max-width: {{ block.settings.image_width }}px{%- endcapture -%} {% endcomment %}
                           {{-
                             block.settings.image
                             | image_url: width: 100

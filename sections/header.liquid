@@ -13,7 +13,7 @@
   {%- assign will_show_locale_selector = true -%}
 {%- endif -%}
 
-{% assign collections = section.blocks | where: 'type', 'collection' | reverse %}
+{% comment %} {% assign collections = section.blocks | where: 'type', 'collection' | reverse %} {% endcomment %}
 
 <style>
   :root {

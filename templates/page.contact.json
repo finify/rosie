@@ -1,1 +1,47 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"content_width":"80ch"}},"contact":{"type":"contact","blocks":{"5c816678-6285-4b59-93a7-a0774525dff3":{"type":"text","settings":{"title":"Phone Number","use_long_text":false}}},"block_order":["5c816678-6285-4b59-93a7-a0774525dff3"],"settings":{"full_width":true,"subheading":"","title":"Get in Touch","content":"<p>Stuck on something? Get in touch with a representative with any questions, issue or concerns<\/p>","text_position":"start","contact_form_size":"large","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","contact_background":"#f7f2f3","contact_text_color":"","button_background":"","button_text_color":""}}},"order":["main","contact"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "contact": {
+      "type": "contact",
+      "blocks": {
+        "5c816678-6285-4b59-93a7-a0774525dff3": {
+          "type": "text",
+          "settings": {
+            "title": "080364834734",
+            "use_long_text": false
+          }
+        }
+      },
+      "block_order": [
+        "5c816678-6285-4b59-93a7-a0774525dff3"
+      ],
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "Get in Touch",
+        "content": "<p>Stuck on something? Get in touch with a representative with any questions, issue or concerns<\/p>",
+        "text_position": "start",
+        "contact_form_size": "large",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "contact_background": "#f7f2f3",
+        "contact_text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact"
+  ]
+}

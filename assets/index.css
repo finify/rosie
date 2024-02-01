@@ -312,7 +312,7 @@ header .menu-wrapper li {
 }
 
 footer .footer__top h1 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 500;
   color: #e9442c;
   letter-spacing: -0.5;
@@ -320,7 +320,7 @@ footer .footer__top h1 {
   white-space: nowrap;
 }
 footer .footer__top p {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
   color: #ffffff;
   font-size: 16px;
