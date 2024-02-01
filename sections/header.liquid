@@ -78,10 +78,11 @@
 </style>
 
 <header class="fixed top-0 left-0 right-0 w-full z-10 py-6">
-    <div class="menu-wrapper container mx-auto flex flex-row justify-items-center lg:w-6/12 w-11/12 transition-all ease-in-out duration-500  delay-150 lg:hover:w-full">
-        <ul class="menu list-none lg:flex flex-row w-1/3 justify-center gap-x-3 justify-items-center hidden text-black">
+    <div class="menu-wrapper container mx-auto flex flex-row justify-center lg:w-6/12 w-11/12 transition-all ease-in-out duration-500  delay-150 lg:hover:w-full">
+        <ul class="list-none lg:flex lg:flex-row w-1/3 justify-center h-full gap-x-2 items-center hidden text-black pt-0">
+  
         {%- for link in section.settings.menu.links -%}
-          <li>
+          <li class="flex justify-center items-center">
             <a
                 href="{{ link.url }}"
                 {% if link.current %}
@@ -94,10 +95,10 @@
         {%- endfor -%}
         </ul>
 
-        <div class="menu-icon lg:hidden flex w-1/3 py-1">
+        <div class="menu-icon lg:hidden flex w-1/3 py-1 pl-2">
             {% comment %} <img class="ml-4" src="img/menu.svg" alt=""> {% endcomment %}
             <img type="button"
-          class="ml-2 tap-area {% if section.settings.layout != 'drawer' %}lg:hidden{% endif %}"
+          class="tap-area {% if section.settings.layout != 'drawer' %}lg:hidden{% endif %}"
           aria-controls="header-sidebar-menu" src="{{ 'menu.svg' | asset_url }}" width="" height="" loading="eager" alt="">
         </div>
 
@@ -119,13 +120,13 @@
         </div>
 
         <div class="icons w-1/3 flex flex-row justify-center items-center py-4">
-          <a href="{{ routes.search_url }}" class="w-2/4 lg:w-1/4" aria-controls="search-drawer">
+          <a href="{{ routes.search_url }}" class="w-2/4 lg:w-1/4 flex justify-center" aria-controls="search-drawer">
             <span class="sr-only">{{ 'header.general.open_search' | t }}</span>
             {%- render 'icon' with 'search' -%}
           </a>
 
           {%- if shop.customer_accounts_enabled -%}
-            <a href="{{ routes.account_url }}" class="w-2/4 lg:w-1/4">
+            <a href="{{ routes.account_url }}" class="w-2/4 lg:w-1/4 flex justify-center">
               <span class="sr-only">{{ 'header.general.open_account' | t }}</span>
               {%- render 'icon' with 'account' -%}
             </a>
@@ -134,7 +135,7 @@
           <a
             href="{{ routes.cart_url }}"
             data-no-instant
-            class="w-2/4 lg:w-1/4"
+            class="w-2/4 lg:w-1/4 flex justify-center"
             {% if settings.cart_type != 'page' and request.page_type != 'cart' %}
               aria-controls="cart-drawer"
             {% endif %}

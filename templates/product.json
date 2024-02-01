@@ -1,1 +1,207 @@
-{"sections":{"main":{"type":"main-product","blocks":{"title":{"type":"title","settings":{"heading_tag":"h2"}},"badges":{"type":"badges","settings":{}},"price":{"type":"price","settings":{"show_taxes_notice":false}},"rating":{"type":"rating","settings":{"show_empty":false}},"payment_terms":{"type":"payment_terms","settings":{}},"description":{"type":"description","settings":{"collapse_content":false}},"variant_picker":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"stack_blocks":true,"selector_mode":"block","color_mode":"color","size_chart_page":""}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_payment_button":false,"show_gift_card_recipient":false,"atc_button_background":"","atc_button_text_color":"","payment_button_background":"","payment_button_text_color":""}},"b8640a09-8fba-426e-bcad-7aa84ce74963":{"type":"liquid","settings":{"liquid":"{% if product.available == false %}{{ product.metafields.custom.out_of_stock_form }}{% endif %}"}}},"block_order":["title","badges","price","rating","payment_terms","description","variant_picker","quantity_selector","buy_buttons","b8640a09-8fba-426e-bcad-7aa84ce74963"],"custom_css":["h1.product-info__title {text-align: left !important;}","variant-option-value {display: none;}",".product-gallery {background: #f8f8f8;}",".form-control {border: none; background: transparent;}",".product-info__price {padding-top: 20px;}","@media only screen and (max-width: 768px) {.product-info__price {width: 100%; } button.button.button--xl {border-radius: 0; } .prose {color: black; }}",".product-info__price {width: 100%;}","label.block-swatch {border-radius: 30px; border: 1px solid #bf5569;}","label.block-swatch span {color: #bf5569;}"],"settings":{"full_width":true,"show_fixed_add_to_cart":true,"desktop_media_width":55,"desktop_media_layout":"carousel_thumbnails_left","mobile_media_size":"contained","mobile_carousel_control":"thumbnails","enable_video_autoplay":false,"enable_video_looping":true,"enable_image_zoom":true,"max_image_zoom_level":3,"background":"","background_gradient":"","text_color":"","input_background":"rgba(0,0,0,0)","input_text_color":""}},"toyfeatures":{"type":"toyfeatures","custom_css":["@media only screen and (max-width: 768px) {.half {width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; } .second-half {width: 100% !important; margin-top: 20px; } .flow {display: block !important; } ul {padding-top: 40px; } .second-half {display: none; }}","ul {padding-top: 45px;}",".container {margin-inline-start: 0;}","h4.space {font-size: 35px; padding-top: 20px;}"],"settings":{"toy_icon":36,"toy_icon_mobile":21,"toy_text":17,"toy_text_mobile":14,"itb_size":26,"itbt_size":14,"ing":19,"ing_mobile":16}},"related-products":{"type":"related-products","custom_css":["@media only screen and (max-width: 768px) {.prose {color: black; } sale-price.text-subdued {color: #bf5569; font-size: 24px; font-weight: 400; } h2.h3 {font-size: 40px; text-align: left !important; }}","span.product-card__title {text-align: center;}",".prose {text-align: center;}","sale-price.text-subdued {color: #bf5569; font-size: 24px; font-weight: 400;}","price-list.price-list {margin: auto;}"],"settings":{"recommendations_count":4,"products":["allison-wonderland-2","analise-anal-vibe-1","ashley-wand-1","butt-stuff-bundle-1","clean-up-towel-1","debbie-suction-vibe-1","get-wet-set-1","gigi-panty-vibe","juiced-up-lubricant-1","juicy-berry-massage-oil-1","copy-of-lucy-bullet","rayna-two-in-one","suck-blow-gel-1","threesome-bundle-1","vibes-only-gift-card-1","copy-of-vibes-only-sweatshirt"],"full_width":true,"stack_products":false,"show_price":true,"show_description":true,"show_progress_bar":true,"description_length":"120","products_per_row_mobile":"1","text_alignment":"center","products_per_row_desktop":4,"subheading":"","title":"Discover More","content":"","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","product_card_background":"","product_card_text_color":""}},"loox-product-reviews-app-section":{"type":"apps","settings":{"full_width":true,"remove_vertical_spacing":false,"remove_horizontal_spacing":false,"background":"","background_gradient":"","text_color":"","enable_review_integration":true,"review_header_gradient":"linear-gradient(135deg, rgba(255, 194, 102, 1), rgba(255, 163, 26, 1) 100%)","review_header_text_color":"#000000","review_button_background":"#000000","review_button_text_color":"#ffffff"}}},"order":["main","toyfeatures","related-products","loox-product-reviews-app-section"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "b8640a09-8fba-426e-bcad-7aa84ce74963": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{% if product.available == false %}{{ product.metafields.custom.out_of_stock_form }}{% endif %}"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "badges",
+        "price",
+        "rating",
+        "payment_terms",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "b8640a09-8fba-426e-bcad-7aa84ce74963"
+      ],
+      "custom_css": [
+        "h1.product-info__title {text-align: left !important;}",
+        "variant-option-value {display: none;}",
+        ".product-gallery {background: #f8f8f8;}",
+        ".form-control {border: none; background: transparent;}",
+        ".product-info__price {padding-top: 20px;}",
+        "@media only screen and (max-width: 768px) {.product-info__price {width: 100%; } button.button.button--xl {border-radius: 0; } .prose {color: black; }}",
+        ".product-info__price {width: 100%;}",
+        "label.block-swatch {border-radius: 30px; border: 1px solid #bf5569;}",
+        "label.block-swatch span {color: #bf5569;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "thumbnails",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "toyfeatures": {
+      "type": "toyfeatures",
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.half {width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; } .second-half {width: 100% !important; margin-top: 20px; } .flow {display: block !important; } ul {padding-top: 40px; } .second-half {display: none; }}",
+        "ul {padding-top: 45px;}",
+        ".container {margin-inline-start: 0;}",
+        "h4.space {font-size: 35px; padding-top: 20px;}"
+      ],
+      "settings": {
+        "toy_icon": 36,
+        "toy_icon_mobile": 21,
+        "toy_text": 17,
+        "toy_text_mobile": 14,
+        "itb_size": 26,
+        "itbt_size": 14,
+        "ing": 19,
+        "ing_mobile": 16
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.prose {color: black; } sale-price.text-subdued {color: #bf5569; font-size: 24px; font-weight: 400; } h2.h3 {font-size: 40px; text-align: left !important; }}",
+        "span.product-card__title {text-align: center;}",
+        ".prose {text-align: center;}",
+        "sale-price.text-subdued {color: #bf5569; font-size: 24px; font-weight: 400;}",
+        "price-list.price-list {margin: auto;}"
+      ],
+      "settings": {
+        "recommendations_count": 4,
+        "products": [
+          "allison-wonderland-2",
+          "analise-anal-vibe-1",
+          "ashley-wand-1",
+          "butt-stuff-bundle-1",
+          "clean-up-towel-1",
+          "debbie-suction-vibe-1",
+          "get-wet-set-1",
+          "gigi-panty-vibe",
+          "juiced-up-lubricant-1",
+          "juicy-berry-massage-oil-1",
+          "copy-of-lucy-bullet",
+          "rayna-two-in-one",
+          "suck-blow-gel-1",
+          "threesome-bundle-1",
+          "vibes-only-gift-card-1",
+          "copy-of-vibes-only-sweatshirt"
+        ],
+        "full_width": true,
+        "stack_products": false,
+        "show_price": true,
+        "show_description": true,
+        "show_progress_bar": true,
+        "description_length": "120",
+        "products_per_row_mobile": "1",
+        "text_alignment": "center",
+        "products_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Discover More",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "loox-product-reviews-app-section": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "enable_review_integration": true,
+        "review_header_gradient": "linear-gradient(135deg, rgba(255, 194, 102, 1), rgba(255, 163, 26, 1) 100%)",
+        "review_header_text_color": "#000000",
+        "review_button_background": "#000000",
+        "review_button_text_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "toyfeatures",
+    "related-products",
+    "loox-product-reviews-app-section"
+  ]
+}

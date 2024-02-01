@@ -1,5 +1,13 @@
 {
   "sections": {
+    "page_header_TbAzhr": {
+      "type": "page-header",
+      "settings": {
+        "image_banner": "shopify:\/\/shop_images\/aboutimage2.png",
+        "heading": "Contact Us",
+        "subheading": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -41,6 +49,7 @@
     }
   },
   "order": [
+    "page_header_TbAzhr",
     "main",
     "contact"
   ]

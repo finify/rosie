@@ -1012,6 +1012,12 @@ video {
 .pt-5{
   padding-top: 1.25rem;
 }
+.pl-1{
+  padding-left: 0.25rem;
+}
+.pl-2{
+  padding-left: 0.5rem;
+}
 .text-left{
   text-align: left;
 }
@@ -1336,6 +1342,9 @@ a {
   .lg\:grid{
     display: grid;
   }
+  .lg\:contents{
+    display: contents;
+  }
   .lg\:hidden{
     display: none;
   }
@@ -1365,6 +1374,9 @@ a {
   }
   .lg\:grid-cols-1{
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .lg\:flex-row{
+    flex-direction: row;
   }
   .lg\:items-end{
     align-items: flex-end;

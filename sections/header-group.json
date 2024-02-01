@@ -38,40 +38,8 @@
     },
     "header": {
       "type": "header",
-      "blocks": {
-        "3b0a2158-ae1e-4472-8ed6-835d9d5e8d44": {
-          "type": "collection",
-          "settings": {
-            "collection": "extras"
-          }
-        },
-        "3e2b7bbe-d5d5-4576-87a7-ca28ae7a0844": {
-          "type": "collection",
-          "settings": {
-            "collection": "bundles"
-          }
-        },
-        "86b7cd05-a1d1-4025-8e60-b25c9a155c03": {
-          "type": "collection",
-          "settings": {
-            "collection": "gels-lubes"
-          }
-        },
-        "c54412ea-d0df-4506-8278-aad01410eb98": {
-          "type": "collection",
-          "settings": {
-            "collection": "toys"
-          }
-        }
-      },
-      "block_order": [
-        "3b0a2158-ae1e-4472-8ed6-835d9d5e8d44",
-        "3e2b7bbe-d5d5-4576-87a7-ca28ae7a0844",
-        "86b7cd05-a1d1-4025-8e60-b25c9a155c03",
-        "c54412ea-d0df-4506-8278-aad01410eb98"
-      ],
       "custom_css": [
-        "li {margin-bottom: 0px !important;}"
+
       ],
       "settings": {
         "enable_sticky": true,

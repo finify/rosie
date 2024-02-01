@@ -18,10 +18,8 @@ header .menu-wrapper li {
   font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
 .hero {
   background-color: #cccccc;
   background-repeat: no-repeat;
