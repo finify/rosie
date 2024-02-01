@@ -349,13 +349,13 @@ footer .footer__top button {
   margin-left: -100px;
 }
 footer .footer__middle h1 {
-  font-weight: 400;
+  font-weight: 200;
   color: #e9442c;
   font-size: 64px;
   letter-spacing: -3.52px;
   line-height: 56px;
   white-space: nowrap;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
 }
 footer .footer__mobile_middle .accordion {
   cursor: pointer;

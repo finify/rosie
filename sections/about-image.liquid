@@ -1,0 +1,38 @@
+<div class="img-banner lg:px-10 px-0">
+    {%- if section.settings.image != blank -%}
+        {{-
+            section.settings.image
+            | image_url: width: 2024
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600',
+            class:'w-full'
+        -}}
+        {%- else -%}
+        {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+</div>
+
+{% schema %}
+{
+    "name": "about-image",
+    "class":"about-image",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1500 x 1500px .jpg recommended"
+        }
+    ],
+    "presets": [
+        {
+            "name": "about-image"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

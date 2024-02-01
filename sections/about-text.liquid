@@ -1,0 +1,37 @@
+<div class="ourstory lg:text-right text-left flex flex-col lg:items-end items-start lg:px-10 px-4 py-5">
+    <h1 class="lg:text-[50px] text-[30px]">{{ section.settings.heading }}</h1>
+    <h4 class="lg:text-[20pxpx] text-[15px] lg:w-3/5">{{ section.settings.richtext }}</h4>
+</div>
+
+
+{% schema %}
+{
+    "name": "about-text",
+    "class":"about-text",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Designed for one handed use"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Richtext ",
+            "default": "<p>The Vibes Only app's custom controller lets you adjust the intensity (0-100%), pick patterns, toggle stealth mode, and control dual motors vibrators independently.</p>"
+        }
+    ],
+    "presets": [
+        {
+            "name": "about-text"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

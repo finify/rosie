@@ -675,6 +675,9 @@ video {
 .flex-nowrap{
   flex-wrap: nowrap;
 }
+.items-start{
+  align-items: flex-start;
+}
 .items-center{
   align-items: center;
 }
@@ -819,6 +822,14 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+.border-slate-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+.border-slate-800{
+  --tw-border-opacity: 1;
+  border-color: rgb(30 41 59 / var(--tw-border-opacity));
+}
 .\!bg-transparent{
   background-color: transparent !important;
 }
@@ -915,6 +926,14 @@ video {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.px-0{
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .pb-0{
   padding-bottom: 0px;
@@ -1267,6 +1286,9 @@ a {
   .lg\:w-6\/12{
     width: 50%;
   }
+  .lg\:w-3\/5{
+    width: 60%;
+  }
   .lg\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1278,6 +1300,9 @@ a {
   }
   .lg\:grid-cols-5{
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .lg\:items-end{
+    align-items: flex-end;
   }
   .lg\:border{
     border-width: 1px;
@@ -1314,6 +1339,9 @@ a {
   }
   .lg\:text-left{
     text-align: left;
+  }
+  .lg\:text-right{
+    text-align: right;
   }
   .lg\:text-\[1\.5rem\]{
     font-size: 1.5rem;
