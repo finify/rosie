@@ -29,6 +29,7 @@
     },
     "page_header_BmdJqd": {
       "type": "page-header",
+      "disabled": true,
       "settings": {
         "image_banner": "shopify:\/\/shop_images\/aboutimage2.png",
         "heading": "Contact Us",
