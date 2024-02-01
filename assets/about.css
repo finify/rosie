@@ -1,12 +1,12 @@
 .about-greeting__text h1 {
-  font-family: "MADE Bon Voyage";
+  font-family: "MADE Bon Voyage" !important;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.about-greeting__text p {
+.about-greeting__text h4 {
   color: #000;
-  font-family: "Plus Jakarta Sans";
+  font-family: "Plus Jakarta Sans" !important;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

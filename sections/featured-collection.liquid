@@ -54,7 +54,7 @@
             <div class="product-details flex justify-between pt-2">
                 <h1>{{- product.title | capitalize -}}</h1>
                 <h4>
-                  {{- product.price | money -}}
+                  {{- product.price | money_without_trailing_zeros -}}
                </h4>
             </div>
           </div>

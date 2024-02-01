@@ -100,6 +100,17 @@
         "product_card_text_color": ""
       }
     },
+    "image_grid_wzzLkP": {
+      "type": "image-grid",
+      "settings": {
+        "image_left": "shopify:\/\/shop_images\/about1.png",
+        "heading1": "cutlery",
+        "link1": "shopify:\/\/collections\/best-sellers",
+        "image_right": "shopify:\/\/shop_images\/about2.png",
+        "heading2": "Plates",
+        "link2": "shopify:\/\/collections\/best-sellers"
+      }
+    },
     "featured_product_3p4hyf": {
       "type": "featured-product",
       "blocks": {
@@ -427,6 +438,7 @@
   "order": [
     "6104a94a-7479-4070-acbf-5fdb044826bd",
     "303c28e9-381e-4dfb-8e16-ae8165961dd4",
+    "image_grid_wzzLkP",
     "featured_product_3p4hyf",
     "fb6827a2-ccf3-409d-a182-8dfa84b8de00",
     "f0cf6424-e1ef-4346-a38e-e6479eddd261",

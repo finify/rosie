@@ -1,0 +1,103 @@
+<style>
+    .about__item1{
+        background-image:url("{{- section.settings.image_left | image_url: width: 1728 -}}") ;
+      }
+      .about__item2{
+        background-image:url("{{- section.settings.image_right | image_url: width: 1728 -}}") ;
+      }
+</style>
+<div class="about grid lg:grid-cols-2 grid-cols-1 gap-2 py-6 h-auto">
+    <div class="flex flex-col about__item1 bg-[url('/img/about1.png')] h-80 bg-no-repeat bg-cover bg-center justify-end pb-7 bg-gray-600">
+        <div class="about__details text-center">
+            <p>{{- section.settings.heading1 | capitalize -}}</p>
+            <h1>
+                <span class="browse" >Browse</span> <span class="our">Our</span><br> 
+                <span class="cutlerry">{{- section.settings.heading1 | capitalize -}}</span> <span class="collect">Collection</span>
+            </h1>
+            <a href="{{- section.settings.link1 -}}">Browser Collection</a>
+        </div>
+    </div>
+    <div class="flex flex-col about__item2 bg-[url('/img/about2.png')] h-80 bg-no-repeat bg-cover bg-center justify-end pb-7">
+        <div class="about__details text-center">
+            <p>{{ section.settings.heading1 }}</p>
+            <h1><span class="browse">Browse</span> <span class="our">Our</span> <br> <span class="cutlerry">{{- section.settings.heading1 | capitalize -}}</span> <span class="collect">Collection</span></h1>
+            <a href="{{ section.settings.link1 }}">Browser Collection</a>
+        </div>
+    </div>
+</div>
+
+{% comment %} <div class="call-to-action">
+    <div class="section-header flex flex-col text-center py-10 items-center">
+        <h1 class="text-[20px] lg:text-[48px]">{{ section.settings.heading1 }}</h1>
+        <a href="{{ section.settings.link1 }}">{{- section.settings.link1text -}}</a>
+    </div>
+    
+    <div class="call-to-action__image">
+        {% comment %} <img src="img/calltoaction.png" class="w-full" alt=""> {% endcomment %}
+        {%- if section.settings.image_left != blank -%}
+          {{-
+            section.settings.image_left
+            | image_url: width: 2024
+            | image_tag: loading: 'lazy', widths: '300,400,500,600,700,800,1000,1200,1400,1600,1800,2000,2200,2400,2600',
+            class:'w-full'
+          -}}
+        {%- else -%}
+          {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
+        {%- endif -%}
+    </div>
+</div> {% endcomment %}
+
+
+{% schema %}
+{
+    "name": "image-grid",
+    "class":"mobile-flex-left",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_left",
+          "label": "Image Left",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading 1",
+            "default": "cutlery"
+        },
+        {
+            "type": "url",
+            "id": "link1",
+            "label": "Link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_right",
+          "label": "Image right",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "text",
+            "id": "heading2",
+            "label": "Heading 2",
+            "default": "Plates"
+        },
+        {
+            "type": "url",
+            "id": "link2",
+            "label": "Link 2"
+        }
+    ],
+    "presets": [
+        {
+            "name": "image-grid"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

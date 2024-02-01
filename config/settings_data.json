@@ -14,9 +14,9 @@
     "header_text_color": "#2b2b2b",
     "footer_background": "#bf5569",
     "footer_text_color": "#fff",
-    "primary_button_background": "#bf5569",
+    "primary_button_background": "#e9442c",
     "primary_button_text_color": "#ffffff",
-    "secondary_button_background": "#bf5569",
+    "secondary_button_background": "#e9442c",
     "secondary_button_text_color": "#ffffff",
     "product_card_text_color": "#1a1a1a",
     "product_primary_badge_background": "#803cee",
@@ -123,6 +123,14 @@
           "brand7-link": "https:\/\/www.theskimm.com\/shopping\/sex-toys-for-every-person-and-preference",
           "brand8": "shopify:\/\/shop_images\/image_88_1.png",
           "brand8-link": "https:\/\/www.menshealth.com\/sex-women\/g19524731\/romantic-gifts-for-valentines-day\/"
+        }
+      },
+      "main-gift-card": {
+        "type": "main-gift-card",
+        "settings": {
+          "show_qr_code": true,
+          "amount_background": "",
+          "amount_text_color": ""
         }
       }
     },
