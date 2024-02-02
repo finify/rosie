@@ -1,0 +1,59 @@
+<style>
+    .back_text{
+        font-family: "Plus Jakarta Sans", Helvetica!important;
+        font-weight: 600;
+        color: #000000;
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: normal;
+    }
+</style>
+<div class="page-header flex flex-col w-full h-[100px] z-0 justify-end pb-10 px-10 bg-[#ffffff00]">
+    
+</div>
+
+<div class="back flex justify-start items-center p-2 gap-3 border-y-2 border-solid border-[#e9442c4c]">
+    <a href="{{ section.settings.link_url }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="14" viewBox="0 0 21 14" fill="none">
+        <path d="M9.16628 13.8102C9.34822 13.9324 9.58905 14.0003 9.83921 14C10.0884 14.0015 10.3274 13.9295 10.4994 13.8011C10.6809 13.6752 10.7833 13.5025 10.7833 13.3221C10.7833 13.1417 10.6809 12.9689 10.4994 12.8431L3.26217 7.69107H20.0477C20.5737 7.69107 21 7.38758 21 7.01319C21 6.63881 20.5737 6.33531 20.0477 6.33531H3.25939L10.5121 1.15633C10.6936 1.03043 10.796 0.857684 10.796 0.677288C10.796 0.496892 10.6936 0.324144 10.5121 0.19825C10.1404 -0.0660832 9.53806 -0.0660832 9.16628 0.19825L0.278492 6.52517C-0.0928308 6.78983 -0.0928308 7.21859 0.278492 7.48325L9.16628 13.8102Z" fill="black"/>
+        </svg>
+    </a>
+    
+    <a href="{{ section.settings.link_url }}">
+        <h1 class="back_text">BACK TO SHOP</h1>
+    </a>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "Product Page header",
+    "class":"product-page-header",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "url",
+            "id": "link_url",
+            "label": "Bank Link URL",
+            "info": "Link back to shopping."
+        }
+    ],
+    "presets": [
+        {
+            "name": "product-page-header"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

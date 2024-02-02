@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .product__text h1 {
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 600;
   color: #e9442c;
   font-size: 48px;
@@ -29,7 +29,7 @@
   text-align: left;
   outline: none;
   transition: 0.4s;
-  font-family: "Plus Jakarta Sans", Helvetica;
+  font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
   color: #000000;
   font-size: 16px;

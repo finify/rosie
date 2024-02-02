@@ -1,13 +1,12 @@
 .product{
     &__text{
         h1{
-            font-family: "Plus Jakarta Sans", Helvetica;
+            font-family: "Plus Jakarta Sans", Helvetica!important;
             font-weight: 600;
             color: #e9442c;
             font-size: 48px;
             letter-spacing: 0;
             line-height: normal;
-
         }
     }
     &__price{
@@ -38,7 +37,7 @@
             font-size: 15px;
             transition: 0.4s;
 
-            font-family: "Plus Jakarta Sans", Helvetica;
+            font-family: "Plus Jakarta Sans", Helvetica!important;
             font-weight: 400;
             color: #000000;
             font-size: 16px;

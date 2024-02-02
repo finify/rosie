@@ -1,5 +1,11 @@
 {
   "sections": {
+    "product_page_header_KYQCDF": {
+      "type": "product-page-header",
+      "settings": {
+        "link_url": ""
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -57,10 +63,10 @@
           "settings": {
             "show_payment_button": false,
             "show_gift_card_recipient": false,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
+            "atc_button_background": "#f83a3a",
+            "atc_button_text_color": "#ffffff",
+            "payment_button_background": "#f83a3a",
+            "payment_button_text_color": "#ffffff"
           }
         },
         "b8640a09-8fba-426e-bcad-7aa84ce74963": {
@@ -199,6 +205,7 @@
     }
   },
   "order": [
+    "product_page_header_KYQCDF",
     "main",
     "toyfeatures",
     "related-products",
