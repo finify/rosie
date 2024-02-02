@@ -39,7 +39,9 @@
     "social_twitter": "https:\/\/twitter.com\/Vibesonly",
     "social_instagram": "https:\/\/www.instagram.com\/vibesonly\/",
     "favicon": "shopify:\/\/shop_images\/f1-5.png",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo-black.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#ffffff",
     "checkout_accent_color": "#bf5569",
     "checkout_button_color": "#ffffff",
     "sections": {
