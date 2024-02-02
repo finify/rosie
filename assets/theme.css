@@ -7751,7 +7751,7 @@ split-lines {
 
 .header__cart-count {
   top: -0.3125rem;
-  position: absolute;
+  position: sticky;
 }
 
 .header__cart-count:not(

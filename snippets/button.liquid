@@ -33,7 +33,7 @@ Supported variables
   assign style = style | default: settings.button_style
 
   capture class_attribute
-    echo 'button'
+    echo 'w-full bg-[#e9442c] text-white py-4 rounded-full text-center'
 
     if size != blank and size != 'base'
       echo ' button--' | append: size

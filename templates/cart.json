@@ -1,1 +1,51 @@
-{"sections":{"main":{"type":"main-cart","blocks":{"totals":{"type":"totals","settings":{"show_order_weight":false,"show_shipping_text":true}},"cart_note":{"type":"cart_note","settings":{}},"checkout_button":{"type":"checkout_button","settings":{}}},"block_order":["totals","cart_note","checkout_button"],"custom_css":["@media only screen and (max-width: 600px) {}",".container,.cart {overflow: hidden !important;}","main#main {overflow-x: hidden !important;}",".container {margin-inline-start: auto;}"],"settings":{"show_shipping_estimator":false,"show_payment_icons":true}}},"order":["main"]}
+{
+  "sections": {
+    "product_page_header_hFih7b": {
+      "type": "product-page-header",
+      "settings": {
+        "link_url": ""
+      }
+    },
+    "main": {
+      "type": "main-cart",
+      "blocks": {
+        "totals": {
+          "type": "totals",
+          "settings": {
+            "show_order_weight": false,
+            "show_shipping_text": true
+          }
+        },
+        "cart_note": {
+          "type": "cart_note",
+          "settings": {
+          }
+        },
+        "checkout_button": {
+          "type": "checkout_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "totals",
+        "cart_note",
+        "checkout_button"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 600px) {}",
+        ".container,.cart {overflow: hidden !important;}",
+        "main#main {overflow-x: hidden !important;}",
+        ".container {margin-inline-start: auto;}"
+      ],
+      "settings": {
+        "show_shipping_estimator": false,
+        "show_payment_icons": true
+      }
+    }
+  },
+  "order": [
+    "product_page_header_hFih7b",
+    "main"
+  ]
+}

@@ -3,7 +3,7 @@
     "product_page_header_KYQCDF": {
       "type": "product-page-header",
       "settings": {
-        "link_url": ""
+        "link_url": "shopify:\/\/collections"
       }
     },
     "main": {
@@ -74,6 +74,13 @@
           "settings": {
             "liquid": "{% if product.available == false %}{{ product.metafields.custom.out_of_stock_form }}{% endif %}"
           }
+        },
+        "collapsible_text_XUkxeM": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "Title",
+            "content": "<p>Share some content to your customers about your products.<\/p>"
+          }
         }
       },
       "block_order": [
@@ -86,7 +93,8 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "b8640a09-8fba-426e-bcad-7aa84ce74963"
+        "b8640a09-8fba-426e-bcad-7aa84ce74963",
+        "collapsible_text_XUkxeM"
       ],
       "custom_css": [
         "h1.product-info__title {text-align: left !important;}",

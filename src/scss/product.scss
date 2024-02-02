@@ -8,6 +8,9 @@
             letter-spacing: 0;
             line-height: normal;
         }
+        h4{
+          font-family: "Plus Jakarta Sans", Helvetica!important;
+        }
     }
     &__price{
         input[type=number]::-webkit-inner-spin-button {
@@ -24,6 +27,13 @@
         }
         button{
             font-size: 20px;
+        }
+
+        .amount{
+          font-family: "Plus Jakarta Sans", Helvetica!important;
+        }
+        .stock-check{
+          font-family: "Plus Jakarta Sans", Helvetica!important;
         }
     }
     &__accordion{

@@ -50,7 +50,7 @@
     }}
 </style>
 
-<div class="product-custom-container">
+ {% comment %} <div class="product-custom-container">
   <div class="product">
     {%- if product.media.size > 0 -%}
       {%- render 'product-gallery', product: product -%}
@@ -58,6 +58,112 @@
 
     {%- render 'product-info', product: product, update_url: true, horizontal: true -%}
   </div>
+</div>  {% endcomment %}
+
+{%- capture product_form_id -%}product-form-{{ product.id }}-{{ section.id }}{%- endcapture -%}
+  {% assign price_block = section.blocks | where: 'type', 'price' %}
+
+  {%- assign variant = product.selected_or_first_available_variant -%}
+<div class="product grid lg:grid-cols-2 grid-cols-1 mt-10">
+    <div class="product__image">
+      {%- if product.media.size > 0 -%}
+      {%- render 'product-gallery', product: product -%}
+    {%- endif -%}
+    </div>
+    <div class="product__details lg:px-20 px-5">
+        <div class="product__text">
+            <h1>{{ product.title }}</h1>
+            <h4 class="mt-2">
+              {%- if product.description != blank -%}
+                {{- product.description -}}
+              {%- endif -%}
+             </h4>
+        </div>
+        <div class="product__price grid grid-rows-2 grid-flow-col mt-3">
+            <div class="col-span-1 row-span-1 border border-solid border-[#e9442c4c] p-5 flex justify-center gap-2">
+              <quantity-selector class="quantity-selector">
+                <button type="button" aria-label="{{ 'product.quantity.decrease_quantity' | t }}">-</button>
+                <input type="number" type="number" inputmode="numeric" class="w-[35px] h-[35px] text-center bg-transparent" value="1" form="{{ product_form_id }}"
+                size="2" autocomplete="off" is="quantity-input" id="{{ product_form_id }}-quantity" name="quantity">
+                <button type="button" aria-label="{{ 'product.quantity.increase_quantity' | t }}">+</button>
+                </quantity-selector>
+            </div>
+            <div class="col-span-1 row-span-1 border border-solid border-[#e9442c4c] p-5 flex justify-center items-center gap-2">
+              {% if variant.available %}
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.626129" y="0.239746" width="6.25397" height="6.25397" rx="3.12698" fill="#5AFF92"/>
+                </svg>
+                <h1 class="stock-check">In Stock</h1>
+              {% else %}
+                <svg width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.626129" y="0.239746" width="6.25397" height="6.25397" rx="3.12698" fill="#5AFF92"/>
+                </svg>
+                <h1 class="stock-check">Out Of Stock</h1>
+              {% endif %}
+                
+            </div>
+            <div class="row-span-2 col-span-10 border border-solid border-[#e9442c4c] flex flex-col justify-end pb-2 pr-2">
+                <div class="text-wrapper flex flex-col text-right">
+                  
+                    <h1 class="amount text-[50px] lg:text-[40px] text-right" {% if product_form_id %}
+                    form="{{ product_form_id }}"{% endif %}>
+                  
+                    {%- if settings.currency_code_enabled -%}
+                    {{- variant.price | money_without_trailing_zeros -}}
+                    {%- else -%}
+                      {{- variant.price | money_without_trailing_zeros  -}}
+                    {%- endif -%}
+                  </h1>
+                    <p class="text-[15px] lg:text-[15px]">Inclusive of taxes & duties worldwide</p>
+                </div>
+            </div>
+        </div>
+        <div class="product__button mt-5">
+          {% assign buy_button_block = section.blocks | where: 'type', 'buy_buttons' %}
+          {%- assign main_form_exists = true -%}
+            {%- if request.page_type != 'password' -%}
+            {% comment %} <button class="w-full bg-[#e9442c] text-white py-4 rounded-full text-center">ADD TO BASKET</button> {% endcomment %}
+            {%- render 'buy-buttons',
+              product: product,
+              form_id: product_form_id,
+              show_payment_button: buy_button_block.settings.show_payment_button,
+              show_gift_card_recipient: buy_button_block.settings.show_gift_card_recipient,
+              atc_button_background: buy_button_block.settings.atc_button_background,
+              atc_button_text_color: buy_button_block.settings.atc_button_text_color,
+              payment_button_background: buy_button_block.settings.payment_button_background,
+              payment_button_text_color: buy_button_block.settings.payment_button_text_color
+            -%}
+
+            <h1 class="w-full text-center mt-3">WORLDWIDE DELIVERY</h1>
+          {%- endif -%}
+
+            {%- unless main_form_exists -%}
+              {%- form 'product', product, id: product_form_id, hidden: true -%}
+                <input type="hidden" disabled name="id" value="{{ product.selected_or_first_available_variant.id }}">
+              {%- endform -%}
+            {%- endunless -%}
+        </div>
+        <div class="product__accordion mt-4">
+            <div class="accordion_wrapper">
+
+                <button class="accordion my-3 !bg-transparent">Product Details</button>
+                <div class="panel !bg-transparent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <button class="accordion my-3 !bg-transparent">EACH PLATE IS UNIQUE</button>
+                <div class="panel !bg-transparent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+
+                <button class="accordion my-3 !bg-transparent">DURABILITY</button>
+                <div class="panel !bg-transparent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 {%- assign buy_buttons_block = section.blocks | where: 'type', 'buy_buttons' | first -%}
