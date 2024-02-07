@@ -70,10 +70,7 @@
 
 <product-card
   handle="{{ product.handle | escape }}"
-  {% if reveal %}
-    reveal-js
-  {% endif %}
-  {% render 'surface', class: card_class, background: card_background, text_color: card_text_color %}
+  class="product-car p-2 border border-solid border-[#e9442c4c]"
 >
   {%- comment -%}
     --------------------------------------------------------------------------------------------------------------------
@@ -194,7 +191,7 @@
     --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
 
-  <div class="product-card__info {% if text_alignment == 'center' %}product-card__info--center{% endif %}">
+  <div class="product-card__info !p-0 {% if text_alignment == 'center' %}product-card__info--center{% endif %}">
     {%- if show_vendor and product.vendor != blank -%}
       {%- if show_rating and text_alignment != 'center' -%}
         <div class="rating-with-text w-full">
@@ -231,12 +228,21 @@
           {%- endif -%}
         </div>
       {%- else -%}
-        <span class="product-card__title"
+        {% comment %} <span class="product-card__title"
           ><a href="{{ product.url }}" class="bold" style="color:{{ product_title_color }};" data-instant>
             {{- product.title -}}
           </a></span
-        >
+        > {% endcomment %}
       {%- endif -%}
+
+      <div class="product-details flex justify-between pt-2">
+        <a href="{{ product.url }}" class="bold" style="color:{{ product_title_color }};" data-instant>
+          {{- product.title | capitalize -}}
+        </a>
+          <span class="text-[#BF5569] bold !font-['Plus Jakarta Sans']">
+            {{- product.price | money_without_trailing_zeros -}}
+        </span>
+      </div>
 
       {% if show_product_description %}
         <div class="product-info__description">
@@ -247,7 +253,7 @@
       {% endif %}
 
       {% if show_product_price %}
-        {%- render 'price-list', product: product, text_alignment: text_alignment, color: product_price_color -%}
+        {% comment %} {%- render 'price-list', product: product, text_alignment: text_alignment, color: product_price_color -%} {% endcomment %}
       {% endif %}
 
       {% if show_product_button %}
@@ -347,3 +353,5 @@
     {%- endif -%}
   </div>
 </product-card>
+
+

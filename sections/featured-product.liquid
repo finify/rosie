@@ -40,14 +40,14 @@
 </style>
 
 {%- assign product = section.settings.product -%}
-<div class="top-products grid lg:grid-cols-2 grid-cols-1 my-6 h-auto">
+<div class="top-products grid lg:grid-cols-2 grid-cols-1 my-6">
     <div class="flex flex-col about__item justify-center bg-[#262626] lg:px-10 px-4 pt-10 lg:pb-10 pb-0">
         <div class="top-products__details text-left border border-solid border-[#e9442c4c] px-10 h-full">
             <div class="top-products__text flex flex-col justify-center text-left h-full lg:py-0 py-6 ">
-                <p>TOP PRODUCT</p>
+                <p class="text-slate-400">TOP PRODUCT</p>
                 <h1 class="mt-2 text-[20px] lg:text-[35px]">{{- product.title | capitalize -}}</h1>
-                <h4 class="mt-2 text-[14px] lg:text-[16px]">{{- product.description -}}</h4>
-                <a href="{{- product.url -}}" class="mt-2">Shop Now</a>
+                <h4 class="w-11/12 mt-2 text-[14px] lg:text-[16px]">{{- product.description -}}</h4>
+                <a href="{{- product.url -}}" class="mt-5">Shop Now</a>
             </div>
         </div>
     </div>

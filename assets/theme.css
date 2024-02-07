@@ -3649,8 +3649,8 @@ model-media .shopify-model-viewer-ui {
     :lang(ur),
     :lang(yi)
   ) {
-  border-top-left-radius: var(--rounded-sm);
-  border-top-right-radius: var(--rounded-sm);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .product-card__image:is(

@@ -118,7 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="product__button mt-5">
+        <div class="product-info__buy-buttons product__button mt-5">
           {% assign buy_button_block = section.blocks | where: 'type', 'buy_buttons' %}
           {%- assign main_form_exists = true -%}
             {%- if request.page_type != 'password' -%}

@@ -7,21 +7,21 @@
       }
 </style>
 <div class="about grid lg:grid-cols-2 grid-cols-1 gap-2 py-6 h-auto">
-    <div class="flex flex-col about__item1 bg-[url('/img/about1.png')] h-80 bg-no-repeat bg-cover bg-center justify-end pb-7 bg-gray-600">
+    <div class="flex flex-col about__item1 bg-[url('/img/about1.png')] h-[400px] bg-no-repeat bg-cover bg-center justify-end pb-7 bg-gray-600 bg-blend-overlay">
         <div class="about__details text-center">
-            <p>{{- section.settings.heading1 | capitalize -}}</p>
+            <p class="!text-lg">{{- section.settings.heading1 | capitalize -}}</p>
             <h1>
                 <span class="browse" >Browse</span> <span class="our">Our</span><br> 
                 <span class="cutlerry">{{- section.settings.heading1 | capitalize -}}</span> <span class="collect">Collection</span>
             </h1>
-            <a href="{{- section.settings.link1 -}}">Browser Collection</a>
+            <a class="text-lg" href="{{- section.settings.link1 -}}">Browser Collection</a>
         </div>
     </div>
-    <div class="flex flex-col about__item2 bg-[url('/img/about2.png')] h-80 bg-no-repeat bg-cover bg-center justify-end pb-7">
+    <div class="flex flex-col about__item2 bg-[url('/img/about2.png')] h-[400px] bg-no-repeat bg-cover bg-center justify-end pb-7">
         <div class="about__details text-center">
-            <p>{{ section.settings.heading1 }}</p>
+            <p class="!text-lg">{{ section.settings.heading1 }}</p>
             <h1><span class="browse">Browse</span> <span class="our">Our</span> <br> <span class="cutlerry">{{- section.settings.heading1 | capitalize -}}</span> <span class="collect">Collection</span></h1>
-            <a href="{{ section.settings.link1 }}">Browser Collection</a>
+            <a class="text-lg" href="{{ section.settings.link1 }}">Browser Collection</a>
         </div>
     </div>
 </div>

@@ -8,10 +8,14 @@
 //     line-height: normal;
 //   }
 @font-face {
-    font-family: BonVoyage;
-    src: url(MADE.otf);
+    font-family: BonVoyage Regular;
+    src: url(MADERegular.otf);
  }
  
+ @font-face {
+    font-family: BonVoyagethin;
+    src: url(MADEThin.otf);
+ }
 
 header{
     .menu-wrapper{
@@ -114,15 +118,14 @@ header{
     background-size: cover;
 
     h1{
-        font-weight: 600;
-        font-style: italic;
+        font-weight: 400;
         color: #ffffff;
         letter-spacing: 0;
         line-height: normal;
-        font-family: "Plus Jakarta Sans", Helvetica;  
+        font-family: BonVoyagethin, Helvetica!important;  
     }
     p{
-        font-family: "Plus Jakarta Sans", Helvetica;
+        font-family: "Plus Jakarta Sans", Helvetica!important;
         font-weight: 400;
         color: #ffffff;
         letter-spacing: 0;
@@ -143,7 +146,7 @@ header{
             line-height: normal;
         }
         h1{
-            font-family: BonVoyage, Helvetica !important;
+            font-family: BonVoyagethin, Helvetica !important;
             font-weight: 400;
             color: #000000;
             font-size: 48px;
@@ -233,7 +236,7 @@ header{
             font-family: "Plus Jakarta Sans", Helvetica!important;
             font-weight: 300;
             font-size: 16px;
-            color: #ffffff;
+            // color: #ffffff;
             letter-spacing: 0;
             line-height: normal; 
         }
