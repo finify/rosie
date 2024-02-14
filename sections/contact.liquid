@@ -16,8 +16,8 @@
 </style>
 
 <div class="contact lg:p-10 p-5">
-        <div class="contact__wrapper bg-[#fff]  grid lg:grid-cols-2 grid-cols-1">
-            <div class="contact__text p-7">
+        <div class="contact__wrapper bg-[#fff]  grid lg:grid-cols-2 grid-cols-1 border border-solid border-[#e9442c4c] animate__animated animate__fadeInRight animate__delay-2s">
+            <div class="contact__text p-7 border border-solid border-[#e9442c4c]">
                 <div class="contact__textwrap">
                     <h1 class="lg:text-[50px] text-[25px]">{{- section.settings.title -}}</h1>
                     <h4 class="lg:text-[20px] text-[15px]">{{- section.settings.content -}}</h4>
@@ -34,62 +34,64 @@
               {%- capture content -%}{{ form.errors.translated_fields[form.errors.first] | capitalize }} {{ form.errors.messages[form.errors.first] }}{%- endcapture -%}
               {%- render 'banner', status: 'error', content: content -%}
             {%- endif -%}
-            <div class="contact__form grid grid-cols-2 lg:p-7 p-0">
-                <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
+            <div class="contact__form lg:p-7 p-0 border border-solid border-[#e9442c4c]">
+              <div class="border border-solid border-[#e9442c4c] grid grid-cols-2 ">
+                  <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
+                      
+                    {%- capture label -%}{{ 'contact.form.first_name'| t}}{%- endcapture -%}
+                      {%- render 'inputnew',
+                        type: 'text',
+                        name: 'contact[first_name]',
+                        label: label,
+                        value: customer.first_name,
+                        required: true,
+                        autocomplete: 'first_name'
+                      -%}
+                  </div>
+                  <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
+
+                    {%- capture label -%}{{ 'contact.form.last_name'| t}}{%- endcapture -%}
+                      {%- render 'inputnew',
+                        type: 'text',
+                        name: 'contact[last_name]',
+                        label: label,
+                        value: customer.last_name,
+                        required: true,
+                        autocomplete: 'last_name'
+                      -%}
+                  </div>
+                  <div  class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
+
+                    {%- capture label -%} Order Purchase(Optional){%- endcapture -%}
+                      {%- render 'inputnew',
+                        type: 'text',
+                        name: 'contact[order_purchase]',
+                        label: label,
+                        required: false,
+                        autocomplete: 'order'
+                      -%}
+                  </div>
+                  <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
                     
-                  {%- capture label -%}{{ 'contact.form.first_name'| t}}{%- endcapture -%}
-                    {%- render 'inputnew',
-                      type: 'text',
-                      name: 'contact[first_name]',
-                      label: label,
-                      value: customer.first_name,
-                      required: true,
-                      autocomplete: 'first_name'
-                    -%}
-                </div>
-                <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
-
-                  {%- capture label -%}{{ 'contact.form.last_name'| t}}{%- endcapture -%}
-                    {%- render 'inputnew',
-                      type: 'text',
-                      name: 'contact[last_name]',
-                      label: label,
-                      value: customer.last_name,
-                      required: true,
-                      autocomplete: 'last_name'
-                    -%}
-                </div>
-                <div  class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
-
-                  {%- capture label -%} Order Purchase(Optional){%- endcapture -%}
-                    {%- render 'inputnew',
-                      type: 'text',
-                      name: 'contact[order_purchase]',
-                      label: label,
-                      required: false,
-                      autocomplete: 'order'
-                    -%}
-                </div>
-                <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
-                   
-                  {%- capture label -%}{{ 'contact.form.email' | t }}{%- endcapture -%}
-                    {%- render 'inputnew',
-                      type: 'email',
-                      name: 'contact[email]',
-                      label: label,
-                      value: customer.email,
-                      required: true,
-                      autocomplete: 'email'
-                    -%}
-                </div>
-                <div class="row-span-3 col-span-2 border border-solid border-[#e9442c4c]">
-                  {%- capture label -%}{{ 'contact.form.message' | t }}{%- endcapture -%}
-                    {%- render 'input', 
-                      name: 'contact[body]', 
-                      label: label, 
-                      multiline: 10, 
-                      required: true 
-                    -%}
+                    {%- capture label -%}{{ 'contact.form.email' | t }}{%- endcapture -%}
+                      {%- render 'inputnew',
+                        type: 'email',
+                        name: 'contact[email]',
+                        label: label,
+                        value: customer.email,
+                        required: true,
+                        autocomplete: 'email'
+                      -%}
+                  </div>
+                  <div class="row-span-3 col-span-2 border border-solid border-[#e9442c4c]">
+                    {%- capture label -%}{{ 'contact.form.message' | t }}{%- endcapture -%}
+                      {%- render 'input', 
+                        name: 'contact[body]', 
+                        label: label, 
+                        multiline: 10, 
+                        required: true 
+                      -%}
+                  </div>
                 </div>
                 <div class="row-span-3 col-span-2">
                     <div class="contact__form-footer">

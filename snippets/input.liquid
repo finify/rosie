@@ -43,7 +43,7 @@ Supported variables
   {%- if multiline != blank -%}
     <textarea id="{{ id }}" class="textarea is-floating" is="resizable-textarea" name="{{ name }}" placeholder=" " rows="{{ multiline }}" {{ optional_attributes }}>{{- value -}}</textarea>
   {%- else -%}
-    <input id="{{ id }}" class="rounded-full" type="{{ type | default: 'text' }}" {% if type == 'email' or type == 'tel' %}dir="ltr"{% endif %} name="{{ name }}" placeholder="" {{ optional_attributes }}>
+    <input id="{{ id }}" class="rounded-full w-full" type="{{ type | default: 'text' }}" {% if type == 'email' or type == 'tel' %}dir="ltr"{% endif %} name="{{ name }}" placeholder="{{ placeholder }}" {{ optional_attributes }}>
   {%- endif -%}
 
   {%- if show_max_characters_count and maxlength > 0 -%}

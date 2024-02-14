@@ -8,7 +8,7 @@
 //     line-height: normal;
 //   }
 @font-face {
-    font-family: BonVoyage Regular;
+    font-family: BonVoyageRegular;
     src: url(MADERegular.otf);
  }
  
@@ -16,6 +16,54 @@
     font-family: BonVoyagethin;
     src: url(MADEThin.otf);
  }
+ //general style
+ .hover-underline-white {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-white::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-white:hover::after {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
+
+  .hover-underline-color {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-color::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(1);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e9442c;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-color:hover::after {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+  }
 
 header{
     .menu-wrapper{
@@ -80,7 +128,6 @@ header{
     .text-wrapper-shop {
         font-weight: 600;
         color: #ffffff;
-        font-size: 16px;
         letter-spacing: 0;
         line-height: normal;
         position: absolute;
@@ -185,7 +232,6 @@ header{
     }
 }
 
-
 .about{
     &__details{
         p{
@@ -284,7 +330,7 @@ header{
             line-height: normal;
         }
         h1{
-            font-family: BonVoyage, Helvetica;
+            font-family: BonVoyagethin, Helvetica;
             font-weight: 400;
             color: #000000;
             font-size: 48px;
@@ -335,7 +381,7 @@ header{
             line-height: normal;
         }
         h1{
-            font-family: BonVoyage, Helvetica!important;
+            font-family: BonVoyagethin, Helvetica!important;
             font-weight: 400;
             color: #000000;
             letter-spacing: 0;
@@ -364,7 +410,7 @@ header{
             line-height: normal;
         }
         h1{
-            font-family: BonVoyage, Helvetica;
+            font-family: BonVoyagethin, Helvetica;
             font-weight: 400;
             color: #000000;
             letter-spacing: 0;
@@ -400,9 +446,8 @@ footer{
             white-space: nowrap;
             opacity: 0.4;
         }
-
         input{
-            width: 100%;
+            max-width: 100%!important;
             padding: 10px;
             background-color: #0e0e0e;
             color:white;
@@ -412,8 +457,6 @@ footer{
             border:none;
             outline: none;
         }
-
-
         button{
             align-items: center;
             justify-content: center;
@@ -421,7 +464,7 @@ footer{
             position: absolute;
             background-color: #e9442c;
             border-radius: 46px;
-            margin-left: -100px;
+            margin-left: -93px;
         }
     }
     .footer__middle{

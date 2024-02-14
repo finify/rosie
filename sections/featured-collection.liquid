@@ -30,6 +30,15 @@
       --product-list-carousel-item-width: calc(var(--container-inner-width) / {{ section.settings.products_per_row_desktop }} - (var(--product-list-column-gap) / {{ section.settings.products_per_row_desktop }} * {{ section.settings.products_per_row_desktop | minus: 1 }}));
     }
   }
+
+  .product-car:last-child{
+    display:none;
+  }
+  @media screen and (max-width: 640px) {
+    .product-car:last-child{
+      display:block;
+    }
+  }
 </style>
 
 {%- assign products = section.settings.products | default: section.settings.collection.products -%}
@@ -37,10 +46,10 @@
     <div class="section-header flex flex-col text-center py-5 items-center">
         <p>{{- section.settings.title -}}</p>
         <h1>{{- section.settings.subheading -}}</h1>
-        <a href="{{- section.settings.collection.url -}}">See more</a>
+        <a class="hover-underline-color" href="{{- section.settings.collection.url -}}">See more</a>
     </div>
     
-    <div class="products grid lg:grid-cols-3 grid-cols-2">
+    <div class="products grid lg:grid-cols-3 grid-cols-2 border border-solid border-[#e9442c4c]">
       {%- for product in products limit: section.settings.products_count -%}
         <a href="{{- product.url -}}" class="product-car p-3 border border-solid border-[#e9442c4c]">
           <div >

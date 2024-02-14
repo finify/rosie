@@ -1,13 +1,15 @@
 {
   "sections": {
-    "product_page_header_LHkFAM": {
-      "type": "product-page-header",
+    "collection_header_DByU9d": {
+      "type": "collection-header",
       "settings": {
-        "link_url": "\/"
+        "heading": "Page",
+        "subheading": "sub heading"
       }
     },
     "banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
@@ -50,7 +52,7 @@
     }
   },
   "order": [
-    "product_page_header_LHkFAM",
+    "collection_header_DByU9d",
     "banner",
     "main"
   ]

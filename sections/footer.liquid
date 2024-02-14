@@ -27,13 +27,13 @@
                           {% comment %} {%- capture style -%}max-width: {{ block.settings.image_width }}px{%- endcapture -%} {% endcomment %}
                           {{-
                             block.settings.image
-                            | image_url: width: 100
+                            | image_url: width: 2000
                             | image_tag: loading: 'lazy', sizes: sizes, widths: widths, class: 'lg:w-4/5 w-1/2'
                           -}}
                         {%- endif -%}
                           {% comment %} <img src="img/logo.png" class="w-1/2" alt=""> {% endcomment %}
                       </div>
-                      <div class="footer__subscribe col-span-2 lg:border lg:border-solid border-none border-stone-800 !lg:px-5 px-1 flex flex-col justify-center pl-10">
+                      <div class="footer__subscribe col-span-2 lg:border lg:border-solid border-none border-stone-800 !lg:px-5 px-1 flex flex-col justify-center pl-1 lg:pl-10">
                           {%- if block.settings.title != blank -%}
                           <h1 class="text-[20px] lg:text-[1.5rem]">{{- block.settings.title | escape -}}</h1>
                           {%- endif -%}
@@ -42,7 +42,7 @@
                           {%- endif -%}
                       </div>
                       <div class="footer__form col-span-2 lg:border lg:border-solid border-none border-stone-800 lg:p-5 lg:py-0 py-3 p-1 flex flex-col justify-center">
-                        {%- form 'customer', id: 'footer-newsletter', class: 'footer__newsletter-form form' -%}
+                        {%- form 'customer', id: 'footer-newsletter', class: 'footer__newsletter-form form max-w-full' -%}
                           {%- if form.posted_successfully? -%}
                             {%- capture success_message -%}{{ 'general.newsletter.subscribed_successfully' | t }}{%- endcapture -%}
                             {%- render 'banner', content: success_message, status: 'success' -%}
@@ -58,6 +58,7 @@
                             {%- render 'input',
                               name: 'contact[email]',
                               label: label,
+                              placeholder: 'Email',
                               type: 'email',
                               required: true,
                               autocomplete: 'email',
@@ -77,23 +78,25 @@
         <div class="footer__middle lg:grid hidden lg:grid-cols-3 grid-cols-1">
             <div class="footer__about lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>About</h1>
-                <ul class="mt-10 flex flex-col gap-2">
+                <ul class="flex flex-col gap-2 !pt-7">
                     <li><a href="#">Our story</a></li>
                     <li><a href="#">Affiliates</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer__shop lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>Shop</h1>
-                <ul class="mt-10 flex flex-col gap-2">
+                <ul class="flex flex-col gap-2 !pt-7">
                     <li><a href="#">Products</a></li>
                     <li><a href="#">collections</a></li>
                 </ul>
             </div>
             <div class="footer__support lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>Support</h1>
-                <ul class="mt-10 flex flex-col gap-2">
+                <ul class="flex flex-col gap-2 !pt-7">
                     <li><a href="#">Contact us</a></li>
                     <li><a href="#">General Enquiry</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
         </div>
@@ -126,16 +129,12 @@
       
         </div>
 
-        <div class="footer__bottom grid lg:grid-cols-3 grid-cols-1 mt-2 lg:text-left text-center">
-            <div class="px-10">
-                <a href="#">Privacy Policy</a>
-            </div>
+        <div class="footer__bottom flex justify-center mt-2 lg:text-left text-center">
+           
             <div class="px-10">
                 <a href="#">2023 Rosies Essentials</a>
             </div>
-            <div class="px-10">
-                <a href="#">Terms of service</a>
-            </div>
+          
             
         </div>
     </div>

@@ -35,13 +35,15 @@
   }
 
 
+
+
   .hero{
     background-image:url("{{- section.settings.image | image_url: width: 1728 -}}") ;
   }
 </style>
 {% comment %} {%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%} {% endcomment %}
 
-  <div class="hero flex flex-col w-full !h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%]">
+<div class="hero flex flex-col w-full h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%] animate__animated animate__fadeInUp animate__delay-2s bg-scroll">
   <div class="text-wrapper flex flex-col">
       <div class="elevate-your lg:text-[16px] text-[13px]">ELEVATE YOUR CULINARY EXPERIENCE</div>
       <p class="p text-white">
@@ -49,12 +51,13 @@
           <span class="text-wrapper-2 lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">To</span>
           <span class="span lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">Your<br /></span>
           <span class="text-wrapper-3 lg:text-[64px] text-[45px] lg:leading-[65px] leading-[40px]">Dream kitchen</span>
+
       </p>
-      <div class="frame-2 flex flex-col-reverse mt-4 gap-x-2">
-          <div class="text-wrapper-shop leading-3">Shop Now</div>
-          <div class="rectangle mt-2"></div>
+      <div class="frame-2 flex flex-col-reverse mt-6 gap-x-2">
+          <div class="text-wrapper-shop leading-3 lg:text-[20px] mt-4 hover-underline-white">Shop Now</div>
+          {% comment %} <div class="rectangle mt-4"></div> {% endcomment %}
       </div>
-  </div>
+  </div>  
   
 </div>
 

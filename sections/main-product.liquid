@@ -72,14 +72,14 @@
     </div>
     <div class="product__details lg:px-20 px-5">
         <div class="product__text">
-            <h1>{{ product.title }}</h1>
+            <h1 class="py-3">{{ product.title | capitalize}}</h1>
             <h4 class="mt-2">
               {%- if product.description != blank -%}
                 {{- product.description -}}
               {%- endif -%}
              </h4>
         </div>
-        <div class="product__price grid grid-rows-2 grid-flow-col mt-3">
+        <div class="product__price grid grid-rows-2 grid-flow-col mt-10">
             <div class="col-span-1 row-span-1 border border-solid border-[#e9442c4c] p-5 flex justify-center gap-2">
               <quantity-selector class="quantity-selector">
                 <button type="button" aria-label="{{ 'product.quantity.decrease_quantity' | t }}">-</button>
@@ -100,25 +100,23 @@
                 </svg>
                 <h1 class="stock-check">Out Of Stock</h1>
               {% endif %}
-                
+            
             </div>
             <div class="row-span-2 col-span-10 border border-solid border-[#e9442c4c] flex flex-col justify-end pb-2 pr-2">
                 <div class="text-wrapper flex flex-col text-right">
-                  
-                    <h1 class="amount text-[50px] lg:text-[40px] text-right" {% if product_form_id %}
+                    <h1 class="amount text-[30px] lg:text-[40px] text-right" {% if product_form_id %}
                     form="{{ product_form_id }}"{% endif %}>
-                  
                     {%- if settings.currency_code_enabled -%}
                     {{- variant.price | money_without_trailing_zeros -}}
                     {%- else -%}
                       {{- variant.price | money_without_trailing_zeros  -}}
                     {%- endif -%}
                   </h1>
-                    <p class="text-[15px] lg:text-[15px]">Inclusive of taxes & duties worldwide</p>
+                    <p class="text-[12px] lg:text-[15px]">Inclusive of taxes & duties worldwide</p>
                 </div>
             </div>
         </div>
-        <div class="product-info__buy-buttons product__button mt-5">
+        <div class="product-info__buy-buttons product__button mt-7">
           {% assign buy_button_block = section.blocks | where: 'type', 'buy_buttons' %}
           {%- assign main_form_exists = true -%}
             {%- if request.page_type != 'password' -%}
@@ -134,7 +132,7 @@
               payment_button_text_color: buy_button_block.settings.payment_button_text_color
             -%}
 
-            <h1 class="w-full text-center mt-3">WORLDWIDE DELIVERY</h1>
+            <h1 class="w-full text-center mt-5">WORLDWIDE DELIVERY</h1>
           {%- endif -%}
 
             {%- unless main_form_exists -%}
@@ -145,7 +143,6 @@
         </div>
         <div class="product__accordion mt-4">
             <div class="accordion_wrapper">
-
                 <button class="accordion my-3 !bg-transparent">Product Details</button>
                 <div class="panel !bg-transparent">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>

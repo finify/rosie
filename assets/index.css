@@ -1,12 +1,60 @@
 @charset "UTF-8";
 @font-face {
-  font-family: BonVoyage Regular;
+  font-family: BonVoyageRegular;
   src: url(MADERegular.otf);
 }
 @font-face {
   font-family: BonVoyagethin;
   src: url(MADEThin.otf);
 }
+.hover-underline-white {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-white::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-white:hover::after {
+  transform: scaleX(0);
+  transform-origin: bottom left;
+}
+
+.hover-underline-color {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-color::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(1);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #e9442c;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-color:hover::after {
+  transform: scaleX(0);
+  transform-origin: bottom left;
+}
+
 header .menu-wrapper {
   height: 55px;
   background-color: rgba(255, 255, 255, 0.2117647059);
@@ -59,7 +107,6 @@ header .menu-wrapper li {
 .hero .text-wrapper-shop {
   font-weight: 600;
   color: #ffffff;
-  font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
@@ -230,7 +277,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .our-products .section-header h1 {
-  font-family: BonVoyage, Helvetica;
+  font-family: BonVoyagethin, Helvetica;
   font-weight: 400;
   color: #000000;
   font-size: 48px;
@@ -271,7 +318,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .call-to-action .section-header h1 {
-  font-family: BonVoyage, Helvetica !important;
+  font-family: BonVoyagethin, Helvetica !important;
   font-weight: 400;
   color: #000000;
   letter-spacing: 0;
@@ -295,7 +342,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .explore .section-header h1 {
-  font-family: BonVoyage, Helvetica;
+  font-family: BonVoyagethin, Helvetica;
   font-weight: 400;
   color: #000000;
   letter-spacing: 0;
@@ -328,7 +375,7 @@ footer .footer__top p {
   opacity: 0.4;
 }
 footer .footer__top input {
-  width: 100%;
+  max-width: 100% !important;
   padding: 10px;
   background-color: #0e0e0e;
   color: white;
@@ -345,7 +392,7 @@ footer .footer__top button {
   position: absolute;
   background-color: #e9442c;
   border-radius: 46px;
-  margin-left: -100px;
+  margin-left: -93px;
 }
 footer .footer__middle h1 {
   font-weight: 200;

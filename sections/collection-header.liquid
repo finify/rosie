@@ -1,0 +1,52 @@
+<style>
+    #shopify-section-{{ section.id }}{
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+    .page-header{
+        background-image:url("{{- collection.featured_image | image_url: width: 2000 -}}") ;
+      }
+</style>
+
+<div class="page-header flex flex-col w-full lg:h-[350px] h-[350px] z-0 justify-center px-10 lg:bg-center bg-[50%_50%]">
+    <div class="text-wrapper flex flex-col text-center animate__animated animate__fadeInUp animate__delay-2s">
+        <h1 class="text-[50px] lg:text-[64px]">{{- collection.title | capitalize -}}</h1>
+        <h1><p class="text-[15px] lg:text-[20px] w-full">{{- collection.description -}}</p></h1>
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "collection-header",
+    "class":"collection-header",
+    "tag": "section",
+    "settings": [
+        
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Page"
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "Sub heading",
+            "default": "sub heading"
+        }
+
+    ],
+    "presets": [
+        {
+            "name": "collection-header"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
