@@ -68,11 +68,11 @@
 header{
     .menu-wrapper{
         height: 55px;
-        background-color: #ffffff36;
+        background-color: #ffffff;
         border-radius: 30px;
         overflow: hidden;
-        backdrop-filter: blur(94px) brightness(100%);
-        -webkit-backdrop-filter: blur(94px) brightness(100%);
+        // backdrop-filter: blur(94px) brightness(100%);
+        // -webkit-backdrop-filter: blur(94px) brightness(100%);
 
         li{
             font-family: "Plus Jakarta Sans", Helvetica;
@@ -401,28 +401,27 @@ header{
 .explore{
 
     .section-header{
-        p{
-            color: #000000;
-            font-family: "Plus Jakarta Sans", Helvetica;
-            font-weight: 300;
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: normal;
-        }
         h1{
-            font-family: BonVoyagethin, Helvetica;
+            font-family: BonVoyagethin, Helvetica!important;  
             font-weight: 400;
             color: #000000;
             letter-spacing: 0;
             line-height: normal;
         }
-        a{
-            font-family: "Plus Jakarta Sans", Helvetica;
+    }
+
+    &__text-wrap{
+        .explore-text{
+            font-family: "EB Garamond", Helvetica!important;
             font-weight: 400;
-            color: #e9442c;
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: normal;
+            font-style: italic;
+            line-height: 40px;
+        }
+        .explore-text1{
+            font-family: "Plus Jakarta Sans", Helvetica!important;
+            font-style: italic;
+            line-height: 40px;
+            font-weight: 300;
         }
     }
 }

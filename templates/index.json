@@ -433,6 +433,18 @@
         "link1": "",
         "link1text": "TRY IT OUT"
       }
+    },
+    "explore_tcLEBk": {
+      "type": "explore",
+      "settings": {
+        "heading1": "Explore Our Luxurious <br> Kitchen Utensils Range",
+        "image_1": "shopify:\/\/shop_images\/pexels-cottonbro-studio-6127402_1.png",
+        "link_1": "shopify:\/\/collections\/best-sellers",
+        "image_2": "shopify:\/\/shop_images\/explore2.png",
+        "link_2": "shopify:\/\/collections\/best-sellers",
+        "image_3": "shopify:\/\/shop_images\/explore3.png",
+        "link_3": "shopify:\/\/collections\/best-sellers"
+      }
     }
   },
   "order": [
@@ -443,6 +455,7 @@
     "fb6827a2-ccf3-409d-a182-8dfa84b8de00",
     "f0cf6424-e1ef-4346-a38e-e6479eddd261",
     "1bfd86af-7ad6-43fd-906c-cb4992e71899",
-    "full_image_3fA3qU"
+    "full_image_3fA3qU",
+    "explore_tcLEBk"
   ]
 }

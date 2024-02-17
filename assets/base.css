@@ -604,6 +604,12 @@ video {
 .aspect-video{
   aspect-ratio: 16 / 9;
 }
+.size-fit{
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .\!h-screen{
   height: 100vh !important;
 }
@@ -633,6 +639,9 @@ video {
 }
 .h-screen{
   height: 100vh;
+}
+.h-\[40rem\]{
+  height: 40rem;
 }
 .w-0{
   width: 0px;
@@ -708,6 +717,9 @@ video {
 }
 .grid-rows-2{
   grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.grid-rows-3{
+  grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 .flex-row{
   flex-direction: row;
@@ -858,6 +870,9 @@ video {
 .border{
   border-width: 1px;
 }
+.border-0{
+  border-width: 0px;
+}
 .border-y-2{
   border-top-width: 2px;
   border-bottom-width: 2px;
@@ -916,6 +931,15 @@ video {
 }
 .bg-\[url\(\'\/img\/about2\.png\'\)\]{
   background-image: url('/img/about2.png');
+}
+.bg-\[url\(\'\/img\/explore1\.png\'\)\]{
+  background-image: url('/img/explore1.png');
+}
+.bg-\[url\(\'\/img\/explore2\.png\'\)\]{
+  background-image: url('/img/explore2.png');
+}
+.bg-\[url\(\'\/img\/explore3\.png\'\)\]{
+  background-image: url('/img/explore3.png');
 }
 .bg-cover{
   background-size: cover;
@@ -1025,6 +1049,10 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
 .\!pt-7{
   padding-top: 1.75rem !important;
 }
@@ -1132,6 +1160,9 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[35px\]{
+  font-size: 35px;
+}
 .uppercase{
   text-transform: uppercase;
 }
@@ -1169,6 +1200,10 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.\!text-white{
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 .overline{
   text-decoration-line: overline;
@@ -1386,6 +1421,9 @@ a {
   .lg\:col-span-1{
     grid-column: span 1 / span 1;
   }
+  .lg\:block{
+    display: block;
+  }
   .lg\:flex{
     display: flex;
   }
@@ -1427,6 +1465,9 @@ a {
   }
   .lg\:items-end{
     align-items: flex-end;
+  }
+  .lg\:justify-end{
+    justify-content: flex-end;
   }
   .lg\:border{
     border-width: 1px;

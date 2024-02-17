@@ -1,0 +1,100 @@
+<style>
+    .explore__item1{
+        background-image:url("{{- section.settings.image_1 | image_url: width: 1728 -}}") ;
+      }
+      .explore__item2{
+        background-image:url("{{- section.settings.image_2 | image_url: width: 1728 -}}") ;
+      }
+      .explore__item3{
+        background-image:url("{{- section.settings.image_3 | image_url: width: 1728 -}}") ;
+      }
+</style>
+<div class="explore lg:block hidden">
+        <div class="section-header flex justify-center text-center py-10">
+            <h1 class="text-[20px] lg:text-[48px]">
+                {{- section.settings.heading1 | capitalize -}}</h1>
+        </div>
+        <div class="explore__grid grid grid-rows-3 grid-flow-col gap-1">
+            <div class="col-span-1 row-span-3 explore__item1 h-[40rem]  flex flex-col justify-end bg-no-repeat bg-cover bg-center p-5">
+                <div class="explore__text-wrap flex flex-col">
+                    <h4 class="explore-text font-['EB Garamond'] text-[35px] text-white">Craftsmanship </h4>
+                    <h4 class="explore-text text-[35px] text-white">Meets <span class="explore-text1">Your</span> Vision</h4>
+                    <a class="text-lg hover-underline-white !text-white inline-block size-fit" href="{{- section.settings.link_1 -}}">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-span-1 row-span-2 explore__item2 bg-no-repeat bg-cover bg-center  flex flex-col justify-end p-5">
+                <div class="explore__text-wrap flex flex-col">
+                    <h4 class="explore-text font-['EB Garamond'] text-[35px] text-white">Quality </h4>
+                    <h4 class="explore-text text-[35px] text-white"><span class="explore-text1">That</span> Lasts</h4>
+                    <a class="text-lg hover-underline-white !text-white size-fit" href="{{- section.settings.link_2 -}}">Shop Now</a>
+                </div>
+            </div>
+            <div class="row-span-1 col-span-1  explore__item3 bg-no-repeat bg-cover bg-center  flex flex-col justify-center p-5">
+                <div class="explore__text-wrap flex flex-col">
+                    <h4 class="explore-text font-['EB Garamond'] text-[35px] text-white">Transform <span class="explore-text1">Your</span></h4>
+                    <h4 class="explore-text text-[35px] !text-white"><span class="explore-text1">Kitchen</span> Today</h4>
+                    <a class="text-lg hover-underline-white !text-white size-fit" href="{{- section.settings.link_3 -}}">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% schema %}
+{
+    "name": "explore",
+    "class":"explore",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading1",
+            "label": "Heading",
+            "default": "Explore Our Luxurious Kitchen Utensils Range"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image Left",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "url",
+            "id": "link_1",
+            "label": "Left Link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image right top",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "url",
+            "id": "link_2",
+            "label": "right top Link 1"
+        },{
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image right bottom",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "url",
+            "id": "link_3",
+            "label": "right bottom Link 1"
+        }
+        
+    ],
+    "presets": [
+        {
+            "name": "explore"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}

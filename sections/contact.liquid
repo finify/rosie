@@ -16,7 +16,7 @@
 </style>
 
 <div class="contact lg:p-10 p-5">
-        <div class="contact__wrapper bg-[#fff]  grid lg:grid-cols-2 grid-cols-1 border border-solid border-[#e9442c4c] animate__animated animate__fadeInRight animate__delay-2s">
+        <div class="contact__wrapper bg-[#fff]  grid lg:grid-cols-2 grid-cols-1 lg:border border-0 border-solid border-[#e9442c4c] animate__animated animate__fadeInRight animate__delay-2s">
             <div class="contact__text p-7 border border-solid border-[#e9442c4c]">
                 <div class="contact__textwrap">
                     <h1 class="lg:text-[50px] text-[25px]">{{- section.settings.title -}}</h1>
@@ -34,7 +34,7 @@
               {%- capture content -%}{{ form.errors.translated_fields[form.errors.first] | capitalize }} {{ form.errors.messages[form.errors.first] }}{%- endcapture -%}
               {%- render 'banner', status: 'error', content: content -%}
             {%- endif -%}
-            <div class="contact__form lg:p-7 p-0 border border-solid border-[#e9442c4c]">
+            <div class="contact__form lg:p-7 p-0 lg:border border-0 border-solid border-[#e9442c4c]">
               <div class="border border-solid border-[#e9442c4c] grid grid-cols-2 ">
                   <div class="lg:col-span-1 col-span-2 border border-solid border-[#e9442c4c] flex flex-col justify-center">
                       
