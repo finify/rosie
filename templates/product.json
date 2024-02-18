@@ -78,8 +78,22 @@
         "collapsible_text_XUkxeM": {
           "type": "collapsible_text",
           "settings": {
-            "title": "Title",
-            "content": "<p>Share some content to your customers about your products.<\/p>"
+            "title": "Product Details",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "collapsible_text_iHnKYm": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "EACH PLATE IS UNIQUE",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "collapsible_text_wFdKE4": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "DURABILITY",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
           }
         }
       },
@@ -94,7 +108,9 @@
         "quantity_selector",
         "buy_buttons",
         "b8640a09-8fba-426e-bcad-7aa84ce74963",
-        "collapsible_text_XUkxeM"
+        "collapsible_text_XUkxeM",
+        "collapsible_text_iHnKYm",
+        "collapsible_text_wFdKE4"
       ],
       "custom_css": [
         "h1.product-info__title {text-align: left !important;}",
@@ -111,7 +127,7 @@
         "full_width": true,
         "show_fixed_add_to_cart": true,
         "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_left",
+        "desktop_media_layout": "carousel_thumbnails_bottom",
         "mobile_media_size": "contained",
         "mobile_carousel_control": "thumbnails",
         "enable_video_autoplay": false,
@@ -179,11 +195,11 @@
         "show_description": true,
         "show_progress_bar": true,
         "description_length": "120",
-        "products_per_row_mobile": "1",
+        "products_per_row_mobile": "2",
         "text_alignment": "center",
         "products_per_row_desktop": 4,
         "subheading": "",
-        "title": "Discover More",
+        "title": "RECOMMENDATIONS",
         "content": "",
         "background": "",
         "background_gradient": "",

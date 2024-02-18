@@ -1113,6 +1113,24 @@ video {
 .text-end{
   text-align: end;
 }
+.font-\[\]{
+  font-family: ;
+}
+.font-\[\'\'\]{
+  font-family: '';
+}
+.font-\[\'BonVoyagethin\'\]{
+  font-family: 'BonVoyagethin';
+}
+.\!font-\[\'BonVoyagethin\'\]{
+  font-family: 'BonVoyagethin' !important;
+}
+.\!font-\[\'Plus_JakartaSans\'\]{
+  font-family: 'Plus JakartaSans' !important;
+}
+.\!font-\[\'Plus_Jakarta_Sans\'\]{
+  font-family: 'Plus Jakarta Sans' !important;
+}
 .\!text-lg{
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
@@ -1163,6 +1181,15 @@ video {
 .text-\[35px\]{
   font-size: 35px;
 }
+.text-\[48px\]{
+  font-size: 48px;
+}
+.font-normal{
+  font-weight: 400;
+}
+.font-semibold{
+  font-weight: 600;
+}
 .uppercase{
   text-transform: uppercase;
 }
@@ -1204,6 +1231,9 @@ video {
 .\!text-white{
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+.text-\[\]{
+  color: ;
 }
 .overline{
   text-decoration-line: overline;
@@ -1558,6 +1588,9 @@ a {
   }
   .lg\:text-\[64px\]{
     font-size: 64px;
+  }
+  .lg\:font-normal{
+    font-weight: 400;
   }
   .lg\:leading-\[65px\]{
     line-height: 65px;

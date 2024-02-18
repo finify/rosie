@@ -38,14 +38,16 @@
 
 <div {% render 'section-properties' %}>
   <div class="section-stack">
-    {%- render 'section-header',
+    {% comment %} {%- render 'section-header',
       subheading: section.settings.subheading,
       heading: section.settings.title,
       heading_color: section.settings.heading_color,
       heading_gradient: section.settings.heading_gradient,
       content: section.settings.content,
       text_alignment: section.settings.text_alignment
-    -%}
+    -%} {% endcomment %}
+
+    <h4 class="!font-['BonVoyagethin'] text-center lg:text-[48px] text-[25px] lg:font-normal font-semibold">{{- section.settings.title -}}</h4>
 
     <div class="{% if section.settings.show_progress_bar %}scrollable-with-controls{% else %}floating-controls-container{% endif %}">
       {%- assign scroll_area_id = 'scroll-area-' | append: section.id -%}

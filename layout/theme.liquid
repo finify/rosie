@@ -65,6 +65,7 @@
     <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
     <script type="module" src="{{ 'sections.js' | asset_url }}"></script>
+    
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <!--
@@ -83,6 +84,7 @@
     {{- 'about.css' | asset_url | stylesheet_tag: preload: true -}}
     {{- 'contact.css' | asset_url | stylesheet_tag: preload: true -}}
     {{- 'product.css' | asset_url | stylesheet_tag: preload: true -}}
+    {{- 'aos.css' | asset_url | stylesheet_tag: preload: true -}}
 
 
     {% comment %} newasset {% endcomment %}
@@ -151,7 +153,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script> {% endcomment %}
-
+    
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -269,8 +271,18 @@
         
         });
     </script>
+
     {% comment %} newasset {% endcomment %}
 
-    {% comment %} <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RmHaAm"></script> {% endcomment %}
+     <script type="module" src="{{ 'aos.js' | asset_url }}"></script>
+    <script>
+      $(document).on('ready', function () {
+        // initialization of aos
+        AOS.init({
+          duration: 650,
+          once: true
+        });
+      });
+    </script>
   </body>
 </html>

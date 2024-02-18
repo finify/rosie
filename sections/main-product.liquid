@@ -65,7 +65,7 @@
 
   {%- assign variant = product.selected_or_first_available_variant -%}
 <div class="product grid lg:grid-cols-2 grid-cols-1 mt-10">
-    <div class="product__image">
+    <div class="product__image px-5">
       {%- if product.media.size > 0 -%}
       {%- render 'product-gallery', product: product -%}
     {%- endif -%}
@@ -132,7 +132,7 @@
               payment_button_text_color: buy_button_block.settings.payment_button_text_color
             -%}
 
-            <h1 class="w-full text-center mt-5">WORLDWIDE DELIVERY</h1>
+            <h1 class="w-full text-center mt-5 !font-['Plus_Jakarta_Sans']">WORLDWIDE DELIVERY</h1>
           {%- endif -%}
 
             {%- unless main_form_exists -%}
@@ -142,21 +142,23 @@
             {%- endunless -%}
         </div>
         <div class="product__accordion mt-4">
+          
             <div class="accordion_wrapper">
-                <button class="accordion my-3 !bg-transparent">Product Details</button>
-                <div class="panel !bg-transparent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion my-3 !bg-transparent">EACH PLATE IS UNIQUE</button>
-                <div class="panel !bg-transparent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion my-3 !bg-transparent">DURABILITY</button>
-                <div class="panel !bg-transparent">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'collapsible_text' -%}
+                    {%- if block.settings.title != blank and block.settings.content != blank -%}
+                      {%- capture accordion_content -%}<div class="prose">{{ block.settings.content }}</div>{%- endcapture -%}
+                      {%- render 'accordion',
+                        title: block.settings.title,
+                        content: accordion_content,
+                        class: 'product-info__accordion',
+                        block: block
+                      -%}
+                    {%- endif -%}
+                {%- endcase -%}
+              {%- endfor -%}
+                
             </div>
 
         </div>
