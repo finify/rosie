@@ -962,11 +962,17 @@ video {
 .bg-fixed{
   background-attachment: fixed;
 }
+.\!bg-fixed{
+  background-attachment: fixed !important;
+}
 .bg-local{
   background-attachment: local;
 }
 .bg-scroll{
   background-attachment: scroll;
+}
+.\!bg-scroll{
+  background-attachment: scroll !important;
 }
 .bg-\[26\%_50\%\]{
   background-position: 26% 50%;
