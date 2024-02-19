@@ -159,7 +159,7 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <script>
+    {% comment %} <script>
       $(document).ready(function(){
           // $("#v-pills-custom-tab").addClass("active");
           $('.image-nav-link').first().addClass('active');
@@ -270,18 +270,21 @@
     
         
         });
-    </script>
+    </script> {% endcomment %}
 
     {% comment %} newasset {% endcomment %}
 
-     <script type="module" src="{{ 'aos.js' | asset_url }}"></script>
+     
     <script>
-      $(document).on('ready', function () {
-        // initialization of aos
-        AOS.init({
-          duration: 650,
-          once: true
-        });
+     
+    $(document).ready(function(){
+      setTimeout(
+      function() 
+      {
+        $("#hero").removeClass("scale-125");
+        $("#hero").addClass("scale-100");
+      }, 500);
+        
       });
     </script>
   </body>

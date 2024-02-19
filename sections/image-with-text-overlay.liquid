@@ -43,7 +43,7 @@
 </style>
 {% comment %} {%- capture class -%}content-over-media content-over-media--{{ section.settings.image_size }} {% if section.settings.full_width %}full-bleed{% else %}shadow-block rounded-lg{% endif %}{%- endcapture -%} {% endcomment %}
 
-<div class="hero flex flex-col w-full h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%] lg:bg-fixed bg-local">
+<div id="hero" class="hero flex flex-col w-full h-screen z-0 justify-end pb-20 lg:px-10 px-5 lg:bg-center lg:bg-cover bg-[26%_50%] lg:bg-fixed bg-local transform transition-all duration-1000 ease-out scale-125">
   <div class="text-wrapper flex flex-col">
       <div class="elevate-your lg:text-[16px] text-[13px]">ELEVATE YOUR CULINARY EXPERIENCE</div>
       <p class="p text-white">
