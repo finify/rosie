@@ -58,7 +58,7 @@
 header .menu-wrapper {
   height: 55px;
   background-color: #ffffff;
-  border-radius: 30px;
+  border-radius: 10px;
   overflow: hidden;
 }
 header .menu-wrapper li {
