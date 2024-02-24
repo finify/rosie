@@ -57,11 +57,13 @@
 
 header .menu-wrapper {
   height: 55px;
-  background-color: #ffffff;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
   overflow: hidden;
+  backdrop-filter: blur(94px) brightness(100%);
+  -webkit-backdrop-filter: blur(94px) brightness(100%);
 }
 header .menu-wrapper li {
+  z-index: 2;
   font-family: "Plus Jakarta Sans", Helvetica;
   font-weight: 500;
   color: #000000;
@@ -389,10 +391,10 @@ footer .footer__top button {
   margin-left: -93px;
 }
 footer .footer__middle h1 {
-  font-weight: 200;
+  font-weight: 100;
   color: #e9442c;
-  font-size: 64px;
-  letter-spacing: -3.52px;
+  font-size: 54px;
+  letter-spacing: normal;
   line-height: 56px;
   white-space: nowrap;
   font-family: "Plus Jakarta Sans", Helvetica !important;

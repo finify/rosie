@@ -43,13 +43,13 @@
 
 {%- assign products = section.settings.products | default: section.settings.collection.products -%}
 <div class="top-sellers container mx-auto py-20">
-    <div class="section-header flex flex-col text-center py-5 items-center">
+    <div id="top-sellers-head" class="section-header flex flex-col text-center py-5 items-center z-0 transform transition-all duration-1000 ease-out translate-y-32 relative">
         <p>{{- section.settings.title -}}</p>
         <h1>{{- section.settings.subheading -}}</h1>
         <a class="hover-underline-color" href="{{- section.settings.collection.url -}}">See more</a>
     </div>
     
-    <div class="products grid lg:grid-cols-3 grid-cols-2 border border-solid border-[#e9442c4c]">
+    <div class="products grid lg:grid-cols-3 grid-cols-2 border border-solid border-[#e9442c4c] z-1 relative">
       {%- for product in products limit: section.settings.products_count -%}
         <a href="{{- product.url -}}" class="product-car p-3 border border-solid border-[#e9442c4c]">
           <div >

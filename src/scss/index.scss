@@ -66,15 +66,31 @@
   }
 
 header{
+    // .menu-background{
+    //     background-image: url("https://cdn.shopify.com/s/files/1/0631/5917/3326/files/explore3.png?v=1708170642"); 
+       
+    //     filter: blur(5px);
+    //     background-position: center;
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    //     position: relative;
+    //     // -webkit-filter: blur(5px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+    //     // filter: blur(5px); /* Supported in all major browsers */
+    
+    //     height: 100%;
+    // }
     .menu-wrapper{
         height: 55px;
-        background-color: #ffffff;
-        border-radius: 10px;
+        background-color: rgba(256 , 256,256,0.5);
         overflow: hidden;
-        // backdrop-filter: blur(94px) brightness(100%);
-        // -webkit-backdrop-filter: blur(94px) brightness(100%);
+        backdrop-filter: blur(94px) brightness(100%);
+        -webkit-backdrop-filter: blur(94px) brightness(100%);
+        
+       
+
 
         li{
+            z-index: 2;
             font-family: "Plus Jakarta Sans", Helvetica;
             font-weight: 500;
             color: #000000;
@@ -468,10 +484,10 @@ footer{
     }
     .footer__middle{
         h1{
-            font-weight: 200;
+            font-weight: 100;
             color: #e9442c;
-            font-size: 64px;
-            letter-spacing: -3.52px;
+            font-size: 54px;
+            letter-spacing: normal;
             line-height: 56px;
             white-space: nowrap;
             font-family: "Plus Jakarta Sans", Helvetica!important;

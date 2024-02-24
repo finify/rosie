@@ -159,7 +159,7 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    {% comment %} <script>
+    <script>
       $(document).ready(function(){
           // $("#v-pills-custom-tab").addClass("active");
           $('.image-nav-link').first().addClass('active');
@@ -217,10 +217,19 @@
        });
 
       $(document).ready(function() {
-
-        $.fn.isInViewport = function () {
-            let elementTop = $(this).offset().top ;
-            let elementBottom = elementTop + $(this).outerHeight();
+        let percentage ,position;
+        $.fn.isInViewport = function (percentage,position) {
+          let elementTop = $(this).offset().top ;
+          let elementBottom = elementTop + $(this).outerHeight();
+          if(position == "bottom"){
+            elementTop = ($(this).offset().top)+(percentage * $(this).offset().top) ;
+            elementBottom = elementTop + $(this).outerHeight();
+            
+          }else{
+            elementTop = $(this).offset().top ;
+            elementBottom = (elementTop + $(this).outerHeight())-(percentage*(elementTop + $(this).outerHeight()));
+          }
+            
             let viewportTop = $(window).scrollTop();
             let viewportBottom = viewportTop + $(window).height();
             return elementBottom > viewportTop && elementTop < viewportBottom;
@@ -270,7 +279,55 @@
     
         
         });
-    </script> {% endcomment %}
+    </script> 
+
+   
+    <script>
+      $(document).ready(function(){
+        $(window).on("load scroll", function () {
+          $('.hero').each(function() {
+            if( $(this).isInViewport(0.5,"top") ) {
+              $("#hero").removeClass("scale-95");
+              $("#hero").addClass("scale-100");
+            }else{
+              $("#hero").removeClass("scale-100");
+              $("#hero").addClass("scale-95");
+            }
+          })
+
+          $('.top-sellers').each(function() {
+            if( $(this).isInViewport(0.5,"top") ) {
+
+              $("#top-sellers-head").removeClass("translate-y-32");
+            }else{
+              $("#top-sellers-head").addClass("translate-y-32");
+            }
+          })
+
+          WindowWidth = $(window).width();
+          if (WindowWidth > 600){
+              $('.call-to-action').each(function() {
+              if( $(this).isInViewport(0.3,"bottom") ) {
+                $("#call-to-action-header").removeClass("translate-y-56");
+              }else{
+                $("#call-to-action-header").addClass("translate-y-56");
+              }
+            })
+
+            $('.call-to-action').each(function() {
+              if( $(this).isInViewport(0.3,"top") ) {
+                console.log("inview");
+                $("#call-to-action-header").removeClass("translate-y-56");
+              }else{
+                $("#call-to-action-header").addClass("translate-y-56");
+              }
+            })
+          }
+
+          
+        })
+      })
+    </script>
 
     {% comment %} newasset {% endcomment %}
 
