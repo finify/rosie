@@ -253,8 +253,7 @@ header .menu-wrapper li {
   line-height: normal;
 }
 .top-products__text a {
-  padding: 10px;
-  padding-top: 5px;
+  padding: 13px 27px;
   border-radius: 34px;
   border: 1px solid;
   border-color: #e9442c;
@@ -263,7 +262,7 @@ header .menu-wrapper li {
   width: fit-content;
   font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0;
   line-height: normal;
 }

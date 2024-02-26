@@ -5,13 +5,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "links": {
-          "type": "links",
-          "settings": {
-            "menu": "main-menu",
-            "show_menu_title": false
-          }
-        },
         "newsletter": {
           "type": "newsletter",
           "settings": {
@@ -22,18 +15,18 @@
             "content": "<p>KEEP UP WITH THE LATEST FROM ROSIE<\/p>"
           }
         },
-        "links_ay7dLX": {
+        "links_g9XJgL": {
           "type": "links",
           "settings": {
-            "menu": "footer",
-            "show_menu_title": true
+            "footer1": "footer1",
+            "footer2": "",
+            "footer3": ""
           }
         }
       },
       "block_order": [
-        "links",
         "newsletter",
-        "links_ay7dLX"
+        "links_g9XJgL"
       ],
       "custom_css": [
         ".footer {overflow-x: hidden !important;}"

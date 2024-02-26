@@ -76,54 +76,117 @@
         <div class="footer__middle lg:grid hidden lg:grid-cols-3 grid-cols-1">
             <div class="footer__about lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>About</h1>
+                
                 <ul class="flex flex-col gap-2 !pt-7">
-                    <li><a href="#">Our Story</a></li>
-                    <li><a href="#">Affiliates</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer1 != blank -%}
+                          {%- for link in block.settings.footer1.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
                 </ul>
+
             </div>
             <div class="footer__shop lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>Shop</h1>
                 <ul class="flex flex-col gap-2 !pt-7">
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">collections</a></li>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer2 != blank -%}
+                          {%- for link in block.settings.footer2.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
                 </ul>
             </div>
             <div class="footer__support lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
                 <h1>Support</h1>
                 <ul class="flex flex-col gap-2 !pt-7">
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">General Enquiry</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer3 != blank -%}
+                          {%- for link in block.settings.footer3.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
                 </ul>
             </div>
         </div>
 
         <div class="footer__mobile_middle lg:hidden display-block flex flex-col">
           
+              <hr class="h-px mt-8 mb-4 bg-stone-800 border-0 dark:bg-stone-800">
               <button class="accordion my-5 !bg-transparent text-[#e9442c] ">About</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
-                  <li><a href="#">Our story</a></li>
-                  <li><a href="#">Affiliates</a></li>
-              </ul>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer1 != blank -%}
+                          {%- for link in block.settings.footer1.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </ul>
               </div>
-
+              <hr class="h-px my-4 bg-stone-800 border-0 dark:bg-stone-800">
               <button class="accordion my-5 !bg-transparent">Shop</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
-                  <li><a href="#">Products</a></li>
-                  <li><a href="#">collections</a></li>
-              </ul>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer2 != blank -%}
+                          {%- for link in block.settings.footer2.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </ul>
               </div>
+              <hr class="h-px my-4 bg-stone-800 border-0 dark:bg-stone-800">
 
               <button class="accordion my-5 !bg-transparent">Support</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
-                  <li><a href="#">Contact us</a></li>
-                  <li><a href="#">General Enquiry</a></li>
-              </ul>
+                  {%- for block in section.blocks -%}
+                    {%- case block.type -%}
+                      {%- when 'links' -%}
+                        {%- if block.settings.footer3 != blank -%}
+                          {%- for link in block.settings.footer3.links -%}
+                            <li>
+                              <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                          {%- endfor -%}
+                        {%- endif -%}
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </ul>
               </div>
+              <hr class="h-px my-4 bg-stone-800 border-0 dark:bg-stone-800">
       
         </div>
 
@@ -433,20 +496,23 @@
     },
     {
       "type": "links",
-      "name": "Links",
+      "name": "Footer 1",
       "settings": [
         {
           "type": "link_list",
-          "id": "menu",
-          "label": "Menu",
-          "info": "This menu won't show dropdown items.",
-          "default": "footer"
+          "id": "footer1",
+          "label": "Footer 1"
         },
         {
-          "type": "checkbox",
-          "id": "show_menu_title",
-          "label": "Show menu title",
-          "default": true
+          "type": "link_list",
+          "id": "footer2",
+          "label": "Footer 2"
+        },
+        {
+          "type": "link_list",
+          "id": "footer3",
+          "label": "Footer 3"
+          
         }
       ]
     },

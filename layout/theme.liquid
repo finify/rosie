@@ -219,15 +219,16 @@
       $(document).ready(function() {
         let percentage ,position;
         $.fn.isInViewport = function (percentage,position) {
-          let elementTop = $(this).offset().top ;
-          let elementBottom = elementTop + $(this).outerHeight();
+          let elementTop ;
+          let elementBottom ;
           if(position == "bottom"){
-            elementTop = ($(this).offset().top)+(percentage * $(this).offset().top) ;
+            elementTop = ($(this).offset().top) - (percentage * $(this).outerHeight());
             elementBottom = elementTop + $(this).outerHeight();
-            
+         
           }else{
+            
             elementTop = $(this).offset().top ;
-            elementBottom = (elementTop + $(this).outerHeight())-(percentage*(elementTop + $(this).outerHeight()));
+            elementBottom = elementTop + ($(this).outerHeight() - (percentage * $(this).outerHeight()) );
           }
             
             let viewportTop = $(window).scrollTop();
@@ -286,10 +287,12 @@
       $(document).ready(function(){
         $(window).on("load scroll", function () {
           $('.hero').each(function() {
-            if( $(this).isInViewport(0.5,"top") ) {
+            if( $(this).isInViewport(0.5,"bottom") ) {
               $("#hero").removeClass("scale-95");
               $("#hero").addClass("scale-100");
+              
             }else{
+             
               $("#hero").removeClass("scale-100");
               $("#hero").addClass("scale-95");
             }
@@ -316,7 +319,7 @@
 
             $('.call-to-action').each(function() {
               if( $(this).isInViewport(0.3,"top") ) {
-                console.log("inview");
+               
                 $("#call-to-action-header").removeClass("translate-y-56");
               }else{
                 $("#call-to-action-header").addClass("translate-y-56");
