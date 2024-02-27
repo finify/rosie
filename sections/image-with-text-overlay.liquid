@@ -54,7 +54,8 @@
 
       </p>
       <div class="frame-2 flex flex-col-reverse mt-6 gap-x-2">
-          <div class="text-wrapper-shop leading-3 lg:text-[20px] mt-4 hover-underline-white">Shop Now</div>
+        
+          <a href="{{- section.settings.link_1 -}}" class="text-wrapper-shop leading-3 lg:text-[20px] mt-4 hover-underline-white">Shop Now</a>
           {% comment %} <div class="rectangle mt-4"></div> {% endcomment %}
       </div>
   </div>  
@@ -178,6 +179,11 @@
       "label": "Allow transparent header",
       "info": "This setting only applies when this section is the first one.",
       "default": false
+    },
+    {
+        "type": "url",
+        "id": "link_1",
+        "label": "Left Link 1"
     },
      {
       "type": "checkbox",

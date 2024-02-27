@@ -136,6 +136,7 @@ header .menu-wrapper li {
   background-size: cover;
 }
 .page-header h1 {
+  text-shadow: 2px 3px 5px #050505;
   font-weight: 400;
   color: #ffffff;
   letter-spacing: 0;
@@ -143,6 +144,7 @@ header .menu-wrapper li {
   font-family: BonVoyagethin, Helvetica !important;
 }
 .page-header p {
+  text-shadow: 2px 3px 5px #050505;
   font-family: "Plus Jakarta Sans", Helvetica !important;
   font-weight: 400;
   color: #ffffff;

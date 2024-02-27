@@ -51,6 +51,7 @@
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
+        "link_1": "shopify:\/\/collections\/best-sellers",
         "overlay": false,
         "enable_parallax": true,
         "layout": "layout-1",

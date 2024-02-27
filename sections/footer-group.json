@@ -12,15 +12,15 @@
             "image_width": 110,
             "heading_size": "h4",
             "title": "Subscribe to our newsletters",
-            "content": "<p>KEEP UP WITH THE LATEST FROM ROSIE<\/p>"
+            "content": "<p>Keep Up With The Latest From Rosies<\/p>"
           }
         },
         "links_g9XJgL": {
           "type": "links",
           "settings": {
             "footer1": "footer1",
-            "footer2": "",
-            "footer3": ""
+            "footer2": "footer2",
+            "footer3": "footer-3"
           }
         }
       },

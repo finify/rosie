@@ -1,10 +1,10 @@
 <div class="call-to-action">
-    <div id="call-to-action-header" class="section-header flex flex-col text-center py-10 items-center z-0 transform transition-all duration-1000 ease-out relative">
+    <div id="call-to-action-header" class="section-header flex flex-col text-center py-10 items-center z-0 transform transition-all duration-1000 ease-out overflow-hidden relative">
         <h1 class="text-[20px] lg:text-[48px]">{{ section.settings.heading1 }}</h1>
         <a class="hover-underline-color" href="{{ section.settings.link1 }}">{{- section.settings.link1text -}}</a>
     </div>
     
-    <div class="call-to-action__image z-1 relative">
+    <div id="call-to-action-image" class="call-to-action__image z-1 relative transform transition-all duration-1000 ease-out">
         {% comment %} <img src="img/calltoaction.png" class="w-full" alt=""> {% endcomment %}
         {%- if section.settings.image_left != blank -%}
           {{-
