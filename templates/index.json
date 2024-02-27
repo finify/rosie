@@ -437,6 +437,7 @@
     },
     "explore_tcLEBk": {
       "type": "explore",
+      "disabled": true,
       "settings": {
         "heading1": "Explore Our Luxurious <br> Kitchen Utensils Range",
         "image_1": "shopify:\/\/shop_images\/pexels-cottonbro-studio-6127402_1.png",
