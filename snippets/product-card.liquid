@@ -235,11 +235,11 @@
         > {% endcomment %}
       {%- endif -%}
 
-      <div class="product-details flex justify-between pt-2">
-        <a href="{{ product.url }}" class="bold" style="color:{{ product_title_color }};" data-instant>
+      <div class="product-details flex flex-column text-left pt-2">
+        <a href="{{ product.url }}" class="" style="color:{{ product_title_color }};" data-instant>
           {{- product.title | capitalize -}}
         </a>
-          <span class="text-[#e9442c] bold !font-['Plus Jakarta Sans']">
+          <span class="text-[#e9442c] !font-['Plus Jakarta Sans']">
             {{- product.price | money_without_trailing_zeros -}}
         </span>
       </div>

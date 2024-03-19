@@ -2,6 +2,7 @@
   "sections": {
     "page_header_GfDmHT": {
       "type": "page-header",
+      "disabled": true,
       "settings": {
         "image_banner": "shopify:\/\/shop_images\/aboutheader.png",
         "heading": "About us",

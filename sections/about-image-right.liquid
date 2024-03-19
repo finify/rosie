@@ -1,15 +1,5 @@
 <div class="about-greeting grid lg:grid-cols-2 grid-cols-1 mt-10 gap-y-3">
-    <div class="about-greeting__text flex flex-col justify-center lg:px-10 px-4 lg:order-first order-last max-h-auto no-scrollbar">
-        <div class="about-greeting__textwrap">
-            <h1 class="lg:text-[50px] text-[30px]">{{ section.settings.heading }}</h1>
-            <h4 class="lg:text-[21px] text-[15px] mt-5"> {{ section.settings.richtext }}</h4>
-        </div>
-        <div class="about-greeting__textwrap mt-10">
-            <h1 class="lg:text-[50px] text-[30px]">{{ section.settings.heading1 }}</h1>
-            <h4 class="lg:text-[21px] text-[15px] mt-5"> {{ section.settings.richtext1 }}</h4>
-        </div>
-    </div>
-    <div class="about-greeting__image max-h-[520px] lg:order-last order-first overflow-hidden sticky lg:top-52">
+    <div class="about-greeting__image max-h-[820px] lg:order-first order-first overflow-hidden sticky lg:top-52">
         {%- if section.settings.image != blank -%}
         {{-
             section.settings.image
@@ -21,6 +11,18 @@
         {{- 'image' | placeholder_svg_tag: 'aspect-short placeholder' -}}
         {%- endif -%}
     </div>
+
+    <div class="about-greeting__text flex flex-col justify-center lg:px-10 px-4 lg:order-last order-last max-h-auto no-scrollbar">
+        <div class="about-greeting__textwrap">
+            <h1 class="lg:text-[50px] text-[30px]">{{ section.settings.heading }}</h1>
+            <h4 class="lg:text-[18px] text-[15px] mt-5"> {{ section.settings.richtext }}</h4>
+        </div>
+        <div class="about-greeting__textwrap mt-10">
+            <h1 class="lg:text-[50px] text-[30px]">{{ section.settings.heading1 }}</h1>
+            <h4 class="lg:text-[18px] text-[15px] mt-5"> {{ section.settings.richtext1 }}</h4>
+        </div>
+    </div>
+    
 </div>
 
 {% schema %}

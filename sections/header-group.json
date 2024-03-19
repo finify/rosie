@@ -36,6 +36,13 @@
         "subheading": ""
       }
     },
+    "empty_page_header_DgHFyV": {
+      "type": "empty-page-header",
+      "settings": {
+        "heading": "Page",
+        "subheading": "sub heading"
+      }
+    },
     "header": {
       "type": "header",
       "custom_css": [
@@ -68,6 +75,7 @@
   "order": [
     "announcement-bar",
     "page_header_BmdJqd",
+    "empty_page_header_DgHFyV",
     "header"
   ]
 }

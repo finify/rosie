@@ -161,7 +161,7 @@
               </div>
 
               <reveal-items selector=".product-list > *">
-                <product-list class="product-list" role="region" aria-live="polite">
+                <product-list class="product-list lg:p-0 p-3" role="region" aria-live="polite">
                   {%- for product in collection.products -%}
                     {%- for block in section.blocks -%}
                       {%- if forloop.parentloop.index != block.settings.position -%}

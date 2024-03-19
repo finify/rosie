@@ -1,0 +1,46 @@
+<div id="hero" class="page-header flex flex-col w-full lg:h-[100px] h-[100px] z-0 justify-center px-10 lg:bg-center bg-[50%_50%] transform transition-all duration-1000 ease-out scale-125">
+    <div class="text-wrapper flex flex-col text-center">
+      
+    </div>
+</div>
+
+
+
+{% schema %}
+{
+    "name": "empty-page-header",
+    "class":"empty-page-header",
+    "tag": "section",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_banner",
+          "label": "Image banner",
+          "info": "1500 x 1500px .jpg recommended"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Page"
+        },
+        {
+            "type": "text",
+            "id": "subheading",
+            "label": "Sub heading",
+            "default": "sub heading"
+        }
+
+    ],
+    "presets": [
+        {
+            "name": "empty-page-header"
+        }
+    ]
+}
+{% endschema %}
+{% stylesheet %}
+  
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
