@@ -498,15 +498,6 @@ video {
 .top-0{
   top: 0px;
 }
-.top-10{
-  top: 2.5rem;
-}
-.top-20{
-  top: 5rem;
-}
-.top-52{
-  top: 13rem;
-}
 .top-32{
   top: 8rem;
 }
@@ -515,6 +506,12 @@ video {
 }
 .z-10{
   z-index: 10;
+}
+.\!z-0{
+  z-index: 0 !important;
+}
+.\!z-10{
+  z-index: 10 !important;
 }
 .order-first{
   order: -9999;
@@ -547,6 +544,10 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .my-5{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -563,8 +564,7 @@ video {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.my-4{
-  margin-top: 1rem;
+.mb-4{
   margin-bottom: 1rem;
 }
 .me-3{
@@ -603,17 +603,17 @@ video {
 .mt-7{
   margin-top: 1.75rem;
 }
-.mt-20{
-  margin-top: 5rem;
-}
-.mr-0{
-  margin-right: 0px;
-}
 .mt-8{
   margin-top: 2rem;
 }
-.mb-4{
-  margin-bottom: 1rem;
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+.\!mb-10{
+  margin-bottom: 2.5rem !important;
+}
+.\!mt-4{
+  margin-top: 1rem !important;
 }
 .block{
   display: block;
@@ -648,6 +648,9 @@ video {
   height: -moz-fit-content;
   height: fit-content;
 }
+.h-1\/2{
+  height: 50%;
+}
 .h-\[100px\]{
   height: 100px;
 }
@@ -672,14 +675,23 @@ video {
 .h-full{
   height: 100%;
 }
+.h-px{
+  height: 1px;
+}
 .h-screen{
   height: 100vh;
 }
-.h-1{
-  height: 0.25rem;
+.h-80{
+  height: 20rem;
 }
-.h-px{
-  height: 1px;
+.h-4\/5{
+  height: 80%;
+}
+.h-\[\]{
+  height: ;
+}
+.h-\[500px\]{
+  height: 500px;
 }
 .max-h-\[520px\]{
   max-height: 520px;
@@ -696,6 +708,9 @@ video {
 .w-11\/12{
   width: 91.666667%;
 }
+.w-16{
+  width: 4rem;
+}
 .w-2\/4{
   width: 50%;
 }
@@ -707,12 +722,6 @@ video {
 }
 .w-full{
   width: 100%;
-}
-.w-10{
-  width: 2.5rem;
-}
-.w-16{
-  width: 4rem;
 }
 .max-w-full{
   max-width: 100%;
@@ -728,22 +737,6 @@ video {
 }
 .grow{
   flex-grow: 1;
-}
-.translate-y-6{
-  --tw-translate-y: 1.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.translate-y-20{
-  --tw-translate-y: 5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-y-20{
-  --tw-translate-y: -5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.translate-y-0{
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-y-32{
   --tw-translate-y: 8rem;
@@ -761,11 +754,6 @@ video {
 .scale-125{
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.scale-90{
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-95{
@@ -914,19 +902,6 @@ video {
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
-.divide-y-8 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(8px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(8px * var(--tw-divide-y-reverse));
-}
-.divide-gray-400 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(156 163 175 / var(--tw-divide-opacity));
-}
-.divide-white > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-divide-opacity));
-}
 .place-self-start{
   place-self: start;
 }
@@ -948,23 +923,8 @@ video {
 .justify-self-center{
   justify-self: center;
 }
-.overflow-auto{
-  overflow: auto;
-}
 .overflow-hidden{
   overflow: hidden;
-}
-.overflow-visible{
-  overflow: visible;
-}
-.overflow-scroll{
-  overflow: scroll;
-}
-.overflow-x-scroll{
-  overflow-x: scroll;
-}
-.overflow-y-scroll{
-  overflow-y: scroll;
 }
 .truncate{
   overflow: hidden;
@@ -980,6 +940,9 @@ video {
 .rounded{
   border-radius: 0.25rem;
 }
+.rounded-\[5px\]{
+  border-radius: 5px;
+}
 .rounded-full{
   border-radius: 9999px;
 }
@@ -989,30 +952,11 @@ video {
 .rounded-sm{
   border-radius: 0.125rem;
 }
-.rounded-\[5px\]{
-  border-radius: 5px;
-}
-.rounded-b-\[5px\]{
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
 .border{
   border-width: 1px;
 }
 .border-0{
   border-width: 0px;
-}
-.border-\[7px\]{
-  border-width: 7px;
-}
-.border-\[1px\]{
-  border-width: 1px;
-}
-.border-\[0\.5px\]{
-  border-width: 0.5px;
-}
-.border-\[0\.9px\]{
-  border-width: 0.9px;
 }
 .border-y-2{
   border-top-width: 2px;
@@ -1020,12 +964,6 @@ video {
 }
 .border-t{
   border-top-width: 1px;
-}
-.border-t-\[3px\]{
-  border-top-width: 3px;
-}
-.border-t-\[7px\]{
-  border-top-width: 7px;
 }
 .border-solid{
   border-style: solid;
@@ -1070,19 +1008,26 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
-.bg-transparent{
-  background-color: transparent;
-}
-.bg-white\/30{
-  background-color: rgb(255 255 255 / 0.3);
-}
-.bg-gray-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
 .bg-stone-800{
   --tw-bg-opacity: 1;
   background-color: rgb(41 37 36 / var(--tw-bg-opacity));
+}
+.bg-transparent{
+  background-color: transparent;
+}
+.bg-red-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 242 242 / var(--tw-bg-opacity));
+}
+.bg-\[\]{
+  background-color: ;
+}
+.bg-\[\#\#E9442C\]{
+  background-color: ##E9442C;
+}
+.bg-\[\#E9442C\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 68 44 / var(--tw-bg-opacity));
 }
 .bg-\[url\(\'\/img\/about1\.png\'\)\]{
   background-image: url('/img/about1.png');
@@ -1092,9 +1037,6 @@ video {
 }
 .bg-cover{
   background-size: cover;
-}
-.\!bg-fixed{
-  background-attachment: fixed !important;
 }
 .bg-fixed{
   background-attachment: fixed;
@@ -1155,10 +1097,6 @@ video {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
 .px-4{
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1198,6 +1136,14 @@ video {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .\!pt-7{
   padding-top: 1.75rem !important;
@@ -1244,11 +1190,35 @@ video {
 .pt-5{
   padding-top: 1.25rem;
 }
-.pt-20{
-  padding-top: 5rem;
-}
 .pl-3{
   padding-left: 0.75rem;
+}
+.pr-4{
+  padding-right: 1rem;
+}
+.pr-6{
+  padding-right: 1.5rem;
+}
+.pr-5{
+  padding-right: 1.25rem;
+}
+.pr-8{
+  padding-right: 2rem;
+}
+.pr-3{
+  padding-right: 0.75rem;
+}
+.\!pb-10{
+  padding-bottom: 2.5rem !important;
+}
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+.pb-16{
+  padding-bottom: 4rem;
+}
+.pb-12{
+  padding-bottom: 3rem;
 }
 .text-left{
   text-align: left;
@@ -1268,20 +1238,20 @@ video {
 .\!font-\[\'BonVoyagethin\'\]{
   font-family: 'BonVoyagethin' !important;
 }
+.\!font-\[\'EB_Garamond\'\]{
+  font-family: 'EB Garamond' !important;
+}
 .\!font-\[\'Plus_Jakarta_Sans\'\]{
   font-family: 'Plus Jakarta Sans' !important;
 }
-.font-\[\]{
-  font-family: ;
+.font-\[\'Open_Sans\'\]{
+  font-family: 'Open Sans';
 }
-.font-\[\'\'\]{
-  font-family: '';
+.font-\[\'Plus_Jakarta_Sans\'\]{
+  font-family: 'Plus Jakarta Sans';
 }
-.font-\[\'EB_Garamond\'\]{
-  font-family: 'EB Garamond';
-}
-.\!font-\[\'EB_Garamond\'\]{
-  font-family: 'EB Garamond' !important;
+.\!font-\[\'Plus_Jakata_Sans\'\]{
+  font-family: 'Plus Jakata Sans' !important;
 }
 .\!text-lg{
   font-size: 1.125rem !important;
@@ -1333,6 +1303,27 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[10px\]{
+  font-size: 10px;
+}
+.\!text-\[10px\]{
+  font-size: 10px !important;
+}
+.\!text-\[30px\]{
+  font-size: 30px !important;
+}
+.\!text-\[20px\]{
+  font-size: 20px !important;
+}
+.\!text-\[25px\]{
+  font-size: 25px !important;
+}
+.\!text-\[15px\]{
+  font-size: 15px !important;
+}
+.\!text-\[17px\]{
+  font-size: 17px !important;
+}
 .font-semibold{
   font-weight: 600;
 }
@@ -1358,10 +1349,6 @@ video {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
-.text-\[\#BF5569\]{
-  --tw-text-opacity: 1;
-  color: rgb(191 85 105 / var(--tw-text-opacity));
-}
 .text-\[\#e9442c\]{
   --tw-text-opacity: 1;
   color: rgb(233 68 44 / var(--tw-text-opacity));
@@ -1377,6 +1364,21 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.\!text-\[\]{
+  color:  !important;
+}
+.text-\[\#50d71e\]{
+  --tw-text-opacity: 1;
+  color: rgb(80 215 30 / var(--tw-text-opacity));
+}
+.text-\[\#E9442C\]{
+  --tw-text-opacity: 1;
+  color: rgb(233 68 44 / var(--tw-text-opacity));
+}
+.\!text-black{
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 .overline{
   text-decoration-line: overline;
@@ -1418,45 +1420,12 @@ video {
   --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
-.blur-sm{
-  --tw-blur: blur(4px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
 .drop-shadow{
   --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.backdrop-blur-sm{
-  --tw-backdrop-blur: blur(4px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-.backdrop-blur-xl{
-  --tw-backdrop-blur: blur(24px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-.backdrop-blur-\[20px\]{
-  --tw-backdrop-blur: blur(20px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-.backdrop-blur{
-  --tw-backdrop-blur: blur(8px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-.backdrop-opacity-60{
-  --tw-backdrop-opacity: opacity(0.6);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-.backdrop-filter{
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 .transition{
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -1472,9 +1441,6 @@ video {
 }
 .duration-1000{
   transition-duration: 1000ms;
-}
-.duration-500{
-  transition-duration: 500ms;
 }
 .ease-in{
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
@@ -1545,12 +1511,6 @@ a {
 
 .empty\:hidden:empty{
   display: none;
-}
-
-.hover\:divide-y-8:hover > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(8px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(8px * var(--tw-divide-y-reverse));
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1647,9 +1607,6 @@ a {
 }
 
 @media (min-width: 1024px){
-  .lg\:top-20{
-    top: 5rem;
-  }
   .lg\:top-52{
     top: 13rem;
   }
@@ -1680,6 +1637,30 @@ a {
   .lg\:h-\[650px\]{
     height: 650px;
   }
+  .lg\:h-\[\]{
+    height: ;
+  }
+  .lg\:h-\[900px\]{
+    height: 900px;
+  }
+  .lg\:h-\[600px\]{
+    height: 600px;
+  }
+  .lg\:h-\[700px\]{
+    height: 700px;
+  }
+  .lg\:h-\[687px\]{
+    height: 687px;
+  }
+  .lg\:h-\[400px\]{
+    height: 400px;
+  }
+  .lg\:h-\[405px\]{
+    height: 405px;
+  }
+  .lg\:h-\[450px\]{
+    height: 450px;
+  }
   .lg\:w-1\/2{
     width: 50%;
   }
@@ -1688,9 +1669,6 @@ a {
   }
   .lg\:w-1\/6{
     width: 16.666667%;
-  }
-  .lg\:w-4\/5{
-    width: 80%;
   }
   .lg\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1812,10 +1790,6 @@ a {
 }
 
 @media (prefers-color-scheme: dark){
-  .dark\:bg-gray-700{
-    --tw-bg-opacity: 1;
-    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-  }
   .dark\:bg-stone-800{
     --tw-bg-opacity: 1;
     background-color: rgb(41 37 36 / var(--tw-bg-opacity));

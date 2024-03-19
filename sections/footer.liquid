@@ -75,7 +75,7 @@
 
         <div class="footer__middle lg:grid hidden lg:grid-cols-3 grid-cols-1">
             <div class="footer__about lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
-                <h1>About</h1>
+                <h1 class="!text-[30px]">About</h1>
                 
                 <ul class="flex flex-col gap-2 !pt-7">
                   {%- for block in section.blocks -%}
@@ -94,7 +94,7 @@
 
             </div>
             <div class="footer__shop lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
-                <h1>Shop</h1>
+                <h1 class="!text-[30px]">Shop</h1>
                 <ul class="flex flex-col gap-2 !pt-7">
                   {%- for block in section.blocks -%}
                     {%- case block.type -%}
@@ -111,7 +111,7 @@
                 </ul>
             </div>
             <div class="footer__support lg:border lg:border-solid border-none border-stone-800 lg:p-10 p-1">
-                <h1>Support</h1>
+                <h1 class="!text-[30px]">Support</h1>
                 <ul class="flex flex-col gap-2 !pt-7">
                   {%- for block in section.blocks -%}
                     {%- case block.type -%}
@@ -131,8 +131,8 @@
 
         <div class="footer__mobile_middle lg:hidden display-block flex flex-col">
           
-              <hr class="h-px mt-8 mb-4 bg-stone-800 border-0 dark:bg-stone-800">
-              <button class="accordion my-5 !bg-transparent text-[#e9442c] ">About</button>
+              <hr class="h-px mt-8 mb-2 bg-stone-800 border-0 dark:bg-stone-800">
+              <button class="accordion my-5 !bg-transparent text-[#e9442c] !text-[25px]">About</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
                   {%- for block in section.blocks -%}
@@ -149,8 +149,8 @@
                   {%- endfor -%}
                 </ul>
               </div>
-              <hr class="h-px my-4 bg-stone-800 border-0 dark:bg-stone-800">
-              <button class="accordion my-5 !bg-transparent">Shop</button>
+              <hr class="h-px my-2 bg-stone-800 border-0 dark:bg-stone-800">
+              <button class="accordion my-5 !bg-transparent !text-[25px]">Shop</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
                   {%- for block in section.blocks -%}
@@ -167,9 +167,9 @@
                   {%- endfor -%}
                 </ul>
               </div>
-              <hr class="h-px my-4 bg-stone-800 border-0 dark:bg-stone-800">
+              <hr class="h-px my-2 bg-stone-800 border-0 dark:bg-stone-800">
 
-              <button class="accordion my-5 !bg-transparent">Support</button>
+              <button class="accordion my-5 !bg-transparent !text-[25px]">Support</button>
               <div class="panel !bg-transparent">
                 <ul class="flex flex-col gap-2">
                   {%- for block in section.blocks -%}

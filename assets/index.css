@@ -414,7 +414,7 @@ footer .footer__mobile_middle .accordion {
   letter-spacing: 0;
   line-height: normal;
 }
-footer .footer__mobile_middle .active, footer .footer__mobile_middle .accordion:hover {
+footer .footer__mobile_middle .\active, footer .footer__mobile_middle .accordion:hover {
   background-color: #ccc;
 }
 footer .footer__mobile_middle .accordion:after {
@@ -424,6 +424,7 @@ footer .footer__mobile_middle .accordion:after {
   float: right;
   margin-left: 5px;
   font-size: 25px;
+  margin-top:-7px;
 }
 footer .footer__mobile_middle .active:after {
   content: "−";
@@ -434,4 +435,27 @@ footer .footer__mobile_middle .panel {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+/* swipper  */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

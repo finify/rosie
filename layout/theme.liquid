@@ -86,6 +86,9 @@
     {{- 'product.css' | asset_url | stylesheet_tag: preload: true -}}
     {{- 'aos.css' | asset_url | stylesheet_tag: preload: true -}}
 
+    {% comment %} swipper js library {% endcomment %}
+    {{- 'swiper-bundle.min.css' | asset_url | stylesheet_tag: preload: true -}}
+
 
     {% comment %} newasset {% endcomment %}
     {{- 'newcustom.css' | asset_url | stylesheet_tag: preload: true -}}
@@ -303,7 +306,7 @@
 
               $("#top-sellers-head").removeClass("translate-y-32");
             }else{
-              $("#top-sellers-head").addClass("translate-y-32");
+             // $("#top-sellers-head").addClass("translate-y-32");
             }
           })
 
@@ -352,5 +355,35 @@
           
         });
     </script>
+
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
+
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1.1, // Display 1.5 slides at a time
+      spaceBetween: 10, // Space between slides
+      slidesOffsetBefore: 10,
+
+      navigation: {
+        nextEl: ".swiper-button-next1",
+        prevEl: ".swiper-button-prev1",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+    var swiper = new Swiper(".mySwiper1", {
+      spaceBetween: 10, // Space between slides
+
+      navigation: {
+        nextEl: ".swiper-button-next1",
+        prevEl: ".swiper-button-prev1",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
   </body>
 </html>

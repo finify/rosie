@@ -6,7 +6,7 @@
         background-image:url("{{- section.settings.image_right | image_url: width: 1728 -}}") ;
       }
 </style>
-<div class="about grid lg:grid-cols-2 grid-cols-1 gap-2 py-6 h-auto">
+<div class="about lg:grid hidden lg:grid-cols-2 grid-cols-1 gap-2 py-6 h-auto">
     <div class="flex flex-col about__item1 bg-[url('/img/about1.png')] h-[400px] bg-no-repeat bg-cover bg-center justify-end pb-7 bg-gray-600 bg-blend-overlay">
         <div class="about__details text-center">
             <p class="!text-lg">{{- section.settings.heading1 | capitalize -}}</p>
@@ -24,6 +24,46 @@
             <a class="text-lg hover-underline-white" href="{{ section.settings.link1 }}">Browser Collection</a>
         </div>
     </div>
+</div>
+
+<div class="w-100 lg:hidden display-block">
+    <div class="about-top-text about__details p-4 ">
+        <p class="!text-lg !text-black">{{- section.settings.heading1 | capitalize -}}</p>
+        <h1>
+            <span class="browse !text-black" >Browse</span> <span class="our !text-black">Our</span><br> 
+            <span class="cutlerry !text-black">{{- section.settings.heading1 | capitalize -}}</span> <span class="collect !text-black !font-['Plus_Jakarta_Sans']">Collection</span>
+        </h1>
+        <p class="!text-[17px] !text-black !mt-4">Find what best fits you kitchen in our collection its not just about function at rosies we care a lot about your style too</p>
+    </div>
+
+    <div class="swiper mySwiper1 lg:hidden display-block !mb-10">
+        <div class="swiper-wrapper">
+           
+            <div class="swiper-slide">
+                <div class="flex flex-col about__item1 h-[400px] bg-no-repeat bg-cover bg-center justify-end pb-12 bg-gray-600 bg-blend-overlay">
+                    <div class="about__details text-center">
+                        <a class="bg-[#E9442C] px-5 py-3 rounded-full" href="{{- section.settings.link1 -}}">Browser Collection</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="flex flex-col about__item2 h-[400px] bg-no-repeat bg-cover bg-center justify-end pb-12 bg-gray-600 bg-blend-overlay">
+                    <div class="about__details text-center">
+                        <a class="text-lg bg-[#E9442C] px-5 py-4 rounded-full pb-5" href="{{- section.settings.link1 -}}">Browser Collection</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between pl-3 pr-3 mt-4">
+            <div class="swiper-pagination !z-0 lg:hidden display-block"></div>
+            
+            <div class="swiper-button-prev1 !z-10 lg:hidden display-block"><img src="{{ 'arrow_back.png' | asset_url }}" width="40" height="20" alt=""></div>
+            <div class="swiper-button-next1 !z-10 lg:hidden display-block"><img src="{{ 'arrow_forward.png' | asset_url }}" width="40" height="20" alt=""></div>
+        </div>
+        
+        </div>
+
+    
 </div>
 
 {% comment %} 
