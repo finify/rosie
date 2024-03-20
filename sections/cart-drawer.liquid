@@ -141,8 +141,8 @@
         {% endfor %}
 
         <div class="h-stack gap-4 justify-between">
-          <span class="h5">{{ 'cart.general.total' | t }}</span>
-          <span class="h5">{{- cart.total_price | money_with_currency -}}</span>
+          <span class="h5 !font-['Plus_Jakarta_Sans']">{{ 'cart.general.total' | t }}</span>
+          <span class="h5 !font-['Plus_Jakarta_Sans']">{{- cart.total_price | money_with_currency -}}</span>
         </div>
 
         {%- if section.settings.show_shipping_text -%}
@@ -207,7 +207,7 @@
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          <button class="button button--xl">
+          <button class="!font-['Plus_Jakarta_Sans'] !rounded-full button button--xl">
             <a
             href="{{ routes.cart_url }}"
             data-no-instant
