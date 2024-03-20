@@ -36,6 +36,7 @@
     "product_image_aspect_ratio": "square_crop",
     "product_info_alignment": "start",
     "cart_type": "drawer",
+    "cart_empty_button_link": "shopify:\/\/collections\/best-sellers",
     "social_twitter": "https:\/\/twitter.com\/Vibesonly",
     "social_instagram": "https:\/\/www.instagram.com\/vibesonly\/",
     "favicon": "shopify:\/\/shop_images\/f1-5.png",
@@ -247,7 +248,8 @@
       ".dropdown-menu__item {opacity: 1 !important;}",
       ".text-subdued {font-size: 15px !important;}",
       ".needsclick {min-height: auto !important;}",
-      "div[data-testid=\"form-component\"]:nth-child(2) {padding: 0px !important;}"
+      "div[data-testid=\"form-component\"]:nth-child(2) {padding: 0px !important;}",
+      ".shopify-challenge__button btn {color: black !important;}"
     ]
   }
 }

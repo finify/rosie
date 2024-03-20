@@ -42,7 +42,7 @@ h1,
 }
 
 .scrollbar__progress:before {
-  background: var(--background-primary-color);
+  background: #E9442C;
   border-radius: 12px;
 }
 
@@ -1182,7 +1182,7 @@ p.form-grid__text {
 
 .collection-with-hero__content {
   max-width: 600px;
-  background: var(--primary-color);
+  background: #e9442c;
   
 }
 .collection-with-hero__content h2 {

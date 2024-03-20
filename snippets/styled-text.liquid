@@ -44,14 +44,14 @@ Supported variables
 
 {%- capture text_content -%}
   {%- if apparition_effect and settings.heading_apparition contains 'split' and gradient == blank -%}
-    <split-lines>{{ content | strip | escape }}</split-lines>
+    <split-lines class="!font-['Plus_Jakata_Sans']">{{ content | strip | escape }}</split-lines>
   {%- else -%}
     {{- content | strip | escape -}}
   {%- endif -%}
 {%- endcapture -%}
 
 {%- if class != blank -%}
-  <span class="{{ class }}" style="{{ style }}">{{- text_content -}}</span>
+  <span class="{{ class }} !font-['Plus_Jakata_Sans']" style="{{ style }}">{{- text_content -}}</span>
 {%- else -%}
   {{- text_content -}}
 {%- endif -%}

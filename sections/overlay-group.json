@@ -36,7 +36,8 @@
         "show_checkout_button": true,
         "recommendations_title": "Trending this month",
         "products": [
-
+          "product3",
+          "product2"
         ],
         "product_card_background": "#f2f2f2",
         "product_card_text_color": ""
