@@ -1,5 +1,12 @@
 {
   "sections": {
+    "empty_page_header_jwTVaX": {
+      "type": "empty-page-header",
+      "settings": {
+        "heading": "Page",
+        "subheading": "sub heading"
+      }
+    },
     "page_header_GfDmHT": {
       "type": "page-header",
       "disabled": true,
@@ -75,6 +82,7 @@
     }
   },
   "order": [
+    "empty_page_header_jwTVaX",
     "page_header_GfDmHT",
     "main",
     "about_image_right_hUmyfk",

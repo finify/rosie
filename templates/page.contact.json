@@ -1,7 +1,15 @@
 {
   "sections": {
+    "empty_page_header_9GdkXd": {
+      "type": "empty-page-header",
+      "settings": {
+        "heading": "Page",
+        "subheading": "sub heading"
+      }
+    },
     "page_header_TbAzhr": {
       "type": "page-header",
+      "disabled": true,
       "settings": {
         "image_banner": "shopify:\/\/shop_images\/aboutimage2.png",
         "heading": "Contact Us",
@@ -49,6 +57,7 @@
     }
   },
   "order": [
+    "empty_page_header_9GdkXd",
     "page_header_TbAzhr",
     "main",
     "contact"
