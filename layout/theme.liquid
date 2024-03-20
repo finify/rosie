@@ -163,63 +163,9 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      $(document).ready(function(){
-          // $("#v-pills-custom-tab").addClass("active");
-          $('.image-nav-link').first().addClass('active');
-          $('.image-tab-pane').first().addClass('active');
-      });
-      let myTitles= document.querySelectorAll('.title-break');
-      myTitles.forEach(myTitle => {
-          let myTitleText = myTitle.innerHTML;
-          let breakpoint = myTitle.getAttribute('bp');
-
-          let myTitleArray = myTitleText.split(" ");
-          myTitleArray.splice(breakpoint, 0, "</br>");
-          let modTitle = myTitleArray.slice(0, myTitleArray.length).join(' ') ;
-          if(breakpoint != 0 || breakpoint==""){
-              myTitle.innerHTML = modTitle ;
-          }
-      });
-
-      //video flip js
-      $(document).ready(function(){
-          // $("#v-pills-custom-tab").addClass("active");
-          $('.video-nav-link').first().addClass('active');
-          $('.video-nav-link').first().attr('disabled', 'disabled');
-          $('.video-tab-pane').first().addClass('active');
-      });
-
-      $('.video-nav-link').first().next().click(function (e) {
-          $('.video-tab-pane').first().next().removeClass('active');
-          $('.video-tab-pane').first().addClass('active');
-          var thevideo = document.getElementsByClassName('myVideo')[0];
-          thevideo.play();
-          setTimeout(function() {
-              $('.video-tab-pane').first().next().addClass('active');
-              $('.video-tab-pane').first().removeClass('active');
-              thevideo.pause ();
-              thevideo.currentTime = 0;
-              $('.video-nav-link').first().removeAttr("disabled");
-              $('.video-nav-link').first().next().attr('disabled', 'disabled');
-          }, 3000);
-       });
-
-       $('.video-nav-link').first().click(function (e) {
-          $('.video-tab-pane').first().removeClass('active');
-          $('.video-tab-pane').first().next().addClass('active');
-          var thevideo = document.getElementsByClassName('myVideo')[1];
-          thevideo.play();
-          setTimeout(function() {
-              $('.video-tab-pane').first().addClass('active');
-              $('.video-tab-pane').first().next().removeClass('active');
-              thevideo.pause ();
-              thevideo.currentTime = 0;
-              $('.video-nav-link').first().next().removeAttr("disabled");
-              $('.video-nav-link').first().attr('disabled', 'disabled');
-          }, 3000);
-       });
-
+     
       $(document).ready(function() {
+     
         let percentage ,position;
         $.fn.isInViewport = function (percentage,position) {
           let elementTop ;
@@ -239,50 +185,7 @@
             return elementBottom > viewportTop && elementTop < viewportBottom;
         };
     
-        WindowWidth = $(window).width();
-        if (WindowWidth < 600){
-            $(window).on("load scroll", function () {
-            $('.mobile-app-section-2__image').each(function() {
-                if( $(this).isInViewport() ) {
-                  //background animate
-                  // $(this).prev().find('.mobile-app-section-2__image').delay(10000).css("background-position","bottom");
-                  $(this).delay(10000).css("background-position","100px 100px");
-                  
-                  //caption animate
-                    // $(this).prev().find('.mobile-app-section-2__caption').delay(10000).css("right","-500px");
-                    // $(this).prev().find('.mobile-app-section-2__caption').delay(10000).css("opacity","0");
-                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("right","0");
-                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("opacity","1");
-
-                  //Link animate
-                    // $(this).prev().find('.mobile-app-section-2__link').delay(10000).css("bottom","-500px");
-                    // $(this).prev().find('.mobile-app-section-2__link').delay(10000).css("opacity","0");
-                    $(this).find('.mobile-app-section-2__link').delay(10000).css("bottom","0");
-                    $(this).find('.mobile-app-section-2__link').delay(10000).css("opacity","1");
-
-                }else{
-                  //background animate
-                  $(this).delay(10000).css("background-position","bottom");
-
-                   //caption animate
-                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("right","-500px");
-                    $(this).find('.mobile-app-section-2__caption').delay(10000).css("opacity","0");
-
-                  //Link animate
-                    $(this).find('.mobile-app-section-2__link').delay(10000).css("bottom","-500px");
-                    $(this).find('.mobile-app-section-2__link').delay(10000).css("opacity","0");
-                }
-            });
-        });
-        }
-        else {
-            console.log("desktop");
-        }
-    
-        
-    
-        
-        });
+      });
     </script> 
 
    
@@ -306,7 +209,7 @@
 
               $("#top-sellers-head").removeClass("translate-y-32");
             }else{
-             // $("#top-sellers-head").addClass("translate-y-32");
+             $("#top-sellers-head").addClass("translate-y-32");
             }
           })
 
@@ -316,7 +219,7 @@
               if( $(this).isInViewport(0.3,"bottom") ) {
                 $("#call-to-action-header").addClass("translate-y-56");
               }else{
-               // $("#call-to-action-header").removeClass("translate-y-56");
+              
               }
             })
 
@@ -351,6 +254,7 @@
         {
           $("#hero").removeClass("scale-125");
           $("#hero").addClass("scale-100");
+         
         }, 500);
           
         });
@@ -359,31 +263,31 @@
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
 
     <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 1.1, // Display 1.5 slides at a time
-      spaceBetween: 10, // Space between slides
-      slidesOffsetBefore: 10,
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1.1, // Display 1.5 slides at a time
+        spaceBetween: 10, // Space between slides
+        slidesOffsetBefore: 10,
 
-      navigation: {
-        nextEl: ".swiper-button-next1",
-        prevEl: ".swiper-button-prev1",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
+        navigation: {
+          nextEl: ".swiper-button-next1",
+          prevEl: ".swiper-button-prev1",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
 
-    var swiper = new Swiper(".mySwiper1", {
-      spaceBetween: 10, // Space between slides
+      var swiper = new Swiper(".mySwiper1", {
+        spaceBetween: 10, // Space between slides
 
-      navigation: {
-        nextEl: ".swiper-button-next1",
-        prevEl: ".swiper-button-prev1",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-  </script>
+        navigation: {
+          nextEl: ".swiper-button-next1",
+          prevEl: ".swiper-button-prev1",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
   </body>
 </html>
