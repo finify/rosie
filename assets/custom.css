@@ -271,7 +271,7 @@ nav .dropdown-menu img {
 }
 
 .product .product-gallery__thumbnail-list-wrapper {
-  margin: var(--spacing-8);
+  /* margin: var(--spacing-8); */
 }
 
 .product button.product-gallery__thumbnail {
@@ -1793,7 +1793,7 @@ a.policy-aside__title {
   }
 
   page-dots.product-gallery__thumbnail-list.scroll-area.bleed.md\:unbleed {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .press__controls {

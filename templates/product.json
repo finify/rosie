@@ -141,25 +141,6 @@
         "input_text_color": ""
       }
     },
-    "toyfeatures": {
-      "type": "toyfeatures",
-      "custom_css": [
-        "@media only screen and (max-width: 768px) {.half {width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; } .second-half {width: 100% !important; margin-top: 20px; } .flow {display: block !important; } ul {padding-top: 40px; } .second-half {display: none; }}",
-        "ul {padding-top: 45px;}",
-        ".container {margin-inline-start: 0;}",
-        "h4.space {font-size: 35px; padding-top: 20px;}"
-      ],
-      "settings": {
-        "toy_icon": 36,
-        "toy_icon_mobile": 21,
-        "toy_text": 17,
-        "toy_text_mobile": 14,
-        "itb_size": 26,
-        "itbt_size": 14,
-        "ing": 19,
-        "ing_mobile": 16
-      }
-    },
     "related-products": {
       "type": "related-products",
       "custom_css": [
@@ -210,6 +191,25 @@
         "product_card_text_color": ""
       }
     },
+    "toyfeatures": {
+      "type": "toyfeatures",
+      "custom_css": [
+        "@media only screen and (max-width: 768px) {.half {width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; } .second-half {width: 100% !important; margin-top: 20px; } .flow {display: block !important; } ul {padding-top: 40px; } .second-half {display: none; }}",
+        "ul {padding-top: 45px;}",
+        ".container {margin-inline-start: 0;}",
+        "h4.space {font-size: 35px; padding-top: 20px;}"
+      ],
+      "settings": {
+        "toy_icon": 36,
+        "toy_icon_mobile": 21,
+        "toy_text": 17,
+        "toy_text_mobile": 14,
+        "itb_size": 26,
+        "itbt_size": 14,
+        "ing": 19,
+        "ing_mobile": 16
+      }
+    },
     "loox-product-reviews-app-section": {
       "type": "apps",
       "disabled": true,
@@ -231,8 +231,8 @@
   "order": [
     "product_page_header_KYQCDF",
     "main",
-    "toyfeatures",
     "related-products",
+    "toyfeatures",
     "loox-product-reviews-app-section"
   ]
 }
