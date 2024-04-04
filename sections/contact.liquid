@@ -19,8 +19,8 @@
         <div class="contact__wrapper bg-[#fff]  grid lg:grid-cols-2 grid-cols-1 lg:border border-0 border-solid border-[#e9442c4c] animate__animated animate__fadeInRight animate__delay-1s">
             <div class="contact__text p-7 border border-solid border-[#e9442c4c]">
                 <div class="contact__textwrap">
-                    <h1 class="lg:text-[50px] text-[25px]">{{- section.settings.title -}}</h1>
-                    <h4 class="lg:text-[20px] text-[13px] mt-5">{{- section.settings.content -}}</h4>
+                    <h1 class="lg:text-[35px] text-[20px]">{{- section.settings.title -}}</h1>
+                    <h4 class="lg:text-[16px]  text-[13px] mt-5">{{- section.settings.content -}}</h4>
                 </div>
             </div>
           {%- capture contact_form_id -%}contact-form-{{ section.id }}{%- endcapture -%}
@@ -72,14 +72,13 @@
                         required: true 
                       -%}
                   </div>
-                  
+
                 </div>
                 <div class="row-span-3 col-span-2">
                     <div class="contact__form-footer">
-                        <input type="checkbox" name="contact[privacy_agree]" value="privacy_agree" id="" required class="float-start mt-1.5 mr-2"> <h3 class="float-start mt-1 text-[13px]">I agree to privacy policy</h3> <br>
                         <input type="checkbox" name="contact[newsletter_yes]" value="newsletter_yes" id="" class="float-start mt-1.5 mr-2 "> <h3 class="float-start mt-1 text-[13px]">Keep me up to date with anything new on rosies Essentials</h3><br>
                     </div>
-                    <button type="submit" class="w-auto bg-[#e9442c] text-white py-2 px-4 rounded-full mt-1 text-center">Submit</button>
+                    <button type="submit" class="w-auto bg-[#e9442c] text-white py-2 px-4 mt-1 text-center">Submit</button>
                 </div>
             </div>
           {%- endform -%}
