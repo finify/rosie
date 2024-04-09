@@ -2362,7 +2362,7 @@ scroll-carousel {
 
   .horizontal-product__cta {
     flex-shrink: 0;
-    margin-inline-end: var(--spacing-4);
+    /* margin-inline-end: var(--spacing-4); */
   }
 }
 
@@ -2697,8 +2697,8 @@ scroll-carousel {
 }
 
 .section-stack {
-  gap: var(--section-stack-spacing-block, 0px)
-    var(--section-stack-spacing-inline, 0px);
+  /* gap: var(--section-stack-spacing-block, 0px)
+    var(--section-stack-spacing-inline, 0px); */
   grid-auto-columns: minmax(0, 1fr);
   display: grid;
 }

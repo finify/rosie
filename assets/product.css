@@ -43,10 +43,6 @@
   letter-spacing: 0;
   line-height: normal;
 }
-
-.accordion_wrapper button{
-  font-size: 17px!important;
-}
 .product__accordion .active, .product__accordion .accordion:hover {
   background-color: #ccc;
 }

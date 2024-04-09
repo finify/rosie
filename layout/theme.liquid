@@ -1,27 +1,27 @@
 {%- comment -%}
-  ------------------------------------------------------------------------------------------------------------------------
-  NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing this theme as much as we did for
-    developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
-    hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
-    all events, dependencies...) in the "documentation.txt" file, located in the Assets folder.
-  ------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing this theme as much as we did for
+developing it. We have put a lot of work to make this theme as developer friendly as possible by offering you
+hooks to integrate into critical parts of the theme. You will find the complete technical documentation (including
+all events, dependencies...) in the "documentation.txt" file, located in the Assets folder.
+------------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
 <!doctype html>
 
-<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
+<html
+  class="no-js"
+  lang="{{ request.locale.iso_code }}"
+  dir="{% render 'direction' %}">
   <head>{% render 'pagefly-head' %}
     <meta charset="utf-8">
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="theme-color" content="{{ settings.header_background }}">
     {% comment %} <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
     > {% endcomment %}
 
     <title>
@@ -29,7 +29,8 @@
         {{- shop.name -}}
       {%- else -%}
         {{- page_title -}}
-        {%- if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
+        {%- if current_page != 1 %}
+          &ndash; {{ 'general.page' | t: page: current_page }}{% endif -%}
       {%- endif %}
     </title>
 
@@ -46,15 +47,28 @@
 
     {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preconnect" href="https://cdn.shopify.com">
-    <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    <link
+      rel="preconnect"
+      href="https://fonts.shopifycdn.com"
+      crossorigin>
     <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
 
     {%- unless settings.heading_font.system? -%}
-      <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        href="{{ settings.heading_font | font_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin>
     {%- endunless -%}
 
     {%- unless settings.text_font.system? -%}
-      <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        href="{{ settings.text_font | font_url }}"
+        as="font"
+        type="font/woff2"
+        crossorigin>
     {%- endunless -%}
 
     {%- render 'social-meta-tags' -%}
@@ -65,12 +79,12 @@
     <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
     <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
     <script type="module" src="{{ 'sections.js' | asset_url }}"></script>
-    
+
 
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <!--
-      <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-      <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     -->
     {{ content_for_header }}
 
@@ -95,17 +109,18 @@
 
     {{ shop.metafields.loox.global_html_head }}
     <style>
-  .container {
-    margin-inline-start:auto!important;
-  }
-  .shopify-challenge__button{
-    color: white!important;
-    background: #e9442c!important;
-    font-family: "Plus Jakarta Sans", Helvetica !important;
-  }
-  .shopify-challenge__container{
-    margin-top: 100px!important;
-  }
+      .container {
+        margin-inline-start: auto !important;
+      }
+      .shopify-challenge__button {
+        color: white !important;
+        background: #e9442c !important;
+        font-family: "Plus Jakarta Sans", Helvetica !important;
+      }
+      .shopify-challenge__container {
+        margin-top: 100px !important;
+      }
+      .cart-drawer__recommendations button {}
     </style>
   </head>
 
@@ -126,18 +141,21 @@
     {%- endif -%}
 
     {%- if request.page_type == 'customers/account'
-      or request.page_type == 'customers/order'
-      or request.page_type == 'customers/addresses'
-    -%}
+ or request.page_type == 'customers/order'
+ or request.page_type == 'customers/addresses'
+ -%}
       {%- section 'account-banner' -%}
     {%- endif -%}
 
-    <main role="main" id="main" class="anchor">
+    <main
+      role="main"
+      id="main"
+      class="anchor">
       {{ content_for_layout }}
 
       {%- comment -%}
-        IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
-        added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
+      IMPLEMENTATION NOTE: due to the very complex logic of margin/padding collapsing in Impact, the footer group is
+      added into the main element to ensure that dynamic sections added into the footer group are properly laid out.
       {%- endcomment -%}
       {%- if request.page_type != 'password' -%}
         {%- sections 'footer-group' -%}
@@ -147,125 +165,144 @@
     {{ shop.metafields.loox.global_html_body }}
     {{ '//cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/booster-page-speed-optimizer.js?23' | script_tag }}
     {% comment %} <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-      defer
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+    defer
     ></script> {% endcomment %}
 
     {% comment %} newasset {% endcomment %}
     {% comment %} <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"
     ></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-      crossorigin="anonymous"
-    ></script> {% endcomment %}
-    
-    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"
+    ></script> {% endcomment %}<script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"> </script>
+
     <script>
-     
+
+      $("[id^=menu]").each(function() {
+        var newindex = $(this).attr('menu');
+        var selector = "submenu-" + newindex;
+        $('#' + selector).hide();
+      
+
+
+        $(this).hover(function() {
+          var newindex = $(this).attr('menu');
+          var selector = "submenu-" + newindex;
+          $('#' + selector).show();
+        },
+        function() {
+          var newindex = $(this).attr('menu');
+          var selector = "submenu-" + newindex;
+          $('#' + selector).hide();
+        });
+      });
+    </script>
+    <script>
+
       $(document).ready(function() {
-     
-        let percentage ,position;
-        $.fn.isInViewport = function (percentage,position) {
-          let elementTop ;
-          let elementBottom ;
-          if(position == "bottom"){
+
+        let percentage,
+          position;
+        $.fn.isInViewport = function(percentage, position) {
+          let elementTop;
+          let elementBottom;
+          if (position == "bottom") {
             elementTop = ($(this).offset().top) - (percentage * $(this).outerHeight());
             elementBottom = elementTop + $(this).outerHeight();
-         
-          }else{
-            
-            elementTop = $(this).offset().top ;
-            elementBottom = elementTop + ($(this).outerHeight() - (percentage * $(this).outerHeight()) );
-          }
-            
-            let viewportTop = $(window).scrollTop();
-            let viewportBottom = viewportTop + $(window).height();
-            return elementBottom > viewportTop && elementTop < viewportBottom;
-        };
-    
-      });
-    </script> 
 
-   
+          } else {
+
+            elementTop = $(this).offset().top;
+            elementBottom = elementTop + ($(this).outerHeight() - (percentage * $(this).outerHeight()));
+          }
+
+          let viewportTop = $(window).scrollTop();
+          let viewportBottom = viewportTop + $(window).height();
+          return elementBottom > viewportTop && elementTop < viewportBottom;
+        };
+
+      });
+    </script>
+
+
     <script>
-      $(document).ready(function(){
-        $(window).on("load scroll", function () {
+      $(document).ready(function() {
+        $(window).on("load scroll", function() {
           $('.hero').each(function() {
-            if( $(this).isInViewport(0.8,"bottom") ) {
+            if ($(this).isInViewport(0.8, "bottom")) {
               $("#hero").removeClass("scale-95");
               $("#hero").addClass("scale-100");
-              
-            }else{
-             
+
+            } else {
+
               $("#hero").removeClass("scale-100");
               $("#hero").addClass("scale-95");
             }
           })
 
           $('.top-sellers').each(function() {
-            if( $(this).isInViewport(0.5,"top") ) {
+            if ($(this).isInViewport(0.5, "top")) {
 
               $("#top-sellers-head").removeClass("translate-y-32");
-            }else{
-             $("#top-sellers-head").addClass("translate-y-32");
+            } else {
+              $("#top-sellers-head").addClass("translate-y-32");
             }
           })
 
           WindowWidth = $(window).width();
-          if (WindowWidth > 600){
-              $('.call-to-action').each(function() {
-              if( $(this).isInViewport(0.3,"bottom") ) {
+          if (WindowWidth > 600) {
+            $('.call-to-action').each(function() {
+              if ($(this).isInViewport(0.3, "bottom")) {
                 $("#call-to-action-header").addClass("translate-y-56");
-              }else{
-              
-              }
+              } else {}
             })
 
             $('.call-to-action').each(function() {
-              if( $(this).isInViewport(0.3,"top") ) {
-               
+              if ($(this).isInViewport(0.3, "top")) {
+
                 $("#call-to-action-header").removeClass("translate-y-56");
                 $("#call-to-action-header").removeClass("relative");
                 $("#call-to-action-header").addClass("sticky");
                 $("#call-to-action-header").addClass("top-32");
                 $("#call-to-action-image").removeClass("translate-y-56");
-              }else{
-                //$("#call-to-action-header").addClass("translate-y-56");
-                //$("#call-to-action-image").addClass("translate-y-56");
+              } else {
+
+// $("#call-to-action-header").addClass("translate-y-56");
+// $("#call-to-action-image").addClass("translate-y-56");
               }
             })
           }
 
-          
+
         })
       })
     </script>
 
+
+
     {% comment %} newasset {% endcomment %}
 
-     
+
     <script>
-     
-      $(document).ready(function(){
-        setTimeout(
-        function() 
-        {
+
+      $(document).ready(function() {
+        setTimeout(function() {
           $("#hero").removeClass("scale-125");
           $("#hero").addClass("scale-100");
-         
+
         }, 500);
-          
-        });
+
+      });
     </script>
 
     <script src="{{ 'swiper-bundle.min.js' | asset_url }}"></script>
@@ -278,11 +315,11 @@
 
         navigation: {
           nextEl: ".swiper-button-next1",
-          prevEl: ".swiper-button-prev1",
+          prevEl: ".swiper-button-prev1"
         },
         pagination: {
-          el: ".swiper-pagination",
-        },
+          el: ".swiper-pagination"
+        }
       });
 
       var swiper = new Swiper(".mySwiper1", {
@@ -290,11 +327,11 @@
 
         navigation: {
           nextEl: ".swiper-button-next1",
-          prevEl: ".swiper-button-prev1",
+          prevEl: ".swiper-button-prev1"
         },
         pagination: {
-          el: ".swiper-pagination",
-        },
+          el: ".swiper-pagination"
+        }
       });
     </script>
   </body>

@@ -207,7 +207,7 @@
         {%- assign checkout_label = 'cart.general.checkout' | t -%}
 
         {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          <button class="!font-['Plus_Jakarta_Sans'] !rounded-full button button--xl">
+          <button class="!font-['Plus_Jakarta_Sans'] button button--xl">
             <a
             href="{{ routes.cart_url }}"
             data-no-instant

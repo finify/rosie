@@ -4,14 +4,16 @@
         margin-bottom:0px;
     }
     .collection-page-header{
-        background-image:url("{{- collection.featured_image | image_url: width: 2000 -}}") ;
+       
+        background-color: #F9F8EE;
+
       }
 </style>
 
-<div class="collection-page-header flex flex-col w-full lg:h-[450px] h-[400px] z-0 justify-end px-5 pb-10 lg:bg-center bg-[50%_50%]">
-    <div class="text-wrapper flex flex-col text-left animate__animated animate__fadeInUp animate__delay-2s">
-        <h1 class="text-[50px] lg:text-[64px] !font-['Plus_Jakarta_Sans'] text-white italic">{{- collection.title | capitalize -}}</h1>
-        <h1><p class="text-[15px] lg:text-[20px] lg:w-2/5 w-full text-white !font-['Plus_Jakarta_Sans']">{{- collection.description -}}</p></h1>
+<div class="collection-page-header flex flex-col w-full lg:h-[350px] h-[300px] z-0 justify-end px-5 pb-10 lg:bg-center bg-[50%_50%]">
+    <div class="text-wrapper flex flex-col text-center animate__animated animate__fadeInUp animate__delay-2s">
+        <h1 class="text-[50px] lg:text-[64px] !font-['Plus_Jakarta_Sans'] text-black italic">{{- collection.title | capitalize -}}</h1>
+        <h1><p class="text-[15px] lg:text-[20px] lg:w-full w-full text-black !font-['Plus_Jakarta_Sans']">{{- collection.description -}}</p></h1>
     </div>
 </div>
 

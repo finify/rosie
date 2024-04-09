@@ -190,7 +190,7 @@
     <div class="product__accordion mt-4">
 
       <div class="accordion_wrapper">
-        <hr class="h-px bg-[#e9442c] border-0 ">
+        <hr class="h-[0.5px] bg-[#e9442c] border-0 ">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'collapsible_text' -%}
@@ -203,7 +203,7 @@
                 content: accordion_content,
                 class: 'product-info__accordion',
                 block: block -%}
-              <hr class="h-px bg-[#e9442c] border-0">
+              <hr class="h-[0.5px] bg-[#e9442c] border-0">
             {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}

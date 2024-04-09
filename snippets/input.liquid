@@ -41,20 +41,35 @@ Supported variables
 
 <div>
   {%- if multiline != blank -%}
-    <textarea id="{{ id }}" class="textarea is-floating" is="resizable-textarea" name="{{ name }}" placeholder="{{ label }}" rows="{{ multiline }}" {{ optional_attributes }}>{{- value -}}</textarea>
+    <textarea
+      id="{{ id }}"
+      class="textarea is-floating !bg-[#ffffff]"
+      is="resizable-textarea"
+      name="{{ name }}"
+      placeholder="{{ label }}"
+      rows="{{ multiline }}"
+      style="background:white;"
+      {{ optional_attributes }}>{{- value -}}</textarea>
   {%- else -%}
-    <input id="{{ id }}" class="rounded-full w-full" type="{{ type | default: 'text' }}" {% if type == 'email' or type == 'tel' %}dir="ltr"{% endif %} name="{{ name }}" placeholder="{{ placeholder }}" {{ optional_attributes }}>
+    <input
+      id="{{ id }}"
+      class="rounded-full w-full"
+      type="{{ type | default: 'text' }}"
+      {% if type == 'email' or type == 'tel' %}dir="ltr"{% endif %}
+      name="{{ name }}"
+      placeholder="{{ placeholder }}"
+      {{ optional_attributes }}>
   {%- endif -%}
 
   {%- if show_max_characters_count and maxlength > 0 -%}
     <span class="form-control__max-characters-count text-sm text-subdued text-end">{{ 'general.form.max_characters' | t: max_chars: maxlength }}</span>
   {%- endif -%}
 
-  
+
 
   {%- if self_submit -%}
-      <button type="submit">
-        Subscribe
-      </button>
+    <button type="submit">
+      Subscribe
+    </button>
   {%- endif -%}
 </div>
