@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "section_vertical_spacing": "medium",
@@ -36,11 +45,11 @@
     "product_image_aspect_ratio": "square_crop",
     "product_info_alignment": "start",
     "cart_type": "drawer",
-    "cart_empty_button_link": "shopify:\/\/collections\/best-sellers",
-    "social_twitter": "https:\/\/twitter.com\/Vibesonly",
-    "social_instagram": "https:\/\/www.instagram.com\/vibesonly\/",
-    "favicon": "shopify:\/\/shop_images\/f1-5.png",
-    "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
+    "cart_empty_button_link": "shopify://collections/best-sellers",
+    "social_twitter": "https://twitter.com/Vibesonly",
+    "social_instagram": "https://www.instagram.com/vibesonly/",
+    "favicon": "shopify://shop_images/f1-5.png",
+    "checkout_logo_image": "shopify://shop_images/logo.png",
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#ffffff",
     "checkout_accent_color": "#bf5569",
@@ -55,7 +64,7 @@
               "name": "Operetta18-Regular",
               "custom_font_weight": "400",
               "custom_font_style": "normal",
-              "custom_font_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0668\/9164\/5181\/files\/Operetta18-Regular.woff?v=1698788831",
+              "custom_font_url": "https://cdn.shopify.com/s/files/1/0668/9164/5181/files/Operetta18-Regular.woff?v=1698788831",
               "apply_h1": false,
               "apply_h2": false,
               "apply_h3": false,
@@ -73,7 +82,7 @@
               "name": "Operetta18-Bold",
               "custom_font_weight": "none",
               "custom_font_style": "none",
-              "custom_font_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0668\/9164\/5181\/files\/Operetta18-Bold.woff?v=1698788830",
+              "custom_font_url": "https://cdn.shopify.com/s/files/1/0668/9164/5181/files/Operetta18-Bold.woff?v=1698788830",
               "apply_h1": true,
               "apply_h2": true,
               "apply_h3": true,
@@ -100,7 +109,7 @@
           "@media only screen and (max-width: 600px) {.full-hero {height: 382px !important; }}"
         ],
         "settings": {
-          "hero_image": "shopify:\/\/shop_images\/Group_1413.png"
+          "hero_image": "shopify://shop_images/Group_1413.png"
         }
       },
       "about-us-text": {
@@ -109,23 +118,23 @@
           "highted_text": "Vibes Only",
           "header_text": "started with a passion...",
           "body_text": "for self-pleasure and a desire to take it to unprecedented levels. With our podcast Girls Gotta Eat, we built such an incredible community, and not only felt the positive impacts of discussing sex and pleasure in an open, honest, non-judgmental way, but realized how many women were in need of more (and better) orgasms. So, we knew a sex toy company was the natural next step. We wanted to create elite, superior quality toys that we would use ourselves, along with the necessary accouterments for the bedroom like oral sex enhancer, lubricant, and more.\n\n<br><br>\n\nBut then we thought, what else are we so passionate about in the bedroom? Oh right...DIRTY TALK. And the app was born. The Vibes Only app is full of erotic audio experiences so you can immerse yourself in your wildest fantasies and have the ultimate orgasm (not to mention the other app features like the Long Distance Lover remote control, vibrator battery estimator, and more). The company is run by a team of incredible women and is designed for whoever finds pleasure in it.",
-          "signature": "shopify:\/\/shop_images\/Group_1404_1.png",
-          "brand1": "shopify:\/\/shop_images\/image_85.png",
-          "brand1-link": "https:\/\/www.youtube.com\/watch?v=dvYavB5GN8o",
-          "brand2": "shopify:\/\/shop_images\/image_87.png",
-          "brand2-link": "https:\/\/www.cosmopolitan.com\/sex-love\/news\/a43169\/the-best-porn-sites-for-women\/",
-          "brand3": "shopify:\/\/shop_images\/image_89.png",
-          "brand3-link": "https:\/\/www.wellandgood.com\/vibes-only-allison-wonderland\/",
-          "brand4": "shopify:\/\/shop_images\/image_88.png",
-          "brand4-link": "https:\/\/www.popsugar.com\/love\/photo-gallery\/43317145\/image\/49144300\/Best-Vibrating-Butt-Plug",
-          "brand5": "shopify:\/\/shop_images\/image_86.png",
-          "brand5-link": "https:\/\/www.refinery29.com\/en-us\/vibes-only-sex-toy-review",
-          "brand6": "shopify:\/\/shop_images\/image_89_1.png",
-          "brand6-link": "https:\/\/www.sheknows.com\/health-and-wellness\/articles\/2679631\/vibes-only-vibrators-app-audio-erotica\/",
-          "brand7": "shopify:\/\/shop_images\/image_87_1.png",
-          "brand7-link": "https:\/\/www.theskimm.com\/shopping\/sex-toys-for-every-person-and-preference",
-          "brand8": "shopify:\/\/shop_images\/image_88_1.png",
-          "brand8-link": "https:\/\/www.menshealth.com\/sex-women\/g19524731\/romantic-gifts-for-valentines-day\/"
+          "signature": "shopify://shop_images/Group_1404_1.png",
+          "brand1": "shopify://shop_images/image_85.png",
+          "brand1-link": "https://www.youtube.com/watch?v=dvYavB5GN8o",
+          "brand2": "shopify://shop_images/image_87.png",
+          "brand2-link": "https://www.cosmopolitan.com/sex-love/news/a43169/the-best-porn-sites-for-women/",
+          "brand3": "shopify://shop_images/image_89.png",
+          "brand3-link": "https://www.wellandgood.com/vibes-only-allison-wonderland/",
+          "brand4": "shopify://shop_images/image_88.png",
+          "brand4-link": "https://www.popsugar.com/love/photo-gallery/43317145/image/49144300/Best-Vibrating-Butt-Plug",
+          "brand5": "shopify://shop_images/image_86.png",
+          "brand5-link": "https://www.refinery29.com/en-us/vibes-only-sex-toy-review",
+          "brand6": "shopify://shop_images/image_89_1.png",
+          "brand6-link": "https://www.sheknows.com/health-and-wellness/articles/2679631/vibes-only-vibrators-app-audio-erotica/",
+          "brand7": "shopify://shop_images/image_87_1.png",
+          "brand7-link": "https://www.theskimm.com/shopping/sex-toys-for-every-person-and-preference",
+          "brand8": "shopify://shop_images/image_88_1.png",
+          "brand8-link": "https://www.menshealth.com/sex-women/g19524731/romantic-gifts-for-valentines-day/"
         }
       },
       "main-gift-card": {
@@ -137,15 +146,17 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "10641372206048101839": {
-        "type": "shopify:\/\/apps\/rebuy-personalization-engine\/blocks\/rebuy-global-embed\/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
+        "type": "shopify://apps/rebuy-personalization-engine/blocks/rebuy-global-embed/a26ae9b9-933b-40bf-bbc6-bf1220bbc4dc",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
+      },
+      "6259689876533155755": {
+        "type": "shopify://apps/adoric-bundles/blocks/bundle-embed/e20b8847-d680-41d1-b500-b783d925492a",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
@@ -251,7 +262,7 @@
       ".cap {text-transform: capitalize !important;}",
       ".product .product-info__flex div:first-child {display: flex;}",
       ".product .product-info__flex {text-align-last: left !important;}",
-      "@media only screen and (max-width: 600px) {.product .product-info__flex {\/* justify-content: space-between; *\/ text-align: left !important; -moz-text-align-last: left !important; text-align-last: left !important; }}",
+      "@media only screen and (max-width: 600px) {.product .product-info__flex {/* justify-content: space-between; */ text-align: left !important; -moz-text-align-last: left !important; text-align-last: left !important; }}",
       ".zoom-image {background: #f8f8f8 !important;}",
       ".dropdown-menu__item {opacity: 1 !important;}",
       ".text-subdued {font-size: 15px !important;}",
